@@ -1,1 +1,10 @@
-# idfy-sdk-net
+# Idfy .NET SDK
+
+## Installation
+...
+
+## Documentation
+...
+
+## Getting started
+...
