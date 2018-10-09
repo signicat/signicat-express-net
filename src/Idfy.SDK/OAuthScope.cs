@@ -5,5 +5,6 @@
         DOCUMENT_READ,
         DOCUMENT_WRITE,
         DOCUMENT_FILE,
+        EVENT
     }
 }
