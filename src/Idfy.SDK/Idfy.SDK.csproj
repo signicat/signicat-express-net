@@ -1,9 +1,22 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>1.0.0</Version>
+    <Description>.NET SDK for Idfy REST API</Description>
+    <Authors>Idfy Norge AS</Authors>
+    <PackageId>Idfy.SDK</PackageId>
+    <PackageTags>idfy;rest;signature;identification;api</PackageTags>
+    <PackageIconUrl>https://idfy-img.azureedge.net/nuget-icon-128x128.png</PackageIconUrl>
     <RootNamespace>Idfy</RootNamespace>
+    <AssemblyName>Idfy.SDK</AssemblyName>
+    <AssemblyTitle>Idfy.SDK</AssemblyTitle>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
   </ItemGroup>
+  
 </Project>
