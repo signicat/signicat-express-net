@@ -13,5 +13,7 @@
         internal static string Signature => $"{BaseUrl}/signature";
 
         internal static string SignatureDocuments => $"{Signature}/documents";
+
+        internal static string Notification => $"{BaseUrl}/notification";
     }
 }
