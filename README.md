@@ -6,5 +6,5 @@
 ## Documentation
 ...
 
-## Getting started
+## Sample Usage
 ...
