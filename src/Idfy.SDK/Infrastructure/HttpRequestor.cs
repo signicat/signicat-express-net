@@ -106,7 +106,7 @@ namespace Idfy.Infrastructure
             return ExecuteRequestAsync(request);
         }
 
-        private static HttpRequestMessage GetRequestMessage(string url, HttpMethod method, string token = null,
+        internal static HttpRequestMessage GetRequestMessage(string url, HttpMethod method, string token = null,
             string jsonBody = null, NameValueCollection formData = null)
         {
             var request = BuildRequest(url, method, jsonBody, formData);

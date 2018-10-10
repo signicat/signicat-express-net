@@ -13,6 +13,9 @@ namespace Idfy.Infrastructure
         
         public static OAuthToken Authorize(string clientId, string clientSecret, IEnumerable<OAuthScope> scopes)
         {
+            if (clientId == null)
+                throw new InvalidOperationException($"Client credentials not set.");
+            
             var formData = new NameValueCollection()
             {
                 {"grant_type", "client_credentials"},
