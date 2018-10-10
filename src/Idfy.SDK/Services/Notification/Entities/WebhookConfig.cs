@@ -21,6 +21,6 @@ namespace Idfy.Notification
         /// Determines whether to log webhook delivery attempts. Defaults to `never`.
         /// </summary>
         [JsonProperty(PropertyName = "deliveryLogging")]
-        public string DeliveryLogging { get; set; }
+        public DeliveryLogging? DeliveryLogging { get; set; }
     }
 }

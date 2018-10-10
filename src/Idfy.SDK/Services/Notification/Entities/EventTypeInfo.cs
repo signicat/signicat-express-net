@@ -8,7 +8,7 @@ namespace Idfy.Notification
         /// Event type
         /// </summary>
         [JsonProperty(PropertyName = "id")]
-        public string Id { get; set; }
+        public EventType? Id { get; set; }
 
         /// <summary>
         /// Display name of the event
