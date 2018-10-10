@@ -24,16 +24,62 @@ namespace Idfy.Infrastructure
 
         public static IdfyResponse Get(string url, string token = null)
         {
-            var request = GetRequestMessage(url, HttpMethod.Get, token);
-
-            return ExecuteRequest(request);
+            return Send(url, HttpMethod.Get, token);
         }
 
         public static Task<IdfyResponse> GetAsync(string url, string token = null)
         {
-            var request = GetRequestMessage(url, HttpMethod.Get, token);
+            return SendAsync(url, HttpMethod.Get, token);
+        }
+        
+        public static IdfyResponse Post(string url, string jsonBody = null, string token = null)
+        {
+            return Send(url, HttpMethod.Post, token, jsonBody);
+        }
 
-            return ExecuteRequestAsync(request);
+        public static Task<IdfyResponse> PostAsync(string url, string jsonBody = null, string token = null)
+        {
+            return SendAsync(url, HttpMethod.Post, token, jsonBody);
+        }
+        
+        public static IdfyResponse PostFormData(string url, NameValueCollection formData, string token = null)
+        {
+            return Send(url, HttpMethod.Post, token, formData: formData);
+        }
+        
+        public static Task<IdfyResponse> PostFormDataAsync(string url, NameValueCollection formData, string token = null)
+        {
+            return SendAsync(url, HttpMethod.Post, token, formData: formData);
+        }
+        
+        public static IdfyResponse Patch(string url, string jsonBody = null, string token = null)
+        {
+            return Send(url, new HttpMethod("PATCH"), token, jsonBody);
+        }
+
+        public static Task<IdfyResponse> PatchAsync(string url, string jsonBody = null, string token = null)
+        {
+            return SendAsync(url, new HttpMethod("PATCH"), token, jsonBody);
+        }
+        
+        public static IdfyResponse Put(string url, string jsonBody = null, string token = null)
+        {
+            return Send(url, HttpMethod.Put, token, jsonBody);
+        }
+
+        public static Task<IdfyResponse> PutAsync(string url, string jsonBody = null, string token = null)
+        {
+            return SendAsync(url, HttpMethod.Put, token, jsonBody);
+        }
+        
+        public static IdfyResponse Delete(string url, string token = null)
+        {
+            return Send(url, HttpMethod.Delete, token);
+        }
+
+        public static Task<IdfyResponse> DeleteAsync(string url, string token = null)
+        {
+            return SendAsync(url, HttpMethod.Delete, token);
         }
         
         public static Stream GetStream(string url, string token = null)
@@ -49,62 +95,6 @@ namespace Idfy.Infrastructure
 
             return ExecuteRawRequestAsync(request);
         }
-        
-        public static IdfyResponse Post(string url, string jsonBody = null, string token = null)
-        {
-            var request = GetRequestMessage(url, HttpMethod.Post, token, jsonBody);
-
-            return ExecuteRequest(request);
-        }
-
-        public static Task<IdfyResponse> PostAsync(string url, string jsonBody = null, string token = null)
-        {
-            var request = GetRequestMessage(url, HttpMethod.Post, token, jsonBody);
-
-            return ExecuteRequestAsync(request);
-        }
-        
-        public static IdfyResponse PostFormData(string url, NameValueCollection formData, string token = null)
-        {
-            var request = GetRequestMessage(url, HttpMethod.Post, token, formData: formData);
-
-            return ExecuteRequest(request);
-        }
-        
-        public static Task<IdfyResponse> PostFormDataAsync(string url, NameValueCollection formData, string token = null)
-        {
-            var request = GetRequestMessage(url, HttpMethod.Post, token, formData: formData);
-
-            return ExecuteRequestAsync(request);
-        }
-        
-        public static IdfyResponse Patch(string url, string jsonBody = null, string token = null)
-        {
-            var request = GetRequestMessage(url, new HttpMethod("PATCH"), token, jsonBody);
-
-            return ExecuteRequest(request);
-        }
-
-        public static Task<IdfyResponse> PatchAsync(string url, string jsonBody = null, string token = null)
-        {
-            var request = GetRequestMessage(url, new HttpMethod("PATCH"), token, jsonBody);
-
-            return ExecuteRequestAsync(request);
-        }
-        
-        public static IdfyResponse Delete(string url, string token = null)
-        {
-            var request = GetRequestMessage(url, HttpMethod.Delete, token);
-
-            return ExecuteRequest(request);
-        }
-
-        public static Task<IdfyResponse> DeleteAsync(string url, string token = null)
-        {
-            var request = GetRequestMessage(url, HttpMethod.Delete, token);
-
-            return ExecuteRequestAsync(request);
-        }
 
         internal static HttpRequestMessage GetRequestMessage(string url, HttpMethod method, string token = null,
             string jsonBody = null, NameValueCollection formData = null)
@@ -117,6 +107,22 @@ namespace Idfy.Infrastructure
             }
 
             return request;
+        }
+
+        private static IdfyResponse Send(string url, HttpMethod method, string token = null, string jsonBody = null,
+            NameValueCollection formData = null)
+        {
+            var request = GetRequestMessage(url, method, token, jsonBody, formData);
+
+            return ExecuteRequest(request);
+        }
+
+        private static Task<IdfyResponse> SendAsync(string url, HttpMethod method, string token = null,
+            string jsonBody = null, NameValueCollection formData = null)
+        {
+            var request = GetRequestMessage(url, method, token, jsonBody, formData);
+
+            return ExecuteRequestAsync(request);
         }
 
         private static HttpRequestMessage BuildRequest(string url, HttpMethod method, string jsonBody = null,

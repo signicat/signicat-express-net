@@ -48,15 +48,15 @@ namespace Idfy
                 HttpRequestor.Post(url, Mapper.MapToJson(requestObject), GetToken()));
         }
 
-        protected void Post(string url, object requestObject = null)
-        {
-            HttpRequestor.Post(url, token: GetToken());
-        }
-
         protected async Task<T> PostAsync<T>(string url, object requestObject = null)
         {
             return Mapper.MapFromJson<T>(
                 await HttpRequestor.PostAsync(url, Mapper.MapToJson(requestObject), GetToken()));
+        }
+        
+        protected void Post(string url, object requestObject = null)
+        {
+            HttpRequestor.Post(url, token: GetToken());
         }
 
         protected async Task PostAsync(string url, object requestObject = null)
@@ -74,6 +74,16 @@ namespace Idfy
         {
             return Mapper.MapFromJson<T>(
                 await HttpRequestor.PatchAsync(url, Mapper.MapToJson(requestObject), GetToken()));
+        }
+        
+        protected void Put(string url, object requestObject = null)
+        {
+            HttpRequestor.Put(url, Mapper.MapToJson(requestObject), GetToken());
+        }
+
+        protected async Task PutAsync(string url, object requestObject = null)
+        {
+            await HttpRequestor.PutAsync(url, Mapper.MapToJson(requestObject), GetToken());
         }
 
         protected void Delete(string url)

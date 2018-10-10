@@ -18,7 +18,8 @@ namespace Idfy.SDK.Tests
                 {"foo", "bar"},
                 {"limit", 25},
                 {"fileFormat", FileFormat.StandardPackaging},
-                {"fromDate", new DateTime(2018, 01, 01, 8, 0, 0, DateTimeKind.Utc)}
+                {"fromDate", new DateTime(2018, 01, 01, 8, 0, 0, DateTimeKind.Utc)},
+                {"mock", null}
             };
 
             var url = APIHelper.AppendQueryParams("https://api.idfy.io", q);
