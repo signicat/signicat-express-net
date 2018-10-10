@@ -1,0 +1,41 @@
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using Idfy.Infrastructure;
+
+namespace Idfy.JWT
+{
+    /// <summary>
+    /// Validate JSON Web Tokens from Idfy.
+    /// </summary>
+    public class JwtService : IdfyBaseService
+    {
+        public JwtService()
+        {
+        }
+
+        public JwtService(string clientId, string clientSecret, IEnumerable<OAuthScope> scopes) :
+            base(clientId, clientSecret, scopes)
+        {
+        }
+
+        /// <summary>
+        /// Validates a JWT.
+        /// </summary>
+        /// <param name="jwtValidationRequest"></param>
+        /// <returns></returns>
+        public JwtValidationResult Validate(JwtValidationRequest jwtValidationRequest)
+        {
+            return Post<JwtValidationResult>($"{Urls.Jwt}/validate");
+        }
+        
+        /// <summary>
+        /// Validates a JWT.
+        /// </summary>
+        /// <param name="jwtValidationRequest"></param>
+        /// <returns></returns>
+        public async Task<JwtValidationResult> ValidateAsync(JwtValidationRequest jwtValidationRequest)
+        {
+            return await PostAsync<JwtValidationResult>($"{Urls.Jwt}/validate");
+        }
+    }
+}

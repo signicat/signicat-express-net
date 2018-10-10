@@ -19,5 +19,7 @@
         internal static string Identification => $"{BaseUrl}/identification";
 
         internal static string MerchantSign => $"{BaseUrl}/merchant";
+        
+        internal static string Jwt => $"{BaseUrl}/jwt";
     }
 }
