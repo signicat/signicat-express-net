@@ -17,6 +17,12 @@ namespace Idfy
         Event,
         
         [EnumMember(Value = "identify")]
-        Identify
+        Identify,
+        
+        [EnumMember(Value = "validation")]
+        Validation,
+        
+        [EnumMember(Value = "validation_ssn")]
+        ValidationSsn
     }
 }

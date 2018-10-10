@@ -21,5 +21,7 @@
         internal static string MerchantSign => $"{BaseUrl}/merchant";
         
         internal static string Jwt => $"{BaseUrl}/jwt";
+
+        internal static string Validation => $"{BaseUrl}/validation";
     }
 }
