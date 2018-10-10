@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Linq;
 
 namespace Idfy.Infrastructure
 {
@@ -15,11 +16,11 @@ namespace Idfy.Infrastructure
         {
             if (clientId == null)
                 throw new InvalidOperationException($"Client credentials not set.");
-            
+
             var formData = new NameValueCollection()
             {
                 {"grant_type", "client_credentials"},
-                {"scope", string.Join(" ", scopes).ToLowerInvariant()},
+                {"scope", string.Join(" ", scopes.Select(scope => scope.ToEnumMemberString()))},
                 {"client_id", clientId},
                 {"client_secret", clientSecret}
             };

@@ -1,11 +1,22 @@
-﻿namespace Idfy
+﻿using System.Runtime.Serialization;
+
+namespace Idfy
 {
     public enum OAuthScope
     {
-        DOCUMENT_READ,
-        DOCUMENT_WRITE,
-        DOCUMENT_FILE,
-        EVENT,
-        IDENTIFY
+        [EnumMember(Value = "document_read")]
+        DocumentRead,
+        
+        [EnumMember(Value = "document_write")]
+        DocumentWrite,
+        
+        [EnumMember(Value = "document_file")]
+        DocumentFile,
+        
+        [EnumMember(Value = "event")]
+        Event,
+        
+        [EnumMember(Value = "identify")]
+        Identify
     }
 }

@@ -47,7 +47,7 @@ namespace Idfy.Infrastructure
             return "?" + string.Join("&", array);
         }
         
-        private static string ToEnumMemberString(this Enum enumValue)
+        public static string ToEnumMemberString(this Enum enumValue)
         {
             var type = enumValue.GetType();
             var info = type.GetField(enumValue.ToString());

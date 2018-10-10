@@ -5,9 +5,9 @@ namespace Idfy.MerchantSign
     public enum DataEncodingFormat
     {
         [EnumMember(Value = "UTF8")]
-        UTF8 = 0,
+        Utf8 = 0,
         
         [EnumMember(Value = "ISOLATIN")]
-        ISOLATIN = 1
+        IsoLatin = 1
     }
 }

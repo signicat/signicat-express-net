@@ -5,9 +5,9 @@ namespace Idfy.Signature
     public enum SignatureMechanism
     {
         [EnumMember(Value = "pkisignature")]
-        Pkisignature = 0,
+        PkiSignature = 0,
     
         [EnumMember(Value = "eaccept")]
-        Eaccept = 1,    
+        EAccept = 1,    
     }
 }

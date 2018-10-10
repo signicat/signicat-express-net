@@ -12,7 +12,7 @@ namespace Idfy.MerchantSign
     public class MerchantSignService : IdfyBaseService
     {
         public MerchantSignService()
-        {   
+        {
         }
 
         public MerchantSignService(string clientId, string clientSecret, IEnumerable<OAuthScope> scopes) :
