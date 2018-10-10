@@ -21,7 +21,7 @@ namespace Idfy.Identification
         /// The status of the identification process.
         /// </summary>
         [JsonProperty(PropertyName = "Status")]
-        public string Status { get; set; }
+        public IdentificationStatus? Status { get; set; }
 
         /// <summary>
         /// The IP-address of the user.

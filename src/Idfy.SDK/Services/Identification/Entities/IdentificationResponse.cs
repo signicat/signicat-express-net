@@ -39,7 +39,7 @@ namespace Idfy.Identification
         /// The status of the identification process. If not success the identification process is not completed
         /// </summary>
         [JsonProperty(PropertyName = "Status")]
-        public string Status { get; set; }
+        public IdentificationStatus? Status { get; set; }
 
         /// <summary>
         /// The social security number for the user (if allowed and if the GetSocialSecurityNumber is set to true in the request)
@@ -57,7 +57,7 @@ namespace Idfy.Identification
         /// The identity provider type (Norwegian BanKID, SwedishBankID, Nemid, etc).
         /// </summary>
         [JsonProperty(PropertyName = "IdentityProvider")]
-        public string IdentityProvider { get; set; }
+        public IdentityProvider? IdentityProvider { get; set; }
 
         /// <summary>
         /// Information about error if the identification process failed.

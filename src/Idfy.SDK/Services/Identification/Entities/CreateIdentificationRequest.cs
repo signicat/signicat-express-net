@@ -10,7 +10,7 @@ namespace Idfy.Identification
         /// a list of all the e-ID assosiated with your account to choose from.
         /// </summary>
         [JsonProperty(PropertyName = "IdentityProvider")]
-        public string IdentityProvider { get; set; }
+        public IdentityProvider? IdentityProvider { get; set; }
 
         /// <summary>
         /// The return urls to be redirected to after the identification process is done
@@ -28,7 +28,7 @@ namespace Idfy.Identification
         /// The language to be used for the identification process, if not set the language of the users browser will be used.
         /// </summary>
         [JsonProperty(PropertyName = "Language")]
-        public string Language { get; set; }
+        public Language? Language { get; set; }
 
         /// <summary>
         /// Whether the social security number should be fetched from the identity provider.
