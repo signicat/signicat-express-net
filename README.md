@@ -16,7 +16,9 @@ Command line:
 	dotnet add package Idfy.SDK
 
 ## Documentation
-...
+- [Idfy REST API Reference](https://developer.idfy.io/api)
+- [Idfy Developer Documentation](https://docs.idfy.io)
+
 
 ## Sample Usage
 ...
