@@ -76,6 +76,18 @@ namespace Idfy
                 await HttpRequestor.PatchAsync(url, Mapper.MapToJson(requestObject), GetToken()));
         }
         
+        protected T Put<T>(string url, object requestObject = null)
+        {
+            return Mapper.MapFromJson<T>(
+                HttpRequestor.Put(url, Mapper.MapToJson(requestObject), GetToken()));
+        }
+
+        protected async Task<T> PutAsync<T>(string url, object requestObject = null)
+        {
+            return Mapper.MapFromJson<T>(
+                await HttpRequestor.PutAsync(url, Mapper.MapToJson(requestObject), GetToken()));
+        }
+        
         protected void Put(string url, object requestObject = null)
         {
             HttpRequestor.Put(url, Mapper.MapToJson(requestObject), GetToken());
