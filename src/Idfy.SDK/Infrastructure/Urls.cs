@@ -23,5 +23,7 @@
         internal static string Jwt => $"{BaseUrl}/jwt";
 
         internal static string Validation => $"{BaseUrl}/validation";
+
+        internal static string Admin => $"{BaseUrl}/admin";
     }
 }

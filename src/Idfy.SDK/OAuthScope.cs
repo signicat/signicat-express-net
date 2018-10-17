@@ -4,6 +4,12 @@ namespace Idfy
 {
     public enum OAuthScope
     {
+        [EnumMember(Value = "account_read")]
+        AccountRead,
+        
+        [EnumMember(Value = "account_write")]
+        AccountWrite,
+        
         [EnumMember(Value = "document_read")]
         DocumentRead,
         
