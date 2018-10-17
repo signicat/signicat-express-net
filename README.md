@@ -1,4 +1,7 @@
 # Idfy .NET SDK
+A .NET SDK for simple integration with the Idfy REST API.
+
+Supports .NET Standard 2.0+, .NET Core 2.0+ and .NET Framework 4.6.1+.
 
 ## Installation
 Using NuGet is the easiest way to install the SDK.
