@@ -1,4 +1,4 @@
-**Note: For support questions, please contact us at support@idfy.io.
+**Note: For support questions, please contact us at support@idfy.io.**
 
 * **I'm submitting a ...**
   - [ ] bug report
