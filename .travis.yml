@@ -6,8 +6,3 @@ script:
   - dotnet restore src\
   - dotnet build -c Release src\Idfy.SDK\
   
- deploy:
-   provider: releases
-   api_key: $GITHUB_TOKEN
-   on:
-     tags: true
