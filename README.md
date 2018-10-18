@@ -25,3 +25,6 @@ Command line:
 
 ## Sample Usage
 ...
+
+## Support
+...
