@@ -3,6 +3,6 @@ mono: none
 dotnet: 2.0
 
 script:
-  - dotnet restore src\
-  - dotnet build -c Release src\Idfy.SDK\
+  - dotnet restore src/
+  - dotnet build -c Release src/Idfy.SDK/Idfy.SDK.csproj
   
