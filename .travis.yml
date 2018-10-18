@@ -2,7 +2,9 @@ language: csharp
 mono: none
 dotnet: 2.0
 
-script:
+install:
   - dotnet restore src/
-  - dotnet build -c Release src/Idfy.SDK/Idfy.SDK.csproj
-  
+
+script:
+  - dotnet build -c Release src/
+  - dotnet test src/Idfy.SDK.Tests/Idfy.SDK.Tests.csproj
