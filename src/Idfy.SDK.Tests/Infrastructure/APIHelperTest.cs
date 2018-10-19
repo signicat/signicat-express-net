@@ -26,7 +26,7 @@ namespace Idfy.SDK.Tests
             var url = APIHelper.AppendQueryParams("https://api.idfy.io", q);
             
             Assert.IsNotEmpty(url);
-            Assert.AreEqual("https://api.idfy.io?foo=bar&limit=25&fileFormat=standard_packaging&fromDate=2018-01-01T08:00:00.0000000Z&toDate=2018-01-01T08:00:00.0000000+00:00", url);
+            Assert.AreEqual("https://api.idfy.io?foo=bar&limit=25&fileFormat=standard_packaging&fromDate=2018-01-01T08:00:00Z&toDate=2018-01-01T08:00:00+00:00", url);
         }
 
         [Test]
