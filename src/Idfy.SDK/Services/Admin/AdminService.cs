@@ -9,7 +9,7 @@ namespace Idfy.Admin
     /// <summary>
     /// Manage your Idfy account.
     /// </summary>
-    public class AdminService : IdfyBaseService
+    public class AdminService : IdfyBaseService, IAdminService
     {
         public AdminService()
         {
