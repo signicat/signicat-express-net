@@ -19,7 +19,7 @@ namespace Idfy.Identification
         }
 
         /// <summary>
-        /// Retrieves the response of a single identifaction session.
+        /// Retrieves the response of a single identification session.
         /// </summary>
         /// <param name="requestId"></param>
         /// <param name="metaData"></param>
@@ -36,7 +36,7 @@ namespace Idfy.Identification
         }
 
         /// <summary>
-        /// Retrieves the response of a single identifaction session.
+        /// Retrieves the response of a single identification session.
         /// </summary>
         /// <param name="requestId"></param>
         /// <param name="metaData"></param>
