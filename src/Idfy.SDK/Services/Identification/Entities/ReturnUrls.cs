@@ -2,9 +2,6 @@ using Newtonsoft.Json;
 
 namespace Idfy.Identification
 {
-    /// <summary>
-    /// Return urls for the identity request
-    /// </summary>
     public class ReturnUrls
     {
         /// <summary>

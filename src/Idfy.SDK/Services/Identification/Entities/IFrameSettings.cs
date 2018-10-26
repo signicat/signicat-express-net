@@ -18,7 +18,7 @@ namespace Idfy.Identification
         public bool? WebMessaging { get; set; }
 
         /// <summary>
-        /// height of the frame when used in iframe.
+        /// Height of the frame when used in iframe.
         /// </summary>
         [JsonProperty(PropertyName = "Height")]
         public int? Height { get; set; }
