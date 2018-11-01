@@ -26,7 +26,21 @@ Command line:
 
 
 ## Sample Usage
-...
+The example below show how to get the details of a specific document.
+
+### 1. Set your credentials and desired scopes
+```csharp
+IdfyConfiguration.SetClientCredentials("clientId", "clientSecret",
+    new[] {OAuthScope.DocumentRead, OAuthScope.DocumentWrite});
+```
+
+### Make a call to retrieve the document
+```csharp
+var signatureService = new SignatureService();
+var document = signatureService.GetDocument(documentId);
+
+Console.WriteLine($"Retrieved document: {document.Title}");
+```
 
 ## Support
 ...
