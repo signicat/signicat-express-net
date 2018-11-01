@@ -34,7 +34,7 @@ IdfyConfiguration.SetClientCredentials("clientId", "clientSecret",
     new[] {OAuthScope.DocumentRead, OAuthScope.DocumentWrite});
 ```
 
-### Make a call to retrieve the document
+### 2. Make a call to retrieve the document
 ```csharp
 var signatureService = new SignatureService();
 var document = signatureService.GetDocument(documentId);
