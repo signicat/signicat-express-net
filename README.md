@@ -28,14 +28,12 @@ Command line:
 ## Sample Usage
 The example below show how to get the details of a specific document.
 
-### 1. Set your credentials and desired scopes
 ```csharp
+// Set your credentials and desired scopes
 IdfyConfiguration.SetClientCredentials("clientId", "clientSecret",
     new[] {OAuthScope.DocumentRead, OAuthScope.DocumentWrite});
-```
 
-### 2. Make a call to retrieve the document
-```csharp
+// Make a call to retrieve the document
 var signatureService = new SignatureService();
 var document = signatureService.GetDocument(documentId);
 
