@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 using Idfy.Infrastructure;
 
 namespace Idfy
@@ -28,6 +29,15 @@ namespace Idfy
         {
             get => string.IsNullOrWhiteSpace(_oauthBaseUrl) ? Urls.DefaultOAuthBaseUrl : _oauthBaseUrl;
             set => _oauthBaseUrl = value;
+        }
+
+        public static string SdkVersion
+        {
+            get
+            {
+                var assembly = Assembly.GetExecutingAssembly();
+                return assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>().InformationalVersion;
+            }
         }
         
         internal static string ClientId { get; set; }

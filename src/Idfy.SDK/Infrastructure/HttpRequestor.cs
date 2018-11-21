@@ -101,6 +101,8 @@ namespace Idfy.Infrastructure
         {
             var request = BuildRequest(url, method, jsonBody, formData);
             
+            request.Headers.Add("X-Idfy-SDK", $".NET {IdfyConfiguration.SdkVersion}");
+            
             if (!string.IsNullOrWhiteSpace(token))
             {
                 request.Headers.Add("Authorization", $"Bearer {token}");
