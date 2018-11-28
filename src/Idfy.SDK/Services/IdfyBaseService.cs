@@ -34,12 +34,12 @@ namespace Idfy
 
         protected Stream GetFile(string url)
         {
-            return HttpRequestor.GetStream(url);
+            return HttpRequestor.GetStream(url, GetToken());
         }
 
         protected async Task<Stream> GetFileAsync(string url)
         {
-            return await HttpRequestor.GetStreamAsync(url);
+            return await HttpRequestor.GetStreamAsync(url, GetToken());
         }
 
         protected T Post<T>(string url, object requestObject = null)
@@ -56,12 +56,12 @@ namespace Idfy
         
         protected void Post(string url, object requestObject = null)
         {
-            HttpRequestor.Post(url, token: GetToken());
+            HttpRequestor.Post(url, Mapper.MapToJson(requestObject), token: GetToken());
         }
 
         protected async Task PostAsync(string url, object requestObject = null)
         {
-            await HttpRequestor.PostAsync(url, token: GetToken());
+            await HttpRequestor.PostAsync(url, Mapper.MapToJson(requestObject), GetToken());
         }
 
         protected T Patch<T>(string url, object requestObject = null)
