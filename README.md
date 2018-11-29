@@ -26,7 +26,7 @@ Command line:
 
 
 ## Sample Usage
-The example below show how to get the details of a specific document.
+The example below shows how to get the details of a specific document.
 
 ```csharp
 // Set your credentials and desired scopes
@@ -41,4 +41,5 @@ Console.WriteLine($"Retrieved document: {document.Title}");
 ```
 
 ## Support
-...
+- Open an [issue](https://github.com/idfy-io/idfy-sdk-net/issues) to report bugs or submit feature requests.
+- For other support requests, visit our [support page](https://support.idfy.io) or contact us at [support@idfy.io](mailto:support@idfy.io).
