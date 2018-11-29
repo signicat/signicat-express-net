@@ -8,7 +8,7 @@ using NUnit.Framework;
 namespace Idfy.SDK.Tests
 {
     [TestFixture]
-    public class APIHelperTest
+    public class APIHelperTest : BaseTest
     {
         [Test]
         public void AppendsQueryParams()
