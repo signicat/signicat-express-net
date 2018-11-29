@@ -28,7 +28,7 @@ namespace Idfy.SDK.Tests
         
         private static object Initialize()
         {
-            var port = Environment.GetEnvironmentVariable("IDFY_MOCK_SERVER_PORT") ?? "8111";
+            var port = Environment.GetEnvironmentVariable("IDFY_MOCK_SERVER_PORT") ?? "5000";
             var url = $"http://localhost:{port}";
 
             _mockHttpClientHandler = new Mock<HttpClientHandler>()
