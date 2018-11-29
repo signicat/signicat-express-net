@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Reflection;
 using Idfy.Infrastructure;
 
@@ -16,6 +17,11 @@ namespace Idfy
             ClientSecret = clientSecret;
             Scopes = scopes;
         }
+        
+        /// <summary>
+        /// Lets you provide your own HttpMessageHandler.
+        /// </summary>
+        public static HttpMessageHandler HttpMessageHandler { get; set; }
         
         public static TimeSpan? HttpTimeout { get; set; }
         

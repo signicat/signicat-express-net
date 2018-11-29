@@ -16,7 +16,9 @@ namespace Idfy.Infrastructure
         
         static HttpRequestor()
         {
-            HttpClient = new HttpClient();
+            HttpClient = IdfyConfiguration.HttpMessageHandler != null
+                ? new HttpClient(IdfyConfiguration.HttpMessageHandler)
+                : new HttpClient();
 
             if (IdfyConfiguration.HttpTimeout.HasValue)
                 HttpClient.Timeout = IdfyConfiguration.HttpTimeout.Value;
