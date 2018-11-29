@@ -21,7 +21,6 @@ script:
   - dotnet build -c Release src/
   - dotnet test src/Idfy.SDK.Tests/Idfy.SDK.Tests.csproj
   - dotnet pack src/Idfy.SDK/ -c Release
-  - dotnet pack src/Idfy.SDK/ -c Release --version-suffix ci-$TRAVIS_BUILD_NUMBER
 
 deploy:
   # Create GitHub release on new version
