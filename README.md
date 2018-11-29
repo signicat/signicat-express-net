@@ -12,10 +12,6 @@ Package Manager:
 
 	PM > Install-Package Idfy.SDK
 
-Command line:  
-
-	nuget install Idfy.SDK
-
 .NET Core CLI:  
 
 	dotnet add package Idfy.SDK
