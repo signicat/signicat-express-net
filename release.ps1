@@ -59,7 +59,7 @@ if ($confirmedVersion -ne $newVersion) {
 
 # Git commit version bump
 Write-Host "Committing new version"
-git add VERSION $csprojPath
+git add $csprojPath
 git commit -m "Release $newVersion"
 git push origin master
 
