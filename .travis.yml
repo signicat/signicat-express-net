@@ -24,12 +24,14 @@ script:
   - dotnet pack src/Idfy.SDK/ -c Release --version-suffix ci-$TRAVIS_BUILD_NUMBER
 
 deploy:
-  # Deploy GitHub release on new version
+  # Create GitHub release on new version
   - provider: releases
     api_key: $GITHUB_OAUTH_TOKEN
     on:
       tags: true
-  # Push NuGet package to MyGet feed on each CI build
-  - provider: script
+  # Push NuGet package to nuget.org on new version
+  -provider: script  
     skip_cleanup: true
-    script: dotnet nuget push src/Idfy.SDK/bin/Release/Idfy.SDK.*ci-$TRAVIS_BUILD_NUMBER --api-key $MYGET_APIKEY --source https://www.myget.org/F/identisign/api/v2/package
+    script: dotnet nuget push src/Idfy.SDK/bin/Release/Idfy.SDK.* --api-key $NUGET_APIKEY --source https://www.nuget.org/api/v2/package
+    on:
+      tags: true

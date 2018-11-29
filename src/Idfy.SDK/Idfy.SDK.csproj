@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <VersionPrefix>1.0.0</VersionPrefix>
-    <VersionSuffix>beta1</VersionSuffix>
+    <VersionSuffix>{VersionSuffix}</VersionSuffix>
     <Description>.NET SDK for Idfy REST API</Description>
     <Authors>Idfy Norge AS</Authors>
     <PackageId>Idfy.SDK</PackageId>
