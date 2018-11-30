@@ -82,5 +82,21 @@ namespace Idfy.SDK.Tests
             Assert.IsNotNull(document);
             AssertRequest(new HttpMethod("PATCH"), $"/signature/documents/{_documentId}");
         }
+        
+        [Test]
+        public void CancelDocument()
+        {
+            _signatureService.CancelDocument(_documentId);
+
+            AssertRequest(HttpMethod.Post, $"/signature/documents/{_documentId}/cancel");
+        }
+
+        [Test]
+        public async Task CancelDocumentAsync()
+        {
+            await _signatureService.CancelDocumentAsync(_documentId);
+
+            AssertRequest(HttpMethod.Post, $"/signature/documents/{_documentId}/cancel");
+        }
     }
 }
