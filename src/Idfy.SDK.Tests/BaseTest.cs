@@ -59,13 +59,12 @@ namespace Idfy.SDK.Tests
 
         protected void AssertRequest(HttpMethod method, string path)
         {
-            _mockHttpClientHandler.Protected().
-                Verify("SendAsync",
-                    Times.Once(),
-                    ItExpr.Is<HttpRequestMessage>(m =>
-                        m.Method == method && 
-                        m.RequestUri.AbsolutePath == path),
-                    ItExpr.IsAny<CancellationToken>());
+            _mockHttpClientHandler.Protected().Verify("SendAsync",
+                Times.Once(),
+                ItExpr.Is<HttpRequestMessage>(m =>
+                    m.Method == method &&
+                    $"{m.RequestUri.AbsolutePath}{m.RequestUri.Query}" == path),
+                ItExpr.IsAny<CancellationToken>());
             
             // Resets the recorded invocation before each test
             _mockHttpClientHandler.Invocations.Clear();
