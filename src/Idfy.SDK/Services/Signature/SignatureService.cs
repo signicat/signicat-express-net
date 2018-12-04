@@ -21,7 +21,7 @@ namespace Idfy.Signature
         }
 
         /// <summary>
-        /// Retrieves  details of a single document.
+        /// Retrieves details of a single document.
         /// </summary>
         /// <param name="documentId"></param>
         /// <returns></returns>
