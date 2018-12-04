@@ -6,7 +6,7 @@ namespace Idfy.Identification
     public class IdentificationLogItem
     {
         /// <summary>
-        /// The sessionID for the identitication
+        /// The identification session ID
         /// </summary>
         [JsonProperty(PropertyName = "Id")]
         public string Id { get; set; }
@@ -24,7 +24,7 @@ namespace Idfy.Identification
         public IdentificationStatus? Status { get; set; }
 
         /// <summary>
-        /// The IP-address of the user.
+        /// The IP address of the user.
         /// </summary>
         [JsonProperty(PropertyName = "ClientIp")]
         public string ClientIp { get; set; }
@@ -73,7 +73,7 @@ namespace Idfy.Identification
         public bool? Iframe { get; set; }
 
         /// <summary>
-        /// Whether social securitynumber was fetched.
+        /// Whether social security number was fetched.
         /// </summary>
         [JsonProperty(PropertyName = "SocialSecurityNumber")]
         public bool? SocialSecurityNumber { get; set; }

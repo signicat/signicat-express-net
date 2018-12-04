@@ -143,13 +143,7 @@ namespace Idfy.Identification
         /// <returns></returns>
         public IdentificationLogItem GetLogEntry(string requestId)
         {
-            var url = APIHelper.AppendQueryParams($"{Urls.Identification}/session/invalidate",
-                new Dictionary<string, object>()
-                {
-                    {"requestId", requestId}
-                });
-
-            return Get<IdentificationLogItem>(url);
+            return Get<IdentificationLogItem>($"{Urls.Identification}/log/requestId/{requestId}");
         }
 
         /// <summary>
@@ -159,13 +153,7 @@ namespace Idfy.Identification
         /// <returns></returns>
         public async Task<IdentificationLogItem> GetLogEntryAsync(string requestId)
         {
-            var url = APIHelper.AppendQueryParams($"{Urls.Identification}/session/invalidate",
-                new Dictionary<string, object>()
-                {
-                    {"requestId", requestId}
-                });
-
-            return await GetAsync<IdentificationLogItem>(url);
+            return await GetAsync<IdentificationLogItem>($"{Urls.Identification}/log/requestId/{requestId}");
         }
 
         /// <summary>
@@ -192,10 +180,9 @@ namespace Idfy.Identification
             int? skip = null,
             int? pageSize = null)
         {
-            var url = APIHelper.AppendQueryParams($"{Urls.Identification}/session/invalidate",
+            var url = APIHelper.AppendQueryParams($"{Urls.Identification}/log/filter/{year}",
                 new Dictionary<string, object>()
                 {
-                    {"year", year},
                     {"month", month},
                     {"day", day},
                     {"status", status},
@@ -233,10 +220,9 @@ namespace Idfy.Identification
             int? skip = null,
             int? pageSize = null)
         {
-            var url = APIHelper.AppendQueryParams($"{Urls.Identification}/session/invalidate",
+            var url = APIHelper.AppendQueryParams($"{Urls.Identification}/log/filter/{year}",
                 new Dictionary<string, object>()
                 {
-                    {"year", year},
                     {"month", month},
                     {"day", day},
                     {"status", status},

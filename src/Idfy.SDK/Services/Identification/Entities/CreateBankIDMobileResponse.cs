@@ -5,8 +5,7 @@ namespace Idfy.Identification
     public class CreateBankIDMobileResponse
     {
         /// <summary>
-        /// Request ID used to get the reponse from server.
-        /// afterwards
+        /// Request ID used to get the response from server afterwards.
         /// </summary>
         [JsonProperty(PropertyName = "RequestId")]
         public string RequestId { get; set; }

@@ -30,7 +30,7 @@ namespace Idfy.Identification
         public string ExternalReference { get; set; }
 
         /// <summary>
-        /// List of addon data that can be orderd. The result will be in MetaData list of the reponse.
+        /// List of addon data that can be ordered. The result will be in MetaData list of the response.
         /// </summary>
         [JsonProperty(PropertyName = "Addonservices")]
         public IDictionary<string, string> Addonservices { get; set; }
