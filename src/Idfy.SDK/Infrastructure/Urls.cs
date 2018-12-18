@@ -4,7 +4,7 @@
     {
         internal static string DefaultBaseUrl => "https://api.idfy.io";
         
-        internal static string DefaultOAuthBaseUrl => BaseUrl;
+        internal static string DefaultOAuthBaseUrl => DefaultBaseUrl;
 
         internal static string BaseUrl => IdfyConfiguration.BaseUrl;
 

@@ -391,7 +391,7 @@ namespace Idfy.Signature
         }
 
         /// <summary>
-        /// Adds an attachments to the specified document.
+        /// Adds an attachment to the specified document.
         /// </summary>
         /// <param name="documentId"></param>
         /// <param name="attachmentOptions"></param>
@@ -402,7 +402,7 @@ namespace Idfy.Signature
         }
         
         /// <summary>
-        /// Adds an attachments to the specified document.
+        /// Adds an attachment to the specified document.
         /// </summary>
         /// <param name="documentId"></param>
         /// <param name="attachmentOptions"></param>
