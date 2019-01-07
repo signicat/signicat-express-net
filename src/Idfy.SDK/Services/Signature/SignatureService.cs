@@ -653,7 +653,8 @@ namespace Idfy.Signature
         /// <returns></returns>
         public ManualReminder SendReminders(Guid documentId, ManualReminder manualReminder)
         {
-            return Post<ManualReminder>($"{Urls.SignatureDocuments}/{documentId}/notifications/reminder");
+            return Post<ManualReminder>($"{Urls.SignatureDocuments}/{documentId}/notifications/reminder",
+                manualReminder);
         }
         
         /// <summary>
@@ -664,7 +665,8 @@ namespace Idfy.Signature
         /// <returns></returns>
         public async Task<ManualReminder> SendRemindersAsync(Guid documentId, ManualReminder manualReminder)
         {
-            return await PostAsync<ManualReminder>($"{Urls.SignatureDocuments}/{documentId}/notifications/reminder");
+            return await PostAsync<ManualReminder>($"{Urls.SignatureDocuments}/{documentId}/notifications/reminder",
+                manualReminder);
         }
 
         /// <summary>
