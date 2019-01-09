@@ -9,7 +9,7 @@ namespace Idfy.Signature
     /// <summary>
     /// Sign contracts, declarations, forms and other documents using digital signatures.
     /// </summary>
-    public class SignatureService : IdfyBaseService
+    public class SignatureService : IdfyBaseService, ISignatureService
     {
         public SignatureService()
         {

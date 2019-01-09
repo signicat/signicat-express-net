@@ -7,7 +7,7 @@ namespace Idfy.Identification
     /// <summary>
     /// Identify users through eID providers such as Norwegian BankID, Swedish BankID and NemID.
     /// </summary>
-    public class IdentificationService : IdfyBaseService
+    public class IdentificationService : IdfyBaseService, IIdentificationService
     {
         public IdentificationService()
         {

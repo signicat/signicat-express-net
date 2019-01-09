@@ -7,7 +7,7 @@ namespace Idfy.Validation
     /// <summary>
     /// Validate signatures from supported eID providers.
     /// </summary>
-    public class ValidationService : IdfyBaseService
+    public class ValidationService : IdfyBaseService, IValidationService
     {
         public ValidationService()
         {
@@ -31,7 +31,7 @@ namespace Idfy.Validation
         /// <returns></returns>
         public ValidateSDOResponse ValidateSDO(ValidateSDORequest validateSdoRequest)
         {
-            return Post<ValidateSDOResponse>($"{Urls.Validation}/no/bankid/validate");
+            return Post<ValidateSDOResponse>($"{Urls.Validation}/no/bankid/validate", validateSdoRequest);
         }
         
         /// <summary>
@@ -41,7 +41,7 @@ namespace Idfy.Validation
         /// <returns></returns>
         public async Task<ValidateSDOResponse> ValidateSDOAsync(ValidateSDORequest validateSdoRequest)
         {
-            return await PostAsync<ValidateSDOResponse>($"{Urls.Validation}/no/bankid/validate");
+            return await PostAsync<ValidateSDOResponse>($"{Urls.Validation}/no/bankid/validate", validateSdoRequest);
         }
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Idfy.Validation
         /// <returns></returns>
         public ParseSDOResponse ParseAndValidateSDO(ParseSDORequest parseSdoRequest)
         {
-            return Post<ParseSDOResponse>($"{Urls.Validation}/no/bankid/parse");
+            return Post<ParseSDOResponse>($"{Urls.Validation}/no/bankid/parse", parseSdoRequest);
         }
         
         /// <summary>
@@ -61,7 +61,7 @@ namespace Idfy.Validation
         /// <returns></returns>
         public async Task<ParseSDOResponse> ParseAndValidateSDOAsync(ParseSDORequest parseSdoRequest)
         {
-            return await PostAsync<ParseSDOResponse>($"{Urls.Validation}/no/bankid/parse");
+            return await PostAsync<ParseSDOResponse>($"{Urls.Validation}/no/bankid/parse", parseSdoRequest);
         }
     }
 }

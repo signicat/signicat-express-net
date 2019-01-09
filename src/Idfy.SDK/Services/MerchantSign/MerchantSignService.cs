@@ -9,7 +9,7 @@ namespace Idfy.MerchantSign
     /// <summary>
     /// Sign documents with a merchant signature.
     /// </summary>
-    public class MerchantSignService : IdfyBaseService
+    public class MerchantSignService : IdfyBaseService, IMerchantSignService
     {
         public MerchantSignService()
         {
@@ -27,7 +27,7 @@ namespace Idfy.MerchantSign
         /// <returns></returns>
         public SignResponse CreateMerchantSignature(SignRequest signRequest)
         {
-            return Post<SignResponse>($"{Urls.MerchantSign}/signature");
+            return Post<SignResponse>($"{Urls.MerchantSign}/signature", signRequest);
         }
         
         /// <summary>
@@ -37,7 +37,7 @@ namespace Idfy.MerchantSign
         /// <returns></returns>
         public async Task<SignResponse> CreateMerchantSignatureAsync(SignRequest signRequest)
         {
-            return await PostAsync<SignResponse>($"{Urls.MerchantSign}/signature");
+            return await PostAsync<SignResponse>($"{Urls.MerchantSign}/signature", signRequest);
         }
 
         /// <summary>

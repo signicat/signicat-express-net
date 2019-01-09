@@ -65,7 +65,7 @@ namespace Idfy.Admin
         /// <returns></returns>
         public Account CreateAccount(AccountCreateOptions accountCreateOptions)
         {
-            return Post<Account>($"{Urls.Admin}/account");
+            return Post<Account>($"{Urls.Admin}/account", accountCreateOptions);
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Idfy.Admin
         /// <returns></returns>
         public async Task<Account> CreateAccountAsync(AccountCreateOptions accountCreateOptions)
         {
-            return await PostAsync<Account>($"{Urls.Admin}/account");
+            return await PostAsync<Account>($"{Urls.Admin}/account", accountCreateOptions);
         }
 
         /// <summary>
@@ -307,7 +307,7 @@ namespace Idfy.Admin
         /// <returns></returns>
         public PdfTemplate CreateTemplate(PdfTemplateOptions pdfTemplateOptions)
         {
-            return Post<PdfTemplate>($"{Urls.Admin}/template");
+            return Post<PdfTemplate>($"{Urls.Admin}/template", pdfTemplateOptions);
         }
         
         /// <summary>
@@ -316,7 +316,7 @@ namespace Idfy.Admin
         /// <returns></returns>
         public async Task<PdfTemplate> CreateTemplateAsync(PdfTemplateOptions pdfTemplateOptions)
         {
-            return await PostAsync<PdfTemplate>($"{Urls.Admin}/template");
+            return await PostAsync<PdfTemplate>($"{Urls.Admin}/template", pdfTemplateOptions);
         }
 
         /// <summary>

@@ -8,7 +8,7 @@ namespace Idfy.Notification
     /// <summary>
     /// Manage events that are raised when something happens in your account.
     /// </summary>
-    public class NotificationService : IdfyBaseService
+    public class NotificationService : IdfyBaseService, INotificationService
     {
         public NotificationService()
         {

@@ -7,7 +7,7 @@ namespace Idfy.JWT
     /// <summary>
     /// Validate JSON Web Tokens from Idfy.
     /// </summary>
-    public class JwtService : IdfyBaseService
+    public class JwtService : IdfyBaseService, IJwtService
     {
         public JwtService()
         {
@@ -25,7 +25,7 @@ namespace Idfy.JWT
         /// <returns></returns>
         public JwtValidationResult Validate(JwtValidationRequest jwtValidationRequest)
         {
-            return Post<JwtValidationResult>($"{Urls.Jwt}/validate");
+            return Post<JwtValidationResult>($"{Urls.Jwt}/validate", jwtValidationRequest);
         }
         
         /// <summary>
@@ -35,7 +35,7 @@ namespace Idfy.JWT
         /// <returns></returns>
         public async Task<JwtValidationResult> ValidateAsync(JwtValidationRequest jwtValidationRequest)
         {
-            return await PostAsync<JwtValidationResult>($"{Urls.Jwt}/validate");
+            return await PostAsync<JwtValidationResult>($"{Urls.Jwt}/validate", jwtValidationRequest);
         }
     }
 }
