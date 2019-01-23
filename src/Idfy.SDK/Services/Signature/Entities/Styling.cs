@@ -6,6 +6,11 @@
         /// The color theme for the application.
         /// </summary>
         public ColorTheme? ColorTheme { get; set; }
+        
+        /// <summary>
+        /// The theme color mode. Specify if you want a dark or light themed UI. Defaults to `Light`. 
+        /// </summary>
+        public ThemeMode? ThemeMode { get; set; }
     
         /// <summary>
         /// The type of spinner to show in loading screens.
