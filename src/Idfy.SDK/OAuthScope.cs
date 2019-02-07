@@ -1,4 +1,5 @@
-﻿using System.Runtime.Serialization;
+﻿using System;
+using System.Runtime.Serialization;
 
 namespace Idfy
 {
@@ -24,6 +25,9 @@ namespace Idfy
         
         [EnumMember(Value = "identify")]
         Identify,
+        
+        [EnumMember(Value = "merchantsign")]
+        MerchantSign,
         
         [EnumMember(Value = "validation")]
         Validation,
