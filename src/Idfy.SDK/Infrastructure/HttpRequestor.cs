@@ -13,7 +13,7 @@ namespace Idfy.Infrastructure
     internal static class HttpRequestor
     {
         private static readonly HttpClient HttpClient;
-        
+
         static HttpRequestor()
         {
             HttpClient = IdfyConfiguration.HttpMessageHandler != null
@@ -33,7 +33,7 @@ namespace Idfy.Infrastructure
         {
             return SendAsync(url, HttpMethod.Get, token);
         }
-        
+
         public static IdfyResponse Post(string url, string jsonBody = null, string token = null)
         {
             return Send(url, HttpMethod.Post, token, jsonBody);
@@ -43,17 +43,30 @@ namespace Idfy.Infrastructure
         {
             return SendAsync(url, HttpMethod.Post, token, jsonBody);
         }
-        
+
         public static IdfyResponse PostFormData(string url, NameValueCollection formData, string token = null)
         {
             return Send(url, HttpMethod.Post, token, formData: formData);
         }
-        
-        public static Task<IdfyResponse> PostFormDataAsync(string url, NameValueCollection formData, string token = null)
+
+        public static Task<IdfyResponse> PostFormDataAsync(string url, NameValueCollection formData,
+            string token = null)
         {
             return SendAsync(url, HttpMethod.Post, token, formData: formData);
         }
-        
+
+        public static IdfyResponse PostContentFormData(string url, MultipartFormDataContent content,
+            string token = null)
+        {
+            return Send(url, HttpMethod.Post, token, formDataContent: content);
+        }
+
+        public static Task<IdfyResponse> PostContentFormDataAsync(string url, MultipartFormDataContent content,
+            string token = null)
+        {
+            return SendAsync(url, HttpMethod.Post, token, formDataContent: content);
+        }
+
         public static IdfyResponse Patch(string url, string jsonBody = null, string token = null)
         {
             return Send(url, new HttpMethod("PATCH"), token, jsonBody);
@@ -63,7 +76,7 @@ namespace Idfy.Infrastructure
         {
             return SendAsync(url, new HttpMethod("PATCH"), token, jsonBody);
         }
-        
+
         public static IdfyResponse Put(string url, string jsonBody = null, string token = null)
         {
             return Send(url, HttpMethod.Put, token, jsonBody);
@@ -73,7 +86,7 @@ namespace Idfy.Infrastructure
         {
             return SendAsync(url, HttpMethod.Put, token, jsonBody);
         }
-        
+
         public static IdfyResponse Delete(string url, string token = null)
         {
             return Send(url, HttpMethod.Delete, token);
@@ -83,14 +96,14 @@ namespace Idfy.Infrastructure
         {
             return SendAsync(url, HttpMethod.Delete, token);
         }
-        
+
         public static Stream GetStream(string url, string token = null)
         {
             var request = GetRequestMessage(url, HttpMethod.Get, token);
 
             return ExecuteRawRequest(request);
         }
-        
+
         public static Task<Stream> GetStreamAsync(string url, string token = null)
         {
             var request = GetRequestMessage(url, HttpMethod.Get, token);
@@ -99,12 +112,13 @@ namespace Idfy.Infrastructure
         }
 
         internal static HttpRequestMessage GetRequestMessage(string url, HttpMethod method, string token = null,
-            string jsonBody = null, NameValueCollection formData = null)
+            string jsonBody = null, NameValueCollection formData = null,
+            MultipartFormDataContent formDataContent = null)
         {
-            var request = BuildRequest(url, method, jsonBody, formData);
-            
+            var request = BuildRequest(url, method, jsonBody, formData, formDataContent);
+
             request.Headers.Add("X-Idfy-SDK", $".NET {IdfyConfiguration.SdkVersion}");
-            
+
             if (!string.IsNullOrWhiteSpace(token))
             {
                 request.Headers.Add("Authorization", $"Bearer {token}");
@@ -114,29 +128,30 @@ namespace Idfy.Infrastructure
         }
 
         private static IdfyResponse Send(string url, HttpMethod method, string token = null, string jsonBody = null,
-            NameValueCollection formData = null)
+            NameValueCollection formData = null, MultipartFormDataContent formDataContent = null)
         {
-            var request = GetRequestMessage(url, method, token, jsonBody, formData);
+            var request = GetRequestMessage(url, method, token, jsonBody, formData, formDataContent);
 
             return ExecuteRequest(request);
         }
 
         private static Task<IdfyResponse> SendAsync(string url, HttpMethod method, string token = null,
-            string jsonBody = null, NameValueCollection formData = null)
+            string jsonBody = null, NameValueCollection formData = null,
+            MultipartFormDataContent formDataContent = null)
         {
-            var request = GetRequestMessage(url, method, token, jsonBody, formData);
+            var request = GetRequestMessage(url, method, token, jsonBody, formData, formDataContent);
 
             return ExecuteRequestAsync(request);
         }
 
         private static HttpRequestMessage BuildRequest(string url, HttpMethod method, string jsonBody = null,
-            NameValueCollection formData = null)
+            NameValueCollection formData = null, MultipartFormDataContent formDataContent = null)
         {
             var request = new HttpRequestMessage(method, new Uri(url));
 
-            if (method != HttpMethod.Post && method != HttpMethod.Put && method.Method != "PATCH") 
+            if (method != HttpMethod.Post && method != HttpMethod.Put && method.Method != "PATCH")
                 return request;
-            
+
             var postData = jsonBody;
             var contentType = "application/json";
 
@@ -150,9 +165,13 @@ namespace Idfy.Infrastructure
                 ? new StringContent(postData, Encoding.UTF8, contentType)
                 : null;
 
+
+            if (!string.IsNullOrWhiteSpace(jsonBody) || formData != null || formDataContent == null) return request;
+            request.Content = formDataContent;
+
             return request;
         }
-        
+
         private static IdfyResponse ExecuteRequest(HttpRequestMessage requestMessage)
         {
             return AsyncHelper.RunSync(() => ExecuteRequestAsync(requestMessage));
@@ -175,7 +194,7 @@ namespace Idfy.Infrastructure
         {
             return AsyncHelper.RunSync(() => ExecuteRawRequestAsync(requestMessage));
         }
-        
+
         private static async Task<Stream> ExecuteRawRequestAsync(HttpRequestMessage requestMessage)
         {
             var response = await HttpClient.SendAsync(requestMessage);
@@ -184,20 +203,23 @@ namespace Idfy.Infrastructure
 
             var errorContent = await response.Content.ReadAsStringAsync();
             var result = BuildResponseData(response, errorContent);
-            
+
             throw BuildException(result, response.StatusCode);
         }
-        
+
         private static IdfyResponse BuildResponseData(HttpResponseMessage response, string responseJson)
         {
             return new IdfyResponse()
             {
-                RequestId = response.Headers.Contains("Request-Id")? response.Headers.GetValues("Request-Id").First(): null,
-                RequestDate = Convert.ToDateTime(response.Headers.GetValues("Date").First(), CultureInfo.InvariantCulture),
+                RequestId = response.Headers.Contains("Request-Id")
+                    ? response.Headers.GetValues("Request-Id").First()
+                    : null,
+                RequestDate =
+                    Convert.ToDateTime(response.Headers.GetValues("Date").First(), CultureInfo.InvariantCulture),
                 ResponseJson = responseJson
             };
         }
-        
+
         private static IdfyException BuildException(IdfyResponse response, HttpStatusCode statusCode)
         {
             var idfyError = Mapper.MapFromJson<IdfyError>(response.ResponseJson);

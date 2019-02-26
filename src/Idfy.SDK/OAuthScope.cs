@@ -33,6 +33,12 @@ namespace Idfy
         Validation,
         
         [EnumMember(Value = "validation_ssn")]
-        ValidationSsn
+        ValidationSsn,
+        
+        [EnumMember(Value = "share_write")]
+        ShareWrite,
+        
+        [EnumMember(Value = "share_read")]
+        ShareRead
     }
 }

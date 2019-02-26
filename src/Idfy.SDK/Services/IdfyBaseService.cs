@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Idfy.Infrastructure;
 
@@ -62,6 +63,16 @@ namespace Idfy
         protected async Task PostAsync(string url, object requestObject = null)
         {
             await HttpRequestor.PostAsync(url, Mapper.MapToJson(requestObject), GetToken());
+        }
+
+        protected void PostFormContentData(string url, MultipartFormDataContent requestObject = null)
+        {
+            HttpRequestor.PostContentFormData(url, requestObject, GetToken());
+        }
+
+        protected async Task PostFormContentDataAsync(string url, MultipartFormDataContent requestObject = null)
+        {
+            await HttpRequestor.PostContentFormDataAsync(url, requestObject, GetToken());
         }
 
         protected T Patch<T>(string url, object requestObject = null)

@@ -25,5 +25,7 @@
         internal static string Validation => $"{BaseUrl}/validation";
 
         internal static string Admin => $"{BaseUrl}/admin";
+
+        internal static string Share => $"{BaseUrl}/share";
     }
 }
