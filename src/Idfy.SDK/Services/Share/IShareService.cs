@@ -124,7 +124,7 @@ namespace Idfy.Share
         void DeleteShareRecipient(string id, string recipientId);
 
         /// <summary>
-        /// Retrieve share recipient async
+        /// Delete share recipient async
         /// </summary>
         /// <param name="id"></param>
         /// <param name="recipientId"></param>
