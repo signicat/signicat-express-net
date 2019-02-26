@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
+using System.Net;
 using System.Runtime.Serialization;
 
 namespace Idfy.Infrastructure
@@ -43,7 +44,7 @@ namespace Idfy.Infrastructure
         {
             var array = (from key in nvc.AllKeys
                 from value in nvc.GetValues(key)
-                select $"{key}={value}").ToArray();
+                select $"{key}={WebUtility.UrlEncode(value)}").ToArray();
             return "?" + string.Join("&", array);
         }
         
