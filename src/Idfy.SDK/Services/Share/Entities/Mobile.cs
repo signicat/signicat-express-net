@@ -5,7 +5,7 @@
         /// <summary>
         /// Country code, no need to add +
         /// </summary>
-        public int CountryCode { get; set; }
+        public string CountryCode { get; set; }
         /// <summary>
         /// Valid phonenumber
         /// </summary>
