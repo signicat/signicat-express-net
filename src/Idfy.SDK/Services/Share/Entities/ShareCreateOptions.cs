@@ -20,6 +20,10 @@ namespace Idfy.Share.Entities
         /// List of people sending this share.
         /// </summary>
         public IEnumerable<Sender> Senders { get; set; }
+        /// <summary>
+        /// Optional settings for advanced configuration
+        /// </summary>
+        public Advanced Advanced { get; set; }
         
     }
 }

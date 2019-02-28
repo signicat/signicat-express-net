@@ -1,4 +1,9 @@
-﻿$HEADER$namespace $NAMESPACE$
+﻿using System.Collections.Generic;
+
+namespace Idfy.Share.Entities
 {
-  public class $CLASS$ {$END$}
+    public class Advanced
+    {
+        public List<string> Tags { get; set; }
+    }
 }

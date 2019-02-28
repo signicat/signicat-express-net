@@ -39,6 +39,10 @@ namespace Idfy.Share.Entities
         /// Senders
         /// </summary>
         public IEnumerable<Sender> Senders { get; set; }
+        /// <summary>
+        /// Optional settings for advanced configuration
+        /// </summary>
+        public Advanced Advanced { get; set; }
     }
 
     public class ServerUpload
