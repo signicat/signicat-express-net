@@ -11,18 +11,13 @@ namespace Idfy.SDK.Tests
     [TestFixture]
     public class NotificationServiceTest : BaseTest
     {
-        private readonly NotificationService _notificationService;
+        private NotificationService _notificationService;
         private Guid _eventId;
-
-        public NotificationServiceTest()
-        {
-            _notificationService = new NotificationService();
-        }
         
         [SetUp]
         public void Setup()
         {
-           
+            _notificationService = new NotificationService();
             _eventId = Guid.NewGuid();
         }
         
