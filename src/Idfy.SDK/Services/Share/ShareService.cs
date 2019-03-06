@@ -20,7 +20,7 @@ namespace Idfy.Share
         }
 
         /// <summary>
-        /// Creates a new share async.
+        /// Creates a new share
         /// </summary>
         /// <param name="shareCreateOptions"></param>
         /// <returns>Id for the newly created share</returns>
@@ -28,8 +28,9 @@ namespace Idfy.Share
         {
             return await PostAsync<CreateShareResponse>($"{Urls.Share}", shareCreateOptions);
         }
+        
         /// <summary>
-        /// Creates a new share.
+        /// Creates a new share
         /// </summary>
         /// <param name="shareCreateOptions"></param>
         /// <returns>Id for the newly created share</returns>
@@ -37,6 +38,7 @@ namespace Idfy.Share
         {
             return Post<CreateShareResponse>($"{Urls.Share}", shareCreateOptions);
         }
+        
         /// <summary>
         /// Upload file
         /// </summary>
@@ -55,7 +57,7 @@ namespace Idfy.Share
         }
 
         /// <summary>
-        /// Upload file async
+        /// Upload file
         /// </summary>
         /// <param name="id"></param>
         /// <param name="fileId"></param>
@@ -70,6 +72,7 @@ namespace Idfy.Share
                 await PostFormContentDataAsync($"{Urls.Share}/{id}/upload/{fileId}", content);
             }
         }
+        
         /// <summary>
         /// Retrieve share
         /// </summary>
@@ -79,8 +82,9 @@ namespace Idfy.Share
         {
             return Get<ShareResponse>($"{Urls.Share}/{id}");
         }
+        
         /// <summary>
-        /// Retrieve share async
+        /// Retrieve share
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -88,6 +92,7 @@ namespace Idfy.Share
         {
             return await GetAsync<ShareResponse>($"{Urls.Share}/{id}");
         }
+        
         /// <summary>
         /// Retrieve list of shares
         /// </summary>
@@ -98,13 +103,14 @@ namespace Idfy.Share
         }
 
         /// <summary>
-        /// Retrieve list of shares async
+        /// Retrieve list of shares
         /// </summary>
         /// <returns></returns>
         public async Task<IEnumerable<ShareResponse>> ListSharesAsync()
         {
             return await GetAsync<IEnumerable<ShareResponse>>($"{Urls.Share}/list");
         }
+        
         /// <summary>
         /// Delete share
         /// </summary>
@@ -116,7 +122,7 @@ namespace Idfy.Share
         }
 
         /// <summary>
-        /// Delete share async
+        /// Delete share
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -134,9 +140,10 @@ namespace Idfy.Share
         public ShareResponse UpdateShare(string id, ShareUpdateOptions options)
         {
             return Patch<ShareResponse>($"{Urls.Share}/{id}", options);
-        }       
+        }
+        
         /// <summary>
-        /// Update share async
+        /// Update share
         /// </summary>
         /// <param name="id"></param>
         /// <param name="options"></param>
@@ -145,6 +152,7 @@ namespace Idfy.Share
         {
             return await PatchAsync<ShareResponse>($"{Urls.Share}/{id}", options);
         }
+        
         /// <summary>
         /// Retrieve share recipient 
         /// </summary>
@@ -155,8 +163,9 @@ namespace Idfy.Share
         {
             return Get<RecipientResponse>($"{Urls.Share}/{id}/recipient/{recipientId}");
         }
+        
         /// <summary>
-        /// Retrieve share recipient async
+        /// Retrieve share recipient
         /// </summary>
         /// <param name="id"></param>
         /// <param name="recipientId"></param>
@@ -165,6 +174,7 @@ namespace Idfy.Share
         {
             return await GetAsync<RecipientResponse>($"{Urls.Share}/{id}/recipient/{recipientId}");
         }
+        
         /// <summary>
         /// Delete share recipient 
         /// </summary>
@@ -176,7 +186,7 @@ namespace Idfy.Share
             Delete($"{Urls.Share}/{id}/recipient/{recipientId}");
         }
         /// <summary>
-        /// Delete share recipient async
+        /// Delete share recipient
         /// </summary>
         /// <param name="id"></param>
         /// <param name="recipientId"></param>
@@ -185,29 +195,31 @@ namespace Idfy.Share
         {
             await DeleteAsync($"{Urls.Share}/{id}/recipient/{recipientId}");  
         }
-        
+
         /// <summary>
         /// Update share recipient
         /// </summary>
         /// <param name="id"></param>
         /// <param name="recipientId"></param>
-        /// <param name="recipient"></param>
+        /// <param name="options"></param>
         /// <returns></returns>
         public RecipientResponse UpdateShareRecipient(string id, string recipientId, RecipientUpdateOptions options)
         {
             return Patch<RecipientResponse>($"{Urls.Share}/{id}/recipient/{recipientId}", options);
         }
+
         /// <summary>
-        /// Update share recipient async
+        /// Update share recipient
         /// </summary>
         /// <param name="id"></param>
         /// <param name="recipientId"></param>
-        /// <param name="recipient"></param>
+        /// <param name="options"></param>
         /// <returns></returns>
         public async Task<RecipientResponse> UpdateShareRecipientAsync(string id, string recipientId, RecipientUpdateOptions options)
         {
             return await PatchAsync<RecipientResponse>($"{Urls.Share}/{id}/recipient/{recipientId}", options);
         }
+        
         /// <summary>
         /// Create share recipient
         /// </summary>
@@ -220,7 +232,7 @@ namespace Idfy.Share
         }
 
         /// <summary>
-        /// Create share recipient async
+        /// Create share recipient
         /// </summary>
         /// <param name="id"></param>
         /// <param name="recipient"></param>
