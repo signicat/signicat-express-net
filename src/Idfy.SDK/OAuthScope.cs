@@ -5,11 +5,17 @@ namespace Idfy
 {
     public enum OAuthScope
     {
+        [EnumMember(Value = "addons")]
+        Addons,
+    
         [EnumMember(Value = "account_read")]
         AccountRead,
         
         [EnumMember(Value = "account_write")]
         AccountWrite,
+        
+        [EnumMember(Value = "dealer")]
+        Dealer,
         
         [EnumMember(Value = "document_read")]
         DocumentRead,
@@ -22,6 +28,9 @@ namespace Idfy
         
         [EnumMember(Value = "event")]
         Event,
+        
+        [EnumMember(Value = "jwt")]
+        Jwt,
         
         [EnumMember(Value = "identify")]
         Identify,
