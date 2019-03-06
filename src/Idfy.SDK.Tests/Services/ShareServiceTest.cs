@@ -66,6 +66,7 @@ namespace Idfy.SDK.Tests
             
             AssertRequest(HttpMethod.Delete, $"/share?id={_jobId}");
         }
+        
         [Test]
         public async Task DeleteShareAsyncTest()
         {
@@ -84,6 +85,7 @@ namespace Idfy.SDK.Tests
             Assert.NotNull(response);
             AssertRequest(new HttpMethod("PATCH"), $"/share/{_jobId}");
         }
+        
         [Test]
         public async Task UpdateShareAsync()
         {
@@ -94,6 +96,7 @@ namespace Idfy.SDK.Tests
             Assert.NotNull(response);
             AssertRequest(new HttpMethod("PATCH"), $"/share/{_jobId}");
         }
+        
         [Test]
         public void GetRecipient()
         {
@@ -103,6 +106,7 @@ namespace Idfy.SDK.Tests
             AssertRequest(HttpMethod.Get, $"/share/{_jobId}/recipient/{_recipientId}");
 
         }
+        
         [Test]
         public async Task GetRecipientAsync()
         {
@@ -111,18 +115,21 @@ namespace Idfy.SDK.Tests
             Assert.NotNull(response);
             AssertRequest(HttpMethod.Get, $"/share/{_jobId}/recipient/{_recipientId}");
         }
+        
         [Test]
         public void DeleteRecipient()
         {
             _service.DeleteShareRecipient(_jobId, _recipientId); 
             AssertRequest(HttpMethod.Delete, $"/share/{_jobId}/recipient/{_recipientId}");
         }
+        
         [Test]
         public async Task DeleteRecipientAsync()
         {
             await _service.DeleteShareRecipientAsync(_jobId, _recipientId); 
             AssertRequest(HttpMethod.Delete, $"/share/{_jobId}/recipient/{_recipientId}");
         }
+        
         [Test]
         public void UpdateRecipient()
         {
@@ -132,6 +139,7 @@ namespace Idfy.SDK.Tests
             Assert.NotNull(result);
             AssertRequest(new HttpMethod("PATCH"), $"/share/{_jobId}/recipient/{_recipientId}");
         }
+        
         [Test]
         public async Task UpdateRecipientAsync()
         {
@@ -141,6 +149,7 @@ namespace Idfy.SDK.Tests
             Assert.NotNull(result);
             AssertRequest(new HttpMethod("PATCH"), $"/share/{_jobId}/recipient/{_recipientId}");
         }
+        
         [Test]
         public void CreateRecipient()
         {
@@ -150,6 +159,7 @@ namespace Idfy.SDK.Tests
             Assert.NotNull(result);
             AssertRequest(HttpMethod.Post, $"/share/{_jobId}/recipient");
         }
+        
         [Test]
         public async Task CreateRecipientAsync()
         {
@@ -167,6 +177,7 @@ namespace Idfy.SDK.Tests
             _service.UploadFile(_jobId, "1", new byte[10], "file.pdf");
             AssertRequest(HttpMethod.Post, $"/share/{_jobId}/upload/1");
         }
+        
         [Test]
         public async Task UploadFileAsyncTest()
         {
