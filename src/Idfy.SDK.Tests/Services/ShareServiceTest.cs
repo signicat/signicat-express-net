@@ -34,6 +34,7 @@ namespace Idfy.SDK.Tests
             Assert.IsNotNull(share);
             AssertRequest(HttpMethod.Get, $"/share/{_jobId}");
         }
+        
         [Test]
         public async Task GetShareAsync()
         {
@@ -59,6 +60,7 @@ namespace Idfy.SDK.Tests
 //            Assert.IsNotNull(shares);
 //            AssertRequest(HttpMethod.Get, $"/share/list");
 //        }
+
         [Test]
         public void DeleteShareTest()
         {
