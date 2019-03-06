@@ -40,7 +40,7 @@ namespace Idfy.Share.Entities
         public Notification Notification { get; set; }
 
         /// <summary>
-        /// Creators id
+        /// Creators ID
         /// </summary>
         public string ExternalId { get; set; }
 

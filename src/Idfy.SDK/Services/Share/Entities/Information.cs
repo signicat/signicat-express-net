@@ -7,7 +7,7 @@
         /// </summary>
         public string Title { get; set; }
         /// <summary>
-        /// Descripition of secure share, will be present in standard notificaitons
+        /// Description of secure share, will be present in standard notifications
         /// </summary>
         public string Description { get; set; }
         /// <summary>
@@ -19,7 +19,7 @@
         /// </summary>
         public string DepartmentId { get; set; }
         /// <summary>
-        ///  Information not avaliable before the recipient has authenticated itself
+        ///  Information not available before the recipient has authenticated itself
         /// </summary>
         public string ConfidentialInfo { get; set; }
     }

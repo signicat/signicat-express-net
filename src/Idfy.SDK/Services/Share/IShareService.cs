@@ -9,14 +9,14 @@ namespace Idfy.Share
     public interface IShareService
     {
         /// <summary>
-        /// Creates a new share async.
+        /// Creates a new share
         /// </summary>
         /// <param name="shareCreateOptions"></param>
         /// <returns>Id for the newly created share</returns>
         Task<CreateShareResponse> CreateSecureShareAsync(ShareCreateOptions shareCreateOptions);
 
         /// <summary>
-        /// Creates a new share.
+        /// Creates a new share
         /// </summary>
         /// <param name="shareCreateOptions"></param>
         /// <returns>Id for the newly created share</returns>
@@ -33,7 +33,7 @@ namespace Idfy.Share
         void UploadFile(string id, string fileId, byte[] file, string filename);
 
         /// <summary>
-        /// Upload file async
+        /// Upload file
         /// </summary>
         /// <param name="id"></param>
         /// <param name="fileId"></param>
@@ -50,12 +50,11 @@ namespace Idfy.Share
         ShareResponse GetShare(string id);
 
         /// <summary>
-        /// Retrieve share async
+        /// Retrieve share
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         Task<ShareResponse> GetShareAsync(string id);
-
 
         /// <summary>
         /// Retrieve list of shares
@@ -64,7 +63,7 @@ namespace Idfy.Share
         IEnumerable<ShareResponse> ListShares();
 
         /// <summary>
-        /// Retrieve list of shares async
+        /// Retrieve list of shares
         /// </summary>
         /// <returns></returns>
         Task<IEnumerable<ShareResponse>> ListSharesAsync();
@@ -77,7 +76,7 @@ namespace Idfy.Share
         void DeleteShare(string id);
 
         /// <summary>
-        /// Delete share async
+        /// Delete share
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -92,7 +91,7 @@ namespace Idfy.Share
         ShareResponse UpdateShare(string id, ShareUpdateOptions options);
 
         /// <summary>
-        /// Update share async
+        /// Update share
         /// </summary>
         /// <param name="id"></param>
         /// <param name="options"></param>
@@ -108,7 +107,7 @@ namespace Idfy.Share
         RecipientResponse GetShareRecipient(string id, string recipientId);
 
         /// <summary>
-        /// Retrieve share recipient async
+        /// Retrieve share recipient
         /// </summary>
         /// <param name="id"></param>
         /// <param name="recipientId"></param>
@@ -124,7 +123,7 @@ namespace Idfy.Share
         void DeleteShareRecipient(string id, string recipientId);
 
         /// <summary>
-        /// Delete share recipient async
+        /// Delete share recipient
         /// </summary>
         /// <param name="id"></param>
         /// <param name="recipientId"></param>
@@ -142,7 +141,7 @@ namespace Idfy.Share
         RecipientResponse UpdateShareRecipient(string id, string recipientId, RecipientUpdateOptions recipient);
 
         /// <summary>
-        /// Update share recipient async
+        /// Update share recipient
         /// </summary>
         /// <param name="id"></param>
         /// <param name="recipientId"></param>
@@ -159,7 +158,7 @@ namespace Idfy.Share
         RecipientResponse CreateShareRecipient(string id, Recipient recipient);
 
         /// <summary>
-        /// Create share recipient async
+        /// Create share recipient
         /// </summary>
         /// <param name="id"></param>
         /// <param name="recipient"></param>
