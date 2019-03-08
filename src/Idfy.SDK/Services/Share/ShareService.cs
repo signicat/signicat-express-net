@@ -24,9 +24,9 @@ namespace Idfy.Share
         /// </summary>
         /// <param name="shareCreateOptions"></param>
         /// <returns>Id for the newly created share</returns>
-        public async Task<CreateShareResponse> CreateSecureShareAsync(ShareCreateOptions shareCreateOptions)
+        public async Task<ShareResponse> CreateSecureShareAsync(ShareCreateOptions shareCreateOptions)
         {
-            return await PostAsync<CreateShareResponse>($"{Urls.Share}", shareCreateOptions);
+            return await PostAsync<ShareResponse>($"{Urls.Share}", shareCreateOptions);
         }
         
         /// <summary>
@@ -34,9 +34,9 @@ namespace Idfy.Share
         /// </summary>
         /// <param name="shareCreateOptions"></param>
         /// <returns>Id for the newly created share</returns>
-        public CreateShareResponse CreateSecureShare(ShareCreateOptions shareCreateOptions)
+        public ShareResponse CreateSecureShare(ShareCreateOptions shareCreateOptions)
         {
-            return Post<CreateShareResponse>($"{Urls.Share}", shareCreateOptions);
+            return Post<ShareResponse>($"{Urls.Share}", shareCreateOptions);
         }
         
         /// <summary>
@@ -99,7 +99,7 @@ namespace Idfy.Share
         /// <returns></returns>
         public IEnumerable<ShareResponse> ListShares()
         {
-            return Get<IEnumerable<ShareResponse>>($"{Urls.Share}/list");
+            return Get<IEnumerable<ShareResponse>>($"{Urls.Share}");
         }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace Idfy.Share
         /// <returns></returns>
         public async Task<IEnumerable<ShareResponse>> ListSharesAsync()
         {
-            return await GetAsync<IEnumerable<ShareResponse>>($"{Urls.Share}/list");
+            return await GetAsync<IEnumerable<ShareResponse>>($"{Urls.Share}");
         }
         
         /// <summary>
@@ -128,7 +128,7 @@ namespace Idfy.Share
         /// <returns></returns>
         public async Task DeleteShareAsync(string id)
         {
-            await DeleteAsync($"{Urls.Share}?id={id}");
+            await DeleteAsync($"{Urls.Share}/{id}");
         }
 
         /// <summary>
@@ -161,7 +161,7 @@ namespace Idfy.Share
         /// <returns></returns>
         public RecipientResponse GetShareRecipient(string id, string recipientId)
         {
-            return Get<RecipientResponse>($"{Urls.Share}/{id}/recipient/{recipientId}");
+            return Get<RecipientResponse>($"{Urls.Share}/{id}/recipients/{recipientId}");
         }
         
         /// <summary>
@@ -172,7 +172,7 @@ namespace Idfy.Share
         /// <returns></returns>
         public async Task<RecipientResponse> GetShareRecipientAsync(string id, string recipientId)
         {
-            return await GetAsync<RecipientResponse>($"{Urls.Share}/{id}/recipient/{recipientId}");
+            return await GetAsync<RecipientResponse>($"{Urls.Share}/{id}/recipients/{recipientId}");
         }
         
         /// <summary>
@@ -183,7 +183,7 @@ namespace Idfy.Share
         /// <returns></returns>
         public void DeleteShareRecipient(string id, string recipientId)
         {
-            Delete($"{Urls.Share}/{id}/recipient/{recipientId}");
+            Delete($"{Urls.Share}/{id}/recipients/{recipientId}");
         }
         /// <summary>
         /// Delete share recipient
@@ -193,7 +193,7 @@ namespace Idfy.Share
         /// <returns></returns>
         public async Task DeleteShareRecipientAsync(string id, string recipientId)
         {
-            await DeleteAsync($"{Urls.Share}/{id}/recipient/{recipientId}");  
+            await DeleteAsync($"{Urls.Share}/{id}/recipients/{recipientId}");  
         }
 
         /// <summary>
@@ -205,7 +205,7 @@ namespace Idfy.Share
         /// <returns></returns>
         public RecipientResponse UpdateShareRecipient(string id, string recipientId, RecipientUpdateOptions options)
         {
-            return Patch<RecipientResponse>($"{Urls.Share}/{id}/recipient/{recipientId}", options);
+            return Patch<RecipientResponse>($"{Urls.Share}/{id}/recipients/{recipientId}", options);
         }
 
         /// <summary>
@@ -217,7 +217,7 @@ namespace Idfy.Share
         /// <returns></returns>
         public async Task<RecipientResponse> UpdateShareRecipientAsync(string id, string recipientId, RecipientUpdateOptions options)
         {
-            return await PatchAsync<RecipientResponse>($"{Urls.Share}/{id}/recipient/{recipientId}", options);
+            return await PatchAsync<RecipientResponse>($"{Urls.Share}/{id}/recipients/{recipientId}", options);
         }
         
         /// <summary>
@@ -228,7 +228,7 @@ namespace Idfy.Share
         /// <returns></returns>
         public RecipientResponse CreateShareRecipient(string id, Recipient recipient)
         {
-            return Post<RecipientResponse>($"{Urls.Share}/{id}/recipient", recipient);
+            return Post<RecipientResponse>($"{Urls.Share}/{id}/recipients", recipient);
         }
 
         /// <summary>
@@ -239,7 +239,27 @@ namespace Idfy.Share
         /// <returns></returns>
         public async Task<RecipientResponse> CreateShareRecipientAsync(string id, Recipient recipient)
         {
-            return await PostAsync<RecipientResponse>($"{Urls.Share}/{id}/recipient", recipient);
+            return await PostAsync<RecipientResponse>($"{Urls.Share}/{id}/recipients", recipient);
+        }
+
+        /// <summary>
+        /// List recipients
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public IEnumerable<RecipientResponse> ListRecipients(string id)
+        {
+            return Get<IEnumerable<RecipientResponse>>($"{Urls.Share}/{id}/recipients");
+        }
+
+        /// <summary>
+        /// List recipients async
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public async Task<IEnumerable<RecipientResponse>> ListRecipientsAsync(string id)
+        {
+            return await GetAsync<IEnumerable<RecipientResponse>>($"{Urls.Share}/{id}/recipients");
         }
     }
 }

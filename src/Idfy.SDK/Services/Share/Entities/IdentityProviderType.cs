@@ -1,14 +1,13 @@
 ﻿namespace Idfy.Share.Entities
 {
-    public enum IdentityProviderType
+    public enum IdentityProvider
     {
-        UNKNOWN,
-        NO_BANKID_MOBILE,
-        NO_BANKID_WEB,
-        SWE_BANKID,
-        SWE_BANKID_MOBILE,
-        NO_BUYPASS,
-        DA_NEMID,
-        FI_TUPAS,
+        NoBankIdMobile,
+        NoBankIdWeb,
+        SweBankId,
+        SweBankIdMobile,
+        NoBuypass, 
+        DaNemId, 
+        FiTupas
     }
 }

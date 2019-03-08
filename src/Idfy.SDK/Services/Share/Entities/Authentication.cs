@@ -3,9 +3,9 @@
     public class Authentication
     {
         /// <summary>
-        ///The identity provider type (Norwegian BanKID, SwedishBankID, Nemid, etc)
+        ///The identity provider type (Norwegian BankID, buypass, Norwegian BankId Mobile etc)
         /// </summary>
-        public IdentityProviderType IdentityProvider { get; set; }
+        public IdentityProvider IdentityProvider { get; set; }
         
         /// <summary>
         /// The uniqueID from the e-ID, this ID is unique for the user and is the same every time the user logs on. This is not a sensitive ID
@@ -24,4 +24,4 @@
         public string DateOfBirth { get; set; }
 
     }
-}
+} 

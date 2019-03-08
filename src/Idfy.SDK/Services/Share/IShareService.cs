@@ -13,14 +13,14 @@ namespace Idfy.Share
         /// </summary>
         /// <param name="shareCreateOptions"></param>
         /// <returns>Id for the newly created share</returns>
-        Task<CreateShareResponse> CreateSecureShareAsync(ShareCreateOptions shareCreateOptions);
+        Task<ShareResponse> CreateSecureShareAsync(ShareCreateOptions shareCreateOptions);
 
         /// <summary>
         /// Creates a new share
         /// </summary>
         /// <param name="shareCreateOptions"></param>
         /// <returns>Id for the newly created share</returns>
-        CreateShareResponse CreateSecureShare(ShareCreateOptions shareCreateOptions);
+        ShareResponse CreateSecureShare(ShareCreateOptions shareCreateOptions);
 
         /// <summary>
         /// Upload file
@@ -147,8 +147,9 @@ namespace Idfy.Share
         /// <param name="recipientId"></param>
         /// <param name="recipient"></param>
         /// <returns></returns>
-        Task<RecipientResponse> UpdateShareRecipientAsync(string id, string recipientId, RecipientUpdateOptions recipient);
-                
+        Task<RecipientResponse> UpdateShareRecipientAsync(string id, string recipientId,
+            RecipientUpdateOptions recipient);
+
         /// <summary>
         /// Create share recipient
         /// </summary>
@@ -164,5 +165,19 @@ namespace Idfy.Share
         /// <param name="recipient"></param>
         /// <returns></returns>
         Task<RecipientResponse> CreateShareRecipientAsync(string id, Recipient recipient);
+
+        /// <summary>
+        /// List recipients on a share
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        IEnumerable<RecipientResponse> ListRecipients(string id);
+
+        /// <summary>
+        /// List recipients on a share async
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        Task<IEnumerable<RecipientResponse>> ListRecipientsAsync(string id);
     }
 }
