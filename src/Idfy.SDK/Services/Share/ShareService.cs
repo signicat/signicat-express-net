@@ -118,7 +118,7 @@ namespace Idfy.Share
         /// <returns></returns>
         public void DeleteShare(string id)
         {
-            Delete($"{Urls.Share}?id={id}");
+            Delete($"{Urls.Share}/{id}");
         }
 
         /// <summary>

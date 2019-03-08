@@ -169,13 +169,5 @@ namespace Idfy.SDK.Tests
             await _service.UploadFileAsync(_jobId, "1", new byte[10], "file.pdf");
             AssertRequest(HttpMethod.Post, $"/share/{_jobId}/upload/1");
         }
-
-        [Test]
-        public async Task ListRecipientTest()
-        {
-            var result = await _service.ListRecipientsAsync(_jobId);
-            Assert.IsNotEmpty(result);
-            AssertRequest(HttpMethod.Get, $"/share/{_jobId}/recipients");
-        }
     }
 }      
