@@ -43,9 +43,11 @@ namespace Idfy.SDK.Tests
             Assert.IsNotNull(share);
             AssertRequest(HttpMethod.Get, $"/share/{_jobId}");
         }
+        
+        
 
         [Test]
-        public void DeleteShareTest()
+        public void DeleteShare()
         {
             _service.DeleteShare(_jobId);
             
@@ -53,7 +55,7 @@ namespace Idfy.SDK.Tests
         }
         
         [Test]
-        public async Task DeleteShareAsyncTest()
+        public async Task DeleteShareAsync()
         {
             await _service.DeleteShareAsync(_jobId);
             
@@ -80,6 +82,26 @@ namespace Idfy.SDK.Tests
             
             Assert.NotNull(response);
             AssertRequest(new HttpMethod("PATCH"), $"/share/{_jobId}");
+        }
+
+        [Test]
+        [Ignore("Not yet available in production.")]
+        public void ListShares()
+        {
+            var response = _service.ListShares();
+
+            Assert.NotNull(response);
+            AssertRequest(HttpMethod.Get, "/share");
+        }
+
+        [Test]
+        [Ignore("Not yet available in production.")]
+        public async Task ListSharesAsync()
+        {
+            var response = await _service.ListSharesAsync();
+            
+            Assert.NotNull(response);
+            AssertRequest(HttpMethod.Get, "/share");
         }
         
         [Test]
@@ -157,17 +179,35 @@ namespace Idfy.SDK.Tests
         }
 
         [Test]
-        public void UploadFileTest()
+        public void UploadFile()
         {
             _service.UploadFile(_jobId, "1", new byte[10], "file.pdf");
             AssertRequest(HttpMethod.Post, $"/share/{_jobId}/upload/1");
         }
         
         [Test]
-        public async Task UploadFileAsyncTest()
+        public async Task UploadFileAsync()
         {
             await _service.UploadFileAsync(_jobId, "1", new byte[10], "file.pdf");
             AssertRequest(HttpMethod.Post, $"/share/{_jobId}/upload/1");
         }
+        
+        [Test]
+        [Ignore("Not yet available in production.")]
+        public void  ListRecipients()
+        {
+            var result = _service.ListRecipients(_jobId);
+            Assert.IsNotEmpty(result);
+            AssertRequest(HttpMethod.Get, $"/share/{_jobId}/recipients");
+        }
+        
+        [Test]
+        [Ignore("Not yet available in production.")]
+        public async Task ListRecipientsAsync()
+        {
+            var result = await _service.ListRecipientsAsync(_jobId);
+            Assert.IsNotEmpty(result);
+            AssertRequest(HttpMethod.Get, $"/share/{_jobId}/recipients");
+        }
     }
-}      
+}
