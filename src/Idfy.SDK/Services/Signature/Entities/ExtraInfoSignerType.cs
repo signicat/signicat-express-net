@@ -26,6 +26,9 @@ namespace Idfy.Signature
         BankIDApisAmlPersonSanctionPep = 6,
     
         [EnumMember(Value = "bankIDApisAmlCurrentAddress")]
-        BankIDApisAmlCurrentAddress = 7
+        BankIDApisAmlCurrentAddress = 7,
+        
+        [EnumMember(Value = "bankIDApisAmlPersonSanctionPepReport")]
+        BankIDApisAmlPersonSanctionPepReport = 8,
     }
 }
