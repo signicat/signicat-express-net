@@ -29,7 +29,7 @@ namespace Idfy.SDK.Tests
         [Test]
         public void GetShare()
         {
-            var share = _service.GetShare(_jobId);
+            var share = _service.GetBucket(_jobId);
 
             Assert.IsNotNull(share);
             AssertRequest(HttpMethod.Get, $"/share/buckets/{_jobId}");
@@ -38,7 +38,7 @@ namespace Idfy.SDK.Tests
         [Test]
         public async Task GetShareAsync()
         {
-            var share = await _service.GetShareAsync(_jobId);
+            var share = await _service.GetBucketAsync(_jobId);
 
             Assert.IsNotNull(share);
             AssertRequest(HttpMethod.Get, $"/share/buckets/{_jobId}");
@@ -49,7 +49,7 @@ namespace Idfy.SDK.Tests
         [Test]
         public void DeleteShare()
         {
-            _service.DeleteShare(_jobId);
+            _service.DeleteBucket(_jobId);
             
             AssertRequest(HttpMethod.Delete, $"/share/buckets/{_jobId}");
         }
@@ -57,7 +57,7 @@ namespace Idfy.SDK.Tests
         [Test]
         public async Task DeleteShareAsync()
         {
-            await _service.DeleteShareAsync(_jobId);
+            await _service.DeleteBucketAsync(_jobId);
             
             AssertRequest(HttpMethod.Delete, $"/share/buckets/{_jobId}");
         }
@@ -65,9 +65,9 @@ namespace Idfy.SDK.Tests
         [Test]
         public void UpdateShare()
         {
-            var options = Fixture.Create<ShareUpdateOptions>();
+            var options = Fixture.Create<BucketUpdateOptions>();
 
-            var response = _service.UpdateShare(_jobId, options); 
+            var response = _service.UpdateBucket(_jobId, options); 
             
             Assert.NotNull(response);
             AssertRequest(new HttpMethod("PATCH"), $"/share/buckets/{_jobId}");
@@ -76,9 +76,9 @@ namespace Idfy.SDK.Tests
         [Test]
         public async Task UpdateShareAsync()
         {
-            var options = Fixture.Create<ShareUpdateOptions>();
+            var options = Fixture.Create<BucketUpdateOptions>();
 
-            var response = await _service.UpdateShareAsync(_jobId, options); 
+            var response = await _service.UpdateBucketAsync(_jobId, options); 
             
             Assert.NotNull(response);
             AssertRequest(new HttpMethod("PATCH"), $"/share/buckets/{_jobId}");
@@ -88,7 +88,7 @@ namespace Idfy.SDK.Tests
         [Ignore("Not yet available in production.")]
         public void ListShares()
         {
-            var response = _service.ListShares();
+            var response = _service.ListBuckets();
 
             Assert.NotNull(response);
             AssertRequest(HttpMethod.Get, "/share");
@@ -98,7 +98,7 @@ namespace Idfy.SDK.Tests
         [Ignore("Not yet available in production.")]
         public async Task ListSharesAsync()
         {
-            var response = await _service.ListSharesAsync();
+            var response = await _service.ListBucketsAsync();
             
             Assert.NotNull(response);
             AssertRequest(HttpMethod.Get, "/share");
@@ -109,7 +109,7 @@ namespace Idfy.SDK.Tests
         [Test]
         public void GetRecipient()
         {
-            var response = _service.GetShareRecipient(_jobId, _recipientId); 
+            var response = _service.GetBucketRecipient(_jobId, _recipientId); 
             
             Assert.NotNull(response);
             AssertRequest(HttpMethod.Get, $"/share/{_jobId}/recipients/{_recipientId}");
@@ -119,7 +119,7 @@ namespace Idfy.SDK.Tests
         [Test]
         public async Task GetRecipientAsync()
         {
-            var response = await _service.GetShareRecipientAsync(_jobId, _recipientId); 
+            var response = await _service.GetBucketRecipientAsync(_jobId, _recipientId); 
             
             Assert.NotNull(response);
             AssertRequest(HttpMethod.Get, $"/share/{_jobId}/recipients/{_recipientId}");
@@ -128,14 +128,14 @@ namespace Idfy.SDK.Tests
         [Test]
         public void DeleteRecipient()
         {
-            _service.DeleteShareRecipient(_jobId, _recipientId); 
+            _service.DeleteBucketRecipient(_jobId, _recipientId); 
             AssertRequest(HttpMethod.Delete, $"/share/{_jobId}/recipients/{_recipientId}");
         }
         
         [Test]
         public async Task DeleteRecipientAsync()
         {
-            await _service.DeleteShareRecipientAsync(_jobId, _recipientId); 
+            await _service.DeleteBucketRecipientAsync(_jobId, _recipientId); 
             AssertRequest(HttpMethod.Delete, $"/share/{_jobId}/recipients/{_recipientId}");
         }
         
@@ -144,7 +144,7 @@ namespace Idfy.SDK.Tests
         {
             var options = Fixture.Create<RecipientUpdateOptions>();
 
-            var result = _service.UpdateShareRecipient(_jobId, _recipientId, options); 
+            var result = _service.UpdateBucketRecipient(_jobId, _recipientId, options); 
             Assert.NotNull(result);
             AssertRequest(new HttpMethod("PATCH"), $"/share/{_jobId}/recipients/{_recipientId}");
         }
@@ -154,7 +154,7 @@ namespace Idfy.SDK.Tests
         {
             var options = Fixture.Create<RecipientUpdateOptions>();
 
-            var result = await _service.UpdateShareRecipientAsync(_jobId, _recipientId, options); 
+            var result = await _service.UpdateBucketRecipientAsync(_jobId, _recipientId, options); 
             Assert.NotNull(result);
             AssertRequest(new HttpMethod("PATCH"), $"/share/{_jobId}/recipients/{_recipientId}");
         }
@@ -164,7 +164,7 @@ namespace Idfy.SDK.Tests
         {
             var options = Fixture.Create<Recipient>();
 
-            var result = _service.CreateShareRecipient(_jobId, options); 
+            var result = _service.CreateBucketRecipient(_jobId, options); 
             Assert.NotNull(result);
             AssertRequest(HttpMethod.Post, $"/share/{_jobId}/recipients");
         }
@@ -174,7 +174,7 @@ namespace Idfy.SDK.Tests
         {
             var options = Fixture.Create<Recipient>();
 
-            var result = await _service.CreateShareRecipientAsync(_jobId, options); 
+            var result = await _service.CreateBucketRecipientAsync(_jobId, options); 
             
             Assert.NotNull(result);
             AssertRequest(HttpMethod.Post, $"/share/{_jobId}/recipients");

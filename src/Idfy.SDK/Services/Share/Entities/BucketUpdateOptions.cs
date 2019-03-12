@@ -1,6 +1,6 @@
 ﻿namespace Idfy.Share.Entities
 {
-    public class ShareUpdateOptions
+    public class BucketUpdateOptions
     {
         /// <summary>
         /// Title of the secure share, will be presented to the recipient 

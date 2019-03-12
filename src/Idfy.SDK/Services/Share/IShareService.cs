@@ -9,18 +9,18 @@ namespace Idfy.Share
     public interface IShareService
     {
         /// <summary>
-        /// Creates a new share
+        /// Creates a new bucket
         /// </summary>
-        /// <param name="shareCreateOptions"></param>
-        /// <returns>Id for the newly created share</returns>
-        Task<ShareResponse> CreateSecureShareAsync(ShareCreateOptions shareCreateOptions);
+        /// <param name="bucketCreateOptions"></param>
+        /// <returns>Id for the newly created bucket</returns>
+        Task<BucketResponse> CreateSecureBucketAsync(BucketCreateOptions bucketCreateOptions);
 
         /// <summary>
-        /// Creates a new share
+        /// Creates a new bucket
         /// </summary>
-        /// <param name="shareCreateOptions"></param>
-        /// <returns>Id for the newly created share</returns>
-        ShareResponse CreateSecureShare(ShareCreateOptions shareCreateOptions);
+        /// <param name="bucketCreateOptions"></param>
+        /// <returns>Id for the newly created bucket</returns>
+        BucketResponse CreateSecureBucket(BucketCreateOptions bucketCreateOptions);
 
         /// <summary>
         /// Upload file
@@ -43,138 +43,138 @@ namespace Idfy.Share
         Task UploadFileAsync(string id, string fileId, byte[] file, string filename);
 
         /// <summary>
-        /// Retrieve share
+        /// Retrieve bucket
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        ShareResponse GetShare(string id);
+        BucketResponse GetBucket(string id);
 
         /// <summary>
-        /// Retrieve share
+        /// Retrieve bucket
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        Task<ShareResponse> GetShareAsync(string id);
+        Task<BucketResponse> GetBucketAsync(string id);
 
         /// <summary>
-        /// Retrieve list of shares
+        /// Retrieve list of buckets
         /// </summary>
         /// <returns></returns>
-        IEnumerable<ShareResponse> ListShares();
+        IEnumerable<BucketResponse> ListBuckets();
 
         /// <summary>
-        /// Retrieve list of shares
+        /// Retrieve list of buckets
         /// </summary>
         /// <returns></returns>
-        Task<IEnumerable<ShareResponse>> ListSharesAsync();
+        Task<IEnumerable<BucketResponse>> ListBucketsAsync();
 
         /// <summary>
-        /// Delete share
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        void DeleteShare(string id);
-
-        /// <summary>
-        /// Delete share
+        /// Delete bucket
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        Task DeleteShareAsync(string id);
+        void DeleteBucket(string id);
 
         /// <summary>
-        /// Update share
+        /// Delete Bucket
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="options"></param>
         /// <returns></returns>
-        ShareResponse UpdateShare(string id, ShareUpdateOptions options);
+        Task DeleteBucketAsync(string id);
 
         /// <summary>
-        /// Update share
+        /// Update bucket
         /// </summary>
         /// <param name="id"></param>
         /// <param name="options"></param>
         /// <returns></returns>
-        Task<ShareResponse> UpdateShareAsync(string id, ShareUpdateOptions options);
+        BucketResponse UpdateBucket(string id, BucketUpdateOptions options);
 
         /// <summary>
-        /// Retrieve share recipient 
+        /// Update bucket
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        Task<BucketResponse> UpdateBucketAsync(string id, BucketUpdateOptions options);
+
+        /// <summary>
+        /// Retrieve bucket recipient 
         /// </summary>
         /// <param name="id"></param>
         /// <param name="recipientId"></param>
         /// <returns></returns>
-        RecipientResponse GetShareRecipient(string id, string recipientId);
+        RecipientResponse GetBucketRecipient(string id, string recipientId);
 
         /// <summary>
-        /// Retrieve share recipient
+        /// Retrieve bucket recipient
         /// </summary>
         /// <param name="id"></param>
         /// <param name="recipientId"></param>
         /// <returns></returns>
-        Task<RecipientResponse> GetShareRecipientAsync(string id, string recipientId);
+        Task<RecipientResponse> GetBucketRecipientAsync(string id, string recipientId);
 
         /// <summary>
-        /// Delete share recipient 
+        /// Delete bucket recipient 
         /// </summary>
         /// <param name="id"></param>
         /// <param name="recipientId"></param>
         /// <returns></returns>
-        void DeleteShareRecipient(string id, string recipientId);
+        void DeleteBucketRecipient(string id, string recipientId);
 
         /// <summary>
-        /// Delete share recipient
+        /// Delete bucket recipient
         /// </summary>
         /// <param name="id"></param>
         /// <param name="recipientId"></param>
         /// <returns></returns>
-        Task DeleteShareRecipientAsync(string id, string recipientId);
+        Task DeleteBucketRecipientAsync(string id, string recipientId);
 
 
         /// <summary>
-        /// Update share recipient
+        /// Update bucket recipient
         /// </summary>
         /// <param name="id"></param>
         /// <param name="recipientId"></param>
         /// <param name="recipient"></param>
         /// <returns></returns>
-        RecipientResponse UpdateShareRecipient(string id, string recipientId, RecipientUpdateOptions recipient);
+        RecipientResponse UpdateBucketRecipient(string id, string recipientId, RecipientUpdateOptions recipient);
 
         /// <summary>
-        /// Update share recipient
+        /// Update bucket recipient
         /// </summary>
         /// <param name="id"></param>
         /// <param name="recipientId"></param>
         /// <param name="recipient"></param>
         /// <returns></returns>
-        Task<RecipientResponse> UpdateShareRecipientAsync(string id, string recipientId,
+        Task<RecipientResponse> UpdateBucketRecipientAsync(string id, string recipientId,
             RecipientUpdateOptions recipient);
 
         /// <summary>
-        /// Create share recipient
+        /// Create bucket recipient
         /// </summary>
         /// <param name="id"></param>
         /// <param name="recipient"></param>
         /// <returns></returns>
-        RecipientResponse CreateShareRecipient(string id, Recipient recipient);
+        RecipientResponse CreateBucketRecipient(string id, Recipient recipient);
 
         /// <summary>
-        /// Create share recipient
+        /// Create bucket recipient
         /// </summary>
         /// <param name="id"></param>
         /// <param name="recipient"></param>
         /// <returns></returns>
-        Task<RecipientResponse> CreateShareRecipientAsync(string id, Recipient recipient);
+        Task<RecipientResponse> CreateBucketRecipientAsync(string id, Recipient recipient);
 
         /// <summary>
-        /// List recipients on a share
+        /// List recipients on a bucket
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         IEnumerable<RecipientResponse> ListRecipients(string id);
 
         /// <summary>
-        /// List recipients on a share async
+        /// List recipients on a bucket async
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
