@@ -26,7 +26,7 @@ namespace Idfy.Share
         /// <returns>Id for the newly created share</returns>
         public async Task<ShareResponse> CreateSecureShareAsync(ShareCreateOptions shareCreateOptions)
         {
-            return await PostAsync<ShareResponse>($"{Urls.Share}", shareCreateOptions);
+            return await PostAsync<ShareResponse>($"{Urls.Share}/buckets", shareCreateOptions);
         }
         
         /// <summary>
@@ -36,7 +36,7 @@ namespace Idfy.Share
         /// <returns>Id for the newly created share</returns>
         public ShareResponse CreateSecureShare(ShareCreateOptions shareCreateOptions)
         {
-            return Post<ShareResponse>($"{Urls.Share}", shareCreateOptions);
+            return Post<ShareResponse>($"{Urls.Share}/buckets", shareCreateOptions);
         }
         
         /// <summary>
@@ -52,7 +52,7 @@ namespace Idfy.Share
             using (var content = new MultipartFormDataContent())
             {
                 content.Add(new StreamContent(new MemoryStream(file)), "file", filename);
-                PostFormContentData($"{Urls.Share}/{id}/upload/{fileId}", content);
+                PostFormContentData($"{Urls.Share}/buckets/{id}/upload/{fileId}", content);
             }
         }
 
@@ -69,7 +69,7 @@ namespace Idfy.Share
             using (var content = new MultipartFormDataContent())
             {
                 content.Add(new StreamContent(new MemoryStream(file)), "file", filename);
-                await PostFormContentDataAsync($"{Urls.Share}/{id}/upload/{fileId}", content);
+                await PostFormContentDataAsync($"{Urls.Share}/buckets/{id}/upload/{fileId}", content);
             }
         }
         
@@ -80,7 +80,7 @@ namespace Idfy.Share
         /// <returns></returns>
         public ShareResponse GetShare(string id)
         {
-            return Get<ShareResponse>($"{Urls.Share}/{id}");
+            return Get<ShareResponse>($"{Urls.Share}/buckets/{id}");
         }
         
         /// <summary>
@@ -90,7 +90,7 @@ namespace Idfy.Share
         /// <returns></returns>
         public async Task<ShareResponse> GetShareAsync(string id)
         {
-            return await GetAsync<ShareResponse>($"{Urls.Share}/{id}");
+            return await GetAsync<ShareResponse>($"{Urls.Share}/buckets/{id}");
         }
         
         /// <summary>
@@ -99,7 +99,7 @@ namespace Idfy.Share
         /// <returns></returns>
         public IEnumerable<ShareResponse> ListShares()
         {
-            return Get<IEnumerable<ShareResponse>>($"{Urls.Share}");
+            return Get<IEnumerable<ShareResponse>>($"{Urls.Share}/buckets");
         }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace Idfy.Share
         /// <returns></returns>
         public async Task<IEnumerable<ShareResponse>> ListSharesAsync()
         {
-            return await GetAsync<IEnumerable<ShareResponse>>($"{Urls.Share}");
+            return await GetAsync<IEnumerable<ShareResponse>>($"{Urls.Share}/buckets");
         }
         
         /// <summary>
@@ -118,7 +118,7 @@ namespace Idfy.Share
         /// <returns></returns>
         public void DeleteShare(string id)
         {
-            Delete($"{Urls.Share}/{id}");
+            Delete($"{Urls.Share}/buckets/{id}");
         }
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace Idfy.Share
         /// <returns></returns>
         public async Task DeleteShareAsync(string id)
         {
-            await DeleteAsync($"{Urls.Share}/{id}");
+            await DeleteAsync($"{Urls.Share}/buckets/{id}");
         }
 
         /// <summary>
@@ -139,7 +139,7 @@ namespace Idfy.Share
         /// <returns></returns>
         public ShareResponse UpdateShare(string id, ShareUpdateOptions options)
         {
-            return Patch<ShareResponse>($"{Urls.Share}/{id}", options);
+            return Patch<ShareResponse>($"{Urls.Share}/buckets/{id}", options);
         }
         
         /// <summary>
@@ -150,7 +150,7 @@ namespace Idfy.Share
         /// <returns></returns>
         public async Task<ShareResponse> UpdateShareAsync(string id, ShareUpdateOptions options)
         {
-            return await PatchAsync<ShareResponse>($"{Urls.Share}/{id}", options);
+            return await PatchAsync<ShareResponse>($"{Urls.Share}/buckets/{id}", options);
         }
         
         /// <summary>

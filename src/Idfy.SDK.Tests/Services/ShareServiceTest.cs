@@ -32,7 +32,7 @@ namespace Idfy.SDK.Tests
             var share = _service.GetShare(_jobId);
 
             Assert.IsNotNull(share);
-            AssertRequest(HttpMethod.Get, $"/share/{_jobId}");
+            AssertRequest(HttpMethod.Get, $"/share/buckets/{_jobId}");
         }
         
         [Test]
@@ -41,7 +41,7 @@ namespace Idfy.SDK.Tests
             var share = await _service.GetShareAsync(_jobId);
 
             Assert.IsNotNull(share);
-            AssertRequest(HttpMethod.Get, $"/share/{_jobId}");
+            AssertRequest(HttpMethod.Get, $"/share/buckets/{_jobId}");
         }
 
         [Test]
@@ -49,7 +49,7 @@ namespace Idfy.SDK.Tests
         {
             _service.DeleteShare(_jobId);
             
-            AssertRequest(HttpMethod.Delete, $"/share/{_jobId}");
+            AssertRequest(HttpMethod.Delete, $"/share/buckets/{_jobId}");
         }
         
         [Test]
@@ -57,7 +57,7 @@ namespace Idfy.SDK.Tests
         {
             await _service.DeleteShareAsync(_jobId);
             
-            AssertRequest(HttpMethod.Delete, $"/share/{_jobId}");
+            AssertRequest(HttpMethod.Delete, $"/share/buckets/{_jobId}");
         }
 
         [Test]
@@ -68,7 +68,7 @@ namespace Idfy.SDK.Tests
             var response = _service.UpdateShare(_jobId, options); 
             
             Assert.NotNull(response);
-            AssertRequest(new HttpMethod("PATCH"), $"/share/{_jobId}");
+            AssertRequest(new HttpMethod("PATCH"), $"/share/buckets/{_jobId}");
         }
         
         [Test]
@@ -79,7 +79,7 @@ namespace Idfy.SDK.Tests
             var response = await _service.UpdateShareAsync(_jobId, options); 
             
             Assert.NotNull(response);
-            AssertRequest(new HttpMethod("PATCH"), $"/share/{_jobId}");
+            AssertRequest(new HttpMethod("PATCH"), $"/share/buckets/{_jobId}");
         }
         
         [Test]
@@ -160,14 +160,14 @@ namespace Idfy.SDK.Tests
         public void UploadFileTest()
         {
             _service.UploadFile(_jobId, "1", new byte[10], "file.pdf");
-            AssertRequest(HttpMethod.Post, $"/share/{_jobId}/upload/1");
+            AssertRequest(HttpMethod.Post, $"/share/buckets/{_jobId}/upload/1");
         }
         
         [Test]
         public async Task UploadFileAsyncTest()
         {
             await _service.UploadFileAsync(_jobId, "1", new byte[10], "file.pdf");
-            AssertRequest(HttpMethod.Post, $"/share/{_jobId}/upload/1");
+            AssertRequest(HttpMethod.Post, $"/share/buckets/{_jobId}/upload/1");
         }
     }
 }      
