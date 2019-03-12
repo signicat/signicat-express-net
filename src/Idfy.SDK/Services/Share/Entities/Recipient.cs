@@ -30,7 +30,7 @@ namespace Idfy.Share.Entities
         /// <summary>
         /// List of content identificators the recipient can access 
         /// </summary>
-        public IEnumerable<string> Uploads { get; set; }
+        public IEnumerable<string> Content { get; set; }
         
         /// <summary>
         /// Auth providers

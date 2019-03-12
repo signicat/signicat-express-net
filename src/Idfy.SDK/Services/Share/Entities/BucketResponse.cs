@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Idfy.Share.Entities
 {
-    public class ShareResponse
+    public class BucketResponse
     {
         /// <summary>
         /// Unique identifier

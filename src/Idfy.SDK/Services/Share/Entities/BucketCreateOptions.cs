@@ -2,7 +2,7 @@
 
 namespace Idfy.Share.Entities
 {
-    public class ShareCreateOptions
+    public class BucketCreateOptions
     {
         public Information Information { get; set; }
         /// <summary>

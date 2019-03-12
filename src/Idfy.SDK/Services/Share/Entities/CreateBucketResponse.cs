@@ -1,6 +1,6 @@
 ﻿namespace Idfy.Share.Entities
 {
-    public class CreateShareResponse
+    public class CreateBucketResponse
     {
         public string Id { get; set; }
     }

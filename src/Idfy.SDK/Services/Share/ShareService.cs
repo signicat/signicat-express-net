@@ -20,23 +20,23 @@ namespace Idfy.Share
         }
 
         /// <summary>
-        /// Creates a new share
+        /// Creates a new bucket
         /// </summary>
-        /// <param name="shareCreateOptions"></param>
-        /// <returns>Id for the newly created share</returns>
-        public async Task<CreateShareResponse> CreateSecureShareAsync(ShareCreateOptions shareCreateOptions)
+        /// <param name="bucketCreateOptions"></param>
+        /// <returns>Id for the newly created bucket</returns>
+        public async Task<BucketResponse> CreateSecureBucketAsync(BucketCreateOptions bucketCreateOptions)
         {
-            return await PostAsync<CreateShareResponse>($"{Urls.Share}", shareCreateOptions);
+            return await PostAsync<BucketResponse>($"{Urls.Share}/buckets", bucketCreateOptions);
         }
         
         /// <summary>
-        /// Creates a new share
+        /// Creates a new bucket
         /// </summary>
-        /// <param name="shareCreateOptions"></param>
-        /// <returns>Id for the newly created share</returns>
-        public CreateShareResponse CreateSecureShare(ShareCreateOptions shareCreateOptions)
+        /// <param name="bucketCreateOptions"></param>
+        /// <returns>Id for the newly created bucket</returns>
+        public BucketResponse CreateSecureBucket(BucketCreateOptions bucketCreateOptions)
         {
-            return Post<CreateShareResponse>($"{Urls.Share}", shareCreateOptions);
+            return Post<BucketResponse>($"{Urls.Share}/buckets", bucketCreateOptions);
         }
         
         /// <summary>
@@ -52,7 +52,7 @@ namespace Idfy.Share
             using (var content = new MultipartFormDataContent())
             {
                 content.Add(new StreamContent(new MemoryStream(file)), "file", filename);
-                PostFormContentData($"{Urls.Share}/{id}/upload/{fileId}", content);
+                PostFormContentData($"{Urls.Share}/buckets/{id}/upload/{fileId}", content);
             }
         }
 
@@ -69,177 +69,197 @@ namespace Idfy.Share
             using (var content = new MultipartFormDataContent())
             {
                 content.Add(new StreamContent(new MemoryStream(file)), "file", filename);
-                await PostFormContentDataAsync($"{Urls.Share}/{id}/upload/{fileId}", content);
+                await PostFormContentDataAsync($"{Urls.Share}/buckets/{id}/upload/{fileId}", content);
             }
         }
         
         /// <summary>
-        /// Retrieve share
+        /// Retrieve bucket
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public ShareResponse GetShare(string id)
+        public BucketResponse GetBucket(string id)
         {
-            return Get<ShareResponse>($"{Urls.Share}/{id}");
+            return Get<BucketResponse>($"{Urls.Share}/buckets/{id}");
         }
         
         /// <summary>
-        /// Retrieve share
+        /// Retrieve bucket
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public async Task<ShareResponse> GetShareAsync(string id)
+        public async Task<BucketResponse> GetBucketAsync(string id)
         {
-            return await GetAsync<ShareResponse>($"{Urls.Share}/{id}");
+            return await GetAsync<BucketResponse>($"{Urls.Share}/buckets/{id}");
         }
         
         /// <summary>
-        /// Retrieve list of shares
+        /// Retrieve list of buckets
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<ShareResponse> ListShares()
+        public IEnumerable<BucketResponse> ListBuckets()
         {
-            return Get<IEnumerable<ShareResponse>>($"{Urls.Share}/list");
+            return Get<IEnumerable<BucketResponse>>($"{Urls.Share}/buckets");
         }
 
         /// <summary>
-        /// Retrieve list of shares
+        /// Retrieve list of buckets
         /// </summary>
         /// <returns></returns>
-        public async Task<IEnumerable<ShareResponse>> ListSharesAsync()
+        public async Task<IEnumerable<BucketResponse>> ListBucketsAsync()
         {
-            return await GetAsync<IEnumerable<ShareResponse>>($"{Urls.Share}/list");
+            return await GetAsync<IEnumerable<BucketResponse>>($"{Urls.Share}/buckets");
         }
         
         /// <summary>
-        /// Delete share
+        /// Delete bucket
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public void DeleteShare(string id)
+        public void DeleteBucket(string id)
         {
-            Delete($"{Urls.Share}?id={id}");
+            Delete($"{Urls.Share}/buckets/{id}");
         }
 
         /// <summary>
-        /// Delete share
+        /// Delete bucket async
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public async Task DeleteShareAsync(string id)
+        public async Task DeleteBucketAsync(string id)
         {
-            await DeleteAsync($"{Urls.Share}?id={id}");
+            await DeleteAsync($"{Urls.Share}/buckets/{id}");
         }
 
         /// <summary>
-        /// Update share
+        /// Update bucket
         /// </summary>
         /// <param name="id"></param>
         /// <param name="options"></param>
         /// <returns></returns>
-        public ShareResponse UpdateShare(string id, ShareUpdateOptions options)
+        public BucketResponse UpdateBucket(string id, BucketUpdateOptions options)
         {
-            return Patch<ShareResponse>($"{Urls.Share}/{id}", options);
+            return Patch<BucketResponse>($"{Urls.Share}/buckets/{id}", options);
         }
         
         /// <summary>
-        /// Update share
+        /// Update bucket
         /// </summary>
         /// <param name="id"></param>
         /// <param name="options"></param>
         /// <returns></returns>
-        public async Task<ShareResponse> UpdateShareAsync(string id, ShareUpdateOptions options)
+        public async Task<BucketResponse> UpdateBucketAsync(string id, BucketUpdateOptions options)
         {
-            return await PatchAsync<ShareResponse>($"{Urls.Share}/{id}", options);
+            return await PatchAsync<BucketResponse>($"{Urls.Share}/buckets/{id}", options);
         }
         
         /// <summary>
-        /// Retrieve share recipient 
+        /// Retrieve bucket recipient 
         /// </summary>
         /// <param name="id"></param>
         /// <param name="recipientId"></param>
         /// <returns></returns>
-        public RecipientResponse GetShareRecipient(string id, string recipientId)
+        public RecipientResponse GetBucketRecipient(string id, string recipientId)
         {
-            return Get<RecipientResponse>($"{Urls.Share}/{id}/recipient/{recipientId}");
+            return Get<RecipientResponse>($"{Urls.Share}/{id}/recipients/{recipientId}");
         }
         
         /// <summary>
-        /// Retrieve share recipient
+        /// Retrieve bucket recipient
         /// </summary>
         /// <param name="id"></param>
         /// <param name="recipientId"></param>
         /// <returns></returns>
-        public async Task<RecipientResponse> GetShareRecipientAsync(string id, string recipientId)
+        public async Task<RecipientResponse> GetBucketRecipientAsync(string id, string recipientId)
         {
-            return await GetAsync<RecipientResponse>($"{Urls.Share}/{id}/recipient/{recipientId}");
+            return await GetAsync<RecipientResponse>($"{Urls.Share}/{id}/recipients/{recipientId}");
         }
         
         /// <summary>
-        /// Delete share recipient 
+        /// Delete bucket recipient 
         /// </summary>
         /// <param name="id"></param>
         /// <param name="recipientId"></param>
         /// <returns></returns>
-        public void DeleteShareRecipient(string id, string recipientId)
+        public void DeleteBucketRecipient(string id, string recipientId)
         {
-            Delete($"{Urls.Share}/{id}/recipient/{recipientId}");
+            Delete($"{Urls.Share}/{id}/recipients/{recipientId}");
         }
         /// <summary>
-        /// Delete share recipient
+        /// Delete bucket recipient
         /// </summary>
         /// <param name="id"></param>
         /// <param name="recipientId"></param>
         /// <returns></returns>
-        public async Task DeleteShareRecipientAsync(string id, string recipientId)
+        public async Task DeleteBucketRecipientAsync(string id, string recipientId)
         {
-            await DeleteAsync($"{Urls.Share}/{id}/recipient/{recipientId}");  
+            await DeleteAsync($"{Urls.Share}/{id}/recipients/{recipientId}");  
         }
 
         /// <summary>
-        /// Update share recipient
-        /// </summary>
-        /// <param name="id"></param>
-        /// <param name="recipientId"></param>
-        /// <param name="options"></param>
-        /// <returns></returns>
-        public RecipientResponse UpdateShareRecipient(string id, string recipientId, RecipientUpdateOptions options)
-        {
-            return Patch<RecipientResponse>($"{Urls.Share}/{id}/recipient/{recipientId}", options);
-        }
-
-        /// <summary>
-        /// Update share recipient
+        /// Update bucket recipient
         /// </summary>
         /// <param name="id"></param>
         /// <param name="recipientId"></param>
         /// <param name="options"></param>
         /// <returns></returns>
-        public async Task<RecipientResponse> UpdateShareRecipientAsync(string id, string recipientId, RecipientUpdateOptions options)
+        public RecipientResponse UpdateBucketRecipient(string id, string recipientId, RecipientUpdateOptions options)
         {
-            return await PatchAsync<RecipientResponse>($"{Urls.Share}/{id}/recipient/{recipientId}", options);
+            return Patch<RecipientResponse>($"{Urls.Share}/{id}/recipients/{recipientId}", options);
+        }
+
+        /// <summary>
+        /// Update bucket recipient
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="recipientId"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public async Task<RecipientResponse> UpdateBucketRecipientAsync(string id, string recipientId, RecipientUpdateOptions options)
+        {
+            return await PatchAsync<RecipientResponse>($"{Urls.Share}/{id}/recipients/{recipientId}", options);
         }
         
         /// <summary>
-        /// Create share recipient
+        /// Create bucket recipient
         /// </summary>
         /// <param name="id"></param>
         /// <param name="recipient"></param>
         /// <returns></returns>
-        public RecipientResponse CreateShareRecipient(string id, Recipient recipient)
+        public RecipientResponse CreateBucketRecipient(string id, Recipient recipient)
         {
-            return Post<RecipientResponse>($"{Urls.Share}/{id}/recipient", recipient);
+            return Post<RecipientResponse>($"{Urls.Share}/{id}/recipients", recipient);
         }
 
         /// <summary>
-        /// Create share recipient
+        /// Create bucket recipient
         /// </summary>
         /// <param name="id"></param>
         /// <param name="recipient"></param>
         /// <returns></returns>
-        public async Task<RecipientResponse> CreateShareRecipientAsync(string id, Recipient recipient)
+        public async Task<RecipientResponse> CreateBucketRecipientAsync(string id, Recipient recipient)
         {
-            return await PostAsync<RecipientResponse>($"{Urls.Share}/{id}/recipient", recipient);
+            return await PostAsync<RecipientResponse>($"{Urls.Share}/{id}/recipients", recipient);
+        }
+
+        /// <summary>
+        /// List recipients
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public IEnumerable<RecipientResponse> ListRecipients(string id)
+        {
+            return Get<IEnumerable<RecipientResponse>>($"{Urls.Share}/{id}/recipients");
+        }
+
+        /// <summary>
+        /// List recipients async
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public async Task<IEnumerable<RecipientResponse>> ListRecipientsAsync(string id)
+        {
+            return await GetAsync<IEnumerable<RecipientResponse>>($"{Urls.Share}/{id}/recipients");
         }
     }
 }
