@@ -103,6 +103,26 @@ namespace Idfy.SDK.Tests
             Assert.NotNull(response);
             AssertRequest(HttpMethod.Get, "/share");
         }
+
+        [Test]
+        [Ignore("Not yet available in production.")]
+        public void ListShares()
+        {
+            var response = _service.ListShares();
+
+            Assert.NotNull(response);
+            AssertRequest(HttpMethod.Get, "/share");
+        }
+
+        [Test]
+        [Ignore("Not yet available in production.")]
+        public async Task ListSharesAsync()
+        {
+            var response = await _service.ListSharesAsync();
+            
+            Assert.NotNull(response);
+            AssertRequest(HttpMethod.Get, "/share");
+        }
         
         [Test]
         public void GetRecipient()
@@ -190,6 +210,24 @@ namespace Idfy.SDK.Tests
         {
             await _service.UploadFileAsync(_jobId, "1", new byte[10], "file.pdf");
             AssertRequest(HttpMethod.Post, $"/share/buckets/{_jobId}/upload/1");
+        }
+        
+        [Test]
+        [Ignore("Not yet available in production.")]
+        public void  ListRecipients()
+        {
+            var result = _service.ListRecipients(_jobId);
+            Assert.IsNotEmpty(result);
+            AssertRequest(HttpMethod.Get, $"/share/{_jobId}/recipients");
+        }
+        
+        [Test]
+        [Ignore("Not yet available in production.")]
+        public async Task ListRecipientsAsync()
+        {
+            var result = await _service.ListRecipientsAsync(_jobId);
+            Assert.IsNotEmpty(result);
+            AssertRequest(HttpMethod.Get, $"/share/{_jobId}/recipients");
         }
         
         [Test]
