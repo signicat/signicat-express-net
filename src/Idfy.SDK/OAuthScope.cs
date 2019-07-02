@@ -48,6 +48,12 @@ namespace Idfy
         ShareWrite,
         
         [EnumMember(Value = "share_read")]
-        ShareRead
+        ShareRead,
+        
+        [EnumMember(Value = "deposit_write")]
+        DepositWrite,
+        
+        [EnumMember(Value = "deposit_read")]
+        DepositRead
     }
 }
