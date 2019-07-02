@@ -1,4 +1,6 @@
-﻿namespace Idfy.Share.Entities
+﻿using System.Collections.Generic;
+
+namespace Idfy.Share.Entities
 {
     /// <summary>
     /// Options for notification
@@ -11,5 +13,13 @@
         /// Language for the notifications. Defaults to Norwegian
         /// </summary>
         public Language Language { get; set; }
+        
+        
+        /// <summary>
+        /// Custom texts in email notifcations 
+        /// </summary>
+        public Dictionary<CustomTextEvent, string> CustomEmailTexts{ get; set; }
+        
+     
     }
 }

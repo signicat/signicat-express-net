@@ -161,7 +161,7 @@ namespace Idfy.Share
         /// <returns></returns>
         public RecipientResponse GetBucketRecipient(string id, string recipientId)
         {
-            return Get<RecipientResponse>($"{Urls.Share}/{id}/recipients/{recipientId}");
+            return Get<RecipientResponse>($"{Urls.Share}/buckets/{id}/recipients/{recipientId}");
         }
         
         /// <summary>
@@ -172,7 +172,7 @@ namespace Idfy.Share
         /// <returns></returns>
         public async Task<RecipientResponse> GetBucketRecipientAsync(string id, string recipientId)
         {
-            return await GetAsync<RecipientResponse>($"{Urls.Share}/{id}/recipients/{recipientId}");
+            return await GetAsync<RecipientResponse>($"{Urls.Share}/buckets/{id}/recipients/{recipientId}");
         }
         
         /// <summary>
@@ -183,7 +183,7 @@ namespace Idfy.Share
         /// <returns></returns>
         public void DeleteBucketRecipient(string id, string recipientId)
         {
-            Delete($"{Urls.Share}/{id}/recipients/{recipientId}");
+            Delete($"{Urls.Share}/buckets/{id}/recipients/{recipientId}");
         }
         /// <summary>
         /// Delete bucket recipient
@@ -193,7 +193,7 @@ namespace Idfy.Share
         /// <returns></returns>
         public async Task DeleteBucketRecipientAsync(string id, string recipientId)
         {
-            await DeleteAsync($"{Urls.Share}/{id}/recipients/{recipientId}");  
+            await DeleteAsync($"{Urls.Share}/buckets/{id}/recipients/{recipientId}");  
         }
 
         /// <summary>
@@ -205,7 +205,7 @@ namespace Idfy.Share
         /// <returns></returns>
         public RecipientResponse UpdateBucketRecipient(string id, string recipientId, RecipientUpdateOptions options)
         {
-            return Patch<RecipientResponse>($"{Urls.Share}/{id}/recipients/{recipientId}", options);
+            return Patch<RecipientResponse>($"{Urls.Share}/buckets/{id}/recipients/{recipientId}", options);
         }
 
         /// <summary>
@@ -217,7 +217,7 @@ namespace Idfy.Share
         /// <returns></returns>
         public async Task<RecipientResponse> UpdateBucketRecipientAsync(string id, string recipientId, RecipientUpdateOptions options)
         {
-            return await PatchAsync<RecipientResponse>($"{Urls.Share}/{id}/recipients/{recipientId}", options);
+            return await PatchAsync<RecipientResponse>($"{Urls.Share}/buckets/{id}/recipients/{recipientId}", options);
         }
         
         /// <summary>
@@ -228,7 +228,7 @@ namespace Idfy.Share
         /// <returns></returns>
         public RecipientResponse CreateBucketRecipient(string id, Recipient recipient)
         {
-            return Post<RecipientResponse>($"{Urls.Share}/{id}/recipients", recipient);
+            return Post<RecipientResponse>($"{Urls.Share}/buckets/{id}/recipients", recipient);
         }
 
         /// <summary>
@@ -239,7 +239,7 @@ namespace Idfy.Share
         /// <returns></returns>
         public async Task<RecipientResponse> CreateBucketRecipientAsync(string id, Recipient recipient)
         {
-            return await PostAsync<RecipientResponse>($"{Urls.Share}/{id}/recipients", recipient);
+            return await PostAsync<RecipientResponse>($"{Urls.Share}/buckets/{id}/recipients", recipient);
         }
 
         /// <summary>
@@ -249,7 +249,7 @@ namespace Idfy.Share
         /// <returns></returns>
         public IEnumerable<RecipientResponse> ListRecipients(string id)
         {
-            return Get<IEnumerable<RecipientResponse>>($"{Urls.Share}/{id}/recipients");
+            return Get<IEnumerable<RecipientResponse>>($"{Urls.Share}/buckets/{id}/recipients");
         }
 
         /// <summary>
@@ -259,7 +259,7 @@ namespace Idfy.Share
         /// <returns></returns>
         public async Task<IEnumerable<RecipientResponse>> ListRecipientsAsync(string id)
         {
-            return await GetAsync<IEnumerable<RecipientResponse>>($"{Urls.Share}/{id}/recipients");
+            return await GetAsync<IEnumerable<RecipientResponse>>($"{Urls.Share}/buckets/{id}/recipients");
         }
     }
 }
