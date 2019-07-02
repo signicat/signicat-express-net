@@ -72,5 +72,11 @@ namespace Idfy.Signature
     
         [EnumMember(Value = "BlueGray")]
         BlueGray = 22,
+        
+        [EnumMember(Value = "OceanGreen")]
+        OceanGreen = 23,
+        
+        [EnumMember(Value = "GreenOcean")]
+        GreenOcean = 24
     }
 }
