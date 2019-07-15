@@ -84,5 +84,11 @@ namespace Idfy.Signature
         /// The time at which the signature URL expires (ISO 8601). Specify this if you want a limited time-to-live for the URL. Defaults to the lifetime of the document.
         /// </summary>
         public DateTime? SignUrlExpires { get; set; }
+        
+        /// <summary>
+        /// Get social security number for this signer only (The global variable advanced.getSocialSecurityNumber will ovveride this when sat to true).
+        /// Requires certificate with permission to retrieve social security number
+        /// </summary>
+        public bool? GetSocialSecurityNumber { get; set; }
     }
 }

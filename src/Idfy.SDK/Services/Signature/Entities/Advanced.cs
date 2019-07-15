@@ -25,7 +25,7 @@ namespace Idfy.Signature
         public string CreatedByApplication { get; set; }
     
         /// <summary>
-        /// Determines if the social security number of the signers should be retrieved after a successful signature.
+        /// Determines if the social security number of all the signers should be retrieved after a successful signature.
         /// Requires a certificate with permission to retrieve SSN.
         /// </summary>
         public bool? GetSocialSecurityNumber { get; set; }
