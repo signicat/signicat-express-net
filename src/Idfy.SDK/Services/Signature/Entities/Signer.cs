@@ -86,7 +86,7 @@ namespace Idfy.Signature
         public DateTime? SignUrlExpires { get; set; }
         
         /// <summary>
-        /// Get social security number for this signer only (The global variable advanced.getSocialSecurityNumber will ovveride this when sat to true).
+        /// Get social security number for this signer only (The global variable advanced.getSocialSecurityNumber will override this when sat to true).
         /// Requires certificate with permission to retrieve social security number
         /// </summary>
         public bool? GetSocialSecurityNumber { get; set; }
