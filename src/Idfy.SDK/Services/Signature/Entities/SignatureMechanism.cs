@@ -7,7 +7,13 @@ namespace Idfy.Signature
         [EnumMember(Value = "pkisignature")]
         PkiSignature = 0,
     
-        [EnumMember(Value = "eaccept")]
-        EAccept = 1,    
+        [EnumMember(Value = "identification")]
+        Identification = 1,  
+        
+        [EnumMember(Value = "handwritten")]
+        Handwritten = 2,  
+        
+        [EnumMember(Value = "handwritten_with_identification")]
+        HandwrittenWithIdentification = 2,  
     }
 }

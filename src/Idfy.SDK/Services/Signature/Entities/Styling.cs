@@ -21,5 +21,10 @@
         /// If you want to hide the top bar, set this property to true (can be a good choice in iframe mode)
         /// </summary>
         public bool? HideTopBar { get; set; }
+
+        /// <summary>
+        /// Override the application background color (hex / html code / transparent)
+        /// </summary>
+        public string BackgroundColor { get; set; }
     }
 }
