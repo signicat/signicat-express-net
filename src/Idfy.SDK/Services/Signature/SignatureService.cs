@@ -323,9 +323,9 @@ namespace Idfy.Signature
         /// <param name="signerId"></param>
         /// <param name="signerOptions"></param>
         /// <returns></returns>
-        public Signer UpdateSignerAsync(Guid documentId, Guid signerId, SignerOptions signerOptions)
+        public Task<Signer> UpdateSignerAsync(Guid documentId, Guid signerId, SignerOptions signerOptions)
         {
-            return Patch<Signer>($"{Urls.SignatureDocuments}/{documentId}/signers/{signerId}", signerOptions);
+            return PatchAsync<Signer>($"{Urls.SignatureDocuments}/{documentId}/signers/{signerId}", signerOptions);
         }
 
         /// <summary>

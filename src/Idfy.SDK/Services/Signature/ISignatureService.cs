@@ -205,7 +205,7 @@ namespace Idfy.Signature
         /// <param name="signerId"></param>
         /// <param name="signerOptions"></param>
         /// <returns></returns>
-        Signer UpdateSignerAsync(Guid documentId, Guid signerId, SignerOptions signerOptions);
+        Task<Signer> UpdateSignerAsync(Guid documentId, Guid signerId, SignerOptions signerOptions);
 
         /// <summary>
         /// Deletes a signer.
