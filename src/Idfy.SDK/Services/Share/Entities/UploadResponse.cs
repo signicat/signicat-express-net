@@ -1,6 +1,6 @@
 using System;
 
-namespace Idfy.Share.Entities
+namespace Idfy.Share
 {
     /// <summary>
     /// Upload information

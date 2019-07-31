@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Idfy.Share.Entities;
 using Idfy.Signature;
 
 namespace Idfy.Share

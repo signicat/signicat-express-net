@@ -1,4 +1,4 @@
-﻿namespace Idfy.Share.Entities
+﻿namespace Idfy.Share
 {
     public enum NotificationEvent
     {

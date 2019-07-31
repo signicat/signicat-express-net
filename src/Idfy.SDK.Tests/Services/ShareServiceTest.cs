@@ -3,7 +3,6 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using AutoFixture;
 using Idfy.Share;
-using Idfy.Share.Entities;
 using NUnit.Framework;
 
 namespace Idfy.SDK.Tests
