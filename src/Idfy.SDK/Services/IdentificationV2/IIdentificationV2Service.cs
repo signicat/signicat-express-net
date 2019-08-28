@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace Idfy.IdentificationV2
 {
-    public interface IIdentificationServiceV2
+    public interface IIdentificationV2Service
     {
         /// <summary>
         /// Retrieves the details of a single identification session.
@@ -78,12 +78,24 @@ namespace Idfy.IdentificationV2
         /// Returns a list of all the supported ID providers.
         /// </summary>
         /// <returns></returns>
-        IEnumerable<AppIdProvider> ListProviders();
+        IEnumerable<AppIdProvider> ListIdProviders();
 
         /// <summary>
         /// Returns a list of all the supported ID providers.
         /// </summary>
         /// <returns></returns>
-        Task<IEnumerable<AppIdProvider>> ListProvidersAsync();
+        Task<IEnumerable<AppIdProvider>> ListIdProvidersAsync();
+        
+        /// <summary>
+        /// Returns a list of all the ID providers available for the requester's account.
+        /// </summary>
+        /// <returns></returns>
+        IEnumerable<AppIdProvider> ListIdProvidersForAccount();
+
+        /// <summary>
+        /// Returns a list of all the ID providers available for the requester's account.
+        /// </summary>
+        /// <returns></returns>
+        Task<IEnumerable<AppIdProvider>> ListIdProvidersForAccountAsync();
     }
 }

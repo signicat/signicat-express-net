@@ -6,27 +6,27 @@ namespace Idfy.IdentificationV2
     public class IdSessionEvent
     {
         /// <summary>
-        /// Gets or Sets Id
+        /// The event ID.
         /// </summary>
         public int? Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// The name of the event.
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets EventType
+        /// The event type.
         /// </summary>
         public IdSessionEventType EventType { get; set; }
 
         /// <summary>
-        /// Gets or Sets Timestamp
+        /// Time at which the event was raised.
         /// </summary>
         public DateTime? Timestamp { get; set; }
 
         /// <summary>
-        /// Gets or Sets EventData
+        /// Event data.
         /// </summary>
         public Dictionary<string, Object> EventData { get; set; }
     }

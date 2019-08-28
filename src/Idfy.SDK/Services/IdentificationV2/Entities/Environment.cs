@@ -6,12 +6,12 @@ namespace Idfy.IdentificationV2
     public class Environment
     {
         /// <summary>
-        /// Gets or Sets UserAgent
+        /// The user agent of the user's browser.
         /// </summary>
         public string UserAgent { get; set; }
 
         /// <summary>
-        /// Gets or Sets IpAddress
+        /// The user's IP address.
         /// </summary>
         public string IpAddress { get; set; }
     }

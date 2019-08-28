@@ -2,7 +2,8 @@ using System.Runtime.Serialization;
 
 namespace Idfy.IdentificationV2
 {
-    public enum Language {
+    public enum Language 
+    {
         [EnumMember(Value = "en")]
         En,
             

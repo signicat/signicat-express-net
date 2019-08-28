@@ -36,42 +36,42 @@ namespace Idfy.IdentificationV2
         public DateTime? Expires { get; set; }
 
         /// <summary>
-        /// Gets or Sets Provider
+        /// The eID provider used for identification.
         /// </summary>
         public IdSessionProvider? Provider { get; set; }
 
         /// <summary>
-        /// Gets or Sets Identity
+        /// Details about the identified user. Only available if session has status `success`.
         /// </summary>
         public Identity Identity { get; set; }
 
         /// <summary>
-        /// Gets or Sets Environment
+        /// Details about the user's environment.
         /// </summary>
         public Environment Environment { get; set; }
 
         /// <summary>
         /// A list of eID providers that can be used for identification. If not specified, the user will be able to chose from all eID's associated with your Idfy account.
         /// </summary>
-        public List<IdProviderType> Providers { get; set; }
+        public List<IdProviderType> AllowedProviders { get; set; }
 
         /// <summary>
         /// The language to use for the identification process. Defaults to `en` (english).
         /// </summary>
-        public Language Language { get; set; }
+        public Language? Language { get; set; }
 
         /// <summary>
-        /// Gets or Sets Flow
+        /// The type of flow to use.
         /// </summary>
         public IdSessionFlow? Flow { get; set; }
 
         /// <summary>
-        /// Gets or Sets RedirectSettings
+        /// Redirect settings when using the `redirect` flow.
         /// </summary>
         public RedirectSettings RedirectSettings { get; set; }
 
         /// <summary>
-        /// Gets or Sets IframeSettings
+        /// Iframe settings when using the `iframe` flow.
         /// </summary>
         public IframeSettings IframeSettings { get; set; }
 
@@ -81,27 +81,22 @@ namespace Idfy.IdentificationV2
         public string ExternalReference { get; set; }
 
         /// <summary>
-        /// The department ID to mark the invoice with.
-        /// </summary>
-        public string DepartmentId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Ui
+        ///  UI settings for the identification process.
         /// </summary>
         public UiSettings Ui { get; set; }
 
         /// <summary>
-        /// Gets or Sets Advanced
+        /// Prefilled input values.
         /// </summary>
-        public AdvancedSettings Advanced { get; set; }
+        public PrefilledInput PrefilledInput { get; set; }
 
         /// <summary>
-        /// Gets or Sets AuditTrail
+        /// Audit trail.
         /// </summary>
         public AuditTrail AuditTrail { get; set; }
 
         /// <summary>
-        /// Gets or Sets Error
+        /// Error details.
         /// </summary>
         public Error Error { get; set; }
     }

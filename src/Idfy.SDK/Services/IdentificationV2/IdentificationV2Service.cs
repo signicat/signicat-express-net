@@ -4,13 +4,13 @@ using Idfy.Infrastructure;
 
 namespace Idfy.IdentificationV2
 {
-    public class IdentificationServiceV2 : IdfyBaseService, IIdentificationServiceV2
+    public class IdentificationV2Service : IdfyBaseService, IIdentificationV2Service
     {
-        public IdentificationServiceV2()
+        public IdentificationV2Service()
         {
         }
 
-        public IdentificationServiceV2(string clientId, string clientSecret, IEnumerable<OAuthScope> scopes)
+        public IdentificationV2Service(string clientId, string clientSecret, IEnumerable<OAuthScope> scopes)
             : base(clientId, clientSecret, scopes)
         {
         }
@@ -131,7 +131,7 @@ namespace Idfy.IdentificationV2
         /// Returns a list of all the supported ID providers.
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<AppIdProvider> ListProviders()
+        public IEnumerable<AppIdProvider> ListIdProviders()
         {
             return Get<IEnumerable<AppIdProvider>>($"{Urls.IdentificationV2}/id-providers");
         }
@@ -140,9 +140,27 @@ namespace Idfy.IdentificationV2
         /// Returns a list of all the supported ID providers.
         /// </summary>
         /// <returns></returns>
-        public Task<IEnumerable<AppIdProvider>> ListProvidersAsync()
+        public Task<IEnumerable<AppIdProvider>> ListIdProvidersAsync()
         {
             return GetAsync<IEnumerable<AppIdProvider>>($"{Urls.IdentificationV2}/id-providers");
+        }
+        
+        /// <summary>
+        /// Returns a list of all the ID providers available for the requester's account.
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<AppIdProvider> ListIdProvidersForAccount()
+        {
+            return Get<IEnumerable<AppIdProvider>>($"{Urls.IdentificationV2}/id-providers/account");
+        }
+
+        /// <summary>
+        /// Returns a list of all the ID providers available for the requester's account.
+        /// </summary>
+        /// <returns></returns>
+        public Task<IEnumerable<AppIdProvider>> ListIdProvidersForAccountAsync()
+        {
+            return GetAsync<IEnumerable<AppIdProvider>>($"{Urls.IdentificationV2}/id-providers/account");
         }
     }
 }

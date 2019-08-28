@@ -13,7 +13,7 @@ namespace Idfy.IdentificationV2
         public List<string> ParentDomains { get; set; }
 
         /// <summary>
-        /// Target for cross domain messaging.
+        /// Target origin for cross domain messaging.
         /// </summary>
         public string PostMessageTargetOrigin { get; set; }
     }
