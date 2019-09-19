@@ -25,7 +25,7 @@ namespace Idfy.IdentificationV2
         /// <param name="cursor"></param>
         /// <param name="limit"></param>
         /// <returns></returns>
-        IEnumerable<IdSession> ListSessions(string cursor = null, int? limit = null);
+        PaginatedData<IdSession> ListSessions(string cursor = null, int? limit = null);
 
         /// <summary>
         /// Returns a list of previously created sessions. The session data returned from this endpoint does not contain any personal information.
@@ -33,7 +33,7 @@ namespace Idfy.IdentificationV2
         /// <param name="cursor"></param>
         /// <param name="limit"></param>
         /// <returns></returns>
-        Task<IEnumerable<IdSession>> ListSessionsAsync(string cursor = null, int? limit = null);
+        Task<PaginatedData<IdSession>> ListSessionsAsync(string cursor = null, int? limit = null);
         
         /// <summary>
         /// Creates a new identification session.

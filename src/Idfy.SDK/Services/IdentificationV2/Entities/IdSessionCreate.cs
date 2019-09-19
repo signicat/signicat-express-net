@@ -18,6 +18,11 @@ namespace Idfy.IdentificationV2
         /// The type of flow to use.
         /// </summary>
         public IdSessionFlow? Flow { get; set; }
+        
+        /// <summary>
+        /// Request additional information about the user.
+        /// </summary>
+        public IEnumerable<Include> Include { get; set; }
 
         /// <summary>
         /// Redirect settings when using the `redirect` flow.

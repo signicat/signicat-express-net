@@ -41,7 +41,7 @@ namespace Idfy.IdentificationV2
         /// <param name="cursor"></param>
         /// <param name="limit"></param>
         /// <returns></returns>
-        public IEnumerable<IdSession> ListSessions(string cursor = null, int? limit = null)
+        public PaginatedData<IdSession> ListSessions(string cursor = null, int? limit = null)
         {
             var url = APIHelper.AppendQueryParams($"{Urls.IdentificationV2}/sessions", new Dictionary<string, object>()
             {
@@ -49,7 +49,7 @@ namespace Idfy.IdentificationV2
                 {"limit", limit}
             });
 
-            return Get<IEnumerable<IdSession>>(url);
+            return Get<PaginatedData<IdSession>>(url);
         }
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace Idfy.IdentificationV2
         /// <param name="cursor"></param>
         /// <param name="limit"></param>
         /// <returns></returns>
-        public Task<IEnumerable<IdSession>> ListSessionsAsync(string cursor = null, int? limit = null)
+        public Task<PaginatedData<IdSession>> ListSessionsAsync(string cursor = null, int? limit = null)
         {
             var url = APIHelper.AppendQueryParams($"{Urls.IdentificationV2}/sessions", new Dictionary<string, object>()
             {
@@ -66,7 +66,7 @@ namespace Idfy.IdentificationV2
                 {"limit", limit}
             });
 
-            return GetAsync<IEnumerable<IdSession>>(url);
+            return GetAsync<PaginatedData<IdSession>>(url);
         }
 
         /// <summary>
