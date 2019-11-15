@@ -15,6 +15,11 @@ namespace Idfy.Signature
         {
         }
 
+        public SignatureService(string clientId, string clientSecret, IEnumerable<string> scopes) :
+            base(clientId, clientSecret, scopes)
+        {
+        }
+        
         public SignatureService(string clientId, string clientSecret, IEnumerable<OAuthScope> scopes) :
             base(clientId, clientSecret, scopes)
         {

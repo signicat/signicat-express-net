@@ -12,15 +12,15 @@ namespace Idfy.Infrastructure
             return IdfyConfiguration.OAuthToken;
         }
         
-        public static OAuthToken Authorize(string clientId, string clientSecret, IEnumerable<OAuthScope> scopes)
+        public static OAuthToken Authorize(string clientId, string clientSecret, IEnumerable<string> scopes)
         {
             if (clientId == null)
-                throw new InvalidOperationException($"Client credentials not set.");
+                throw new InvalidOperationException("Client credentials not set.");
 
             var formData = new NameValueCollection()
             {
                 {"grant_type", "client_credentials"},
-                {"scope", string.Join(" ", scopes.Select(scope => scope.ToEnumMemberString()))},
+                {"scope", string.Join(" ", scopes)},
                 {"client_id", clientId},
                 {"client_secret", clientSecret}
             };

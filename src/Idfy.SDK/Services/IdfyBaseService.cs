@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Idfy.Infrastructure;
@@ -11,16 +12,23 @@ namespace Idfy
     {
         private readonly string _clientId;
         private readonly string _clientSecret;
-        private readonly IEnumerable<OAuthScope> _scopes;
+        private readonly IEnumerable<string> _scopes;
         private OAuthToken _oAuthToken;
 
         protected IdfyBaseService() { }
 
-        protected IdfyBaseService(string clientId, string clientSecret, IEnumerable<OAuthScope> scopes)
+        protected IdfyBaseService(string clientId, string clientSecret, IEnumerable<string> scopes)
         {
             _clientId = clientId ?? throw new ArgumentNullException(nameof(clientId));
             _clientSecret = clientSecret ?? throw new ArgumentNullException(nameof(clientSecret));
             _scopes = scopes ?? throw new ArgumentNullException(nameof(scopes));
+        }
+        
+        protected IdfyBaseService(string clientId, string clientSecret, IEnumerable<OAuthScope> scopes)
+        {
+            _clientId = clientId ?? throw new ArgumentNullException(nameof(clientId));
+            _clientSecret = clientSecret ?? throw new ArgumentNullException(nameof(clientSecret));
+            _scopes = scopes.Select(s => s.ToEnumMemberString()) ?? throw new ArgumentNullException(nameof(scopes));
         }
 
         protected T Get<T>(string url)

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Reflection;
 using Idfy.Infrastructure;
@@ -12,6 +13,13 @@ namespace Idfy
         private static string _oauthBaseUrl;
 
         public static void SetClientCredentials(string clientId, string clientSecret, IEnumerable<OAuthScope> scopes)
+        {
+            ClientId = clientId;
+            ClientSecret = clientSecret;
+            Scopes = scopes.Select(s => s.ToEnumMemberString());
+        }
+        
+        public static void SetClientCredentials(string clientId, string clientSecret, IEnumerable<string> scopes)
         {
             ClientId = clientId;
             ClientSecret = clientSecret;
@@ -50,7 +58,7 @@ namespace Idfy
         
         internal static string ClientSecret { get; set; }
         
-        internal static IEnumerable<OAuthScope> Scopes { get; set; }
+        internal static IEnumerable<string> Scopes { get; set; }
 
         internal static OAuthToken OAuthToken { get; set; }
     }
