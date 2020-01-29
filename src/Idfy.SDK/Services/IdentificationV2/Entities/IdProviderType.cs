@@ -5,27 +5,33 @@ namespace Idfy.IdentificationV2
     public enum IdProviderType 
     {
         [EnumMember(Value = "no_bankid_netcentric")]
-        NoBankidNetcentric,
+        NoBankidNetcentric = 0,
             
         [EnumMember(Value = "no_bankid_mobile")]
-        NoBankidMobile,
+        NoBankidMobile = 1,
             
         [EnumMember(Value = "se_bankid")]
-        SeBankid,
+        SeBankid = 2,
             
         [EnumMember(Value = "no_buypass")]
-        NoBuypass,
+        NoBuypass = 3,
             
         [EnumMember(Value = "dk_nemid")]
-        DkNemid,
+        DkNemid = 4,
             
         [EnumMember(Value = "fi_eid")]
-        FiEid,
+        FiEid = 5,
             
         [EnumMember(Value = "sms_otp")]
-        SmsOtp,
+        SmsOtp = 6,
             
         [EnumMember(Value = "freja")]
-        Freja,
+        Freja = 7,
+        
+        [EnumMember(Value = "github")]
+        GitHub = 8,
+        
+        [EnumMember(Value = "google")]
+        Google = 9,
     }
 }

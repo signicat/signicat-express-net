@@ -10,7 +10,7 @@ namespace Idfy.IdentificationV2
         /// <summary>
         /// Parent domains that will iframe the session.
         /// </summary>
-        public List<string> ParentDomains { get; set; }
+        public IList<string> ParentDomains { get; set; }
 
         /// <summary>
         /// Target origin for cross domain messaging.

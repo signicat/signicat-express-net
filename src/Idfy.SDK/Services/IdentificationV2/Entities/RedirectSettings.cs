@@ -6,7 +6,7 @@ namespace Idfy.IdentificationV2
     public class RedirectSettings
     {
         /// <summary>
-        /// The URL that the user is redirected to after a sucessful identification.
+        /// The URL that the user is redirected to after a successful identification.
         /// </summary>
         public string SuccessUrl { get; set; }
 

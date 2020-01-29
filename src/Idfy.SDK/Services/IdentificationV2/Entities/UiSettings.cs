@@ -14,5 +14,15 @@ namespace Idfy.IdentificationV2
         /// Whether to hide the footer with the language switcher and help button.
         /// </summary>
         public bool? HideFooter { get; set; }
+        
+        /// <summary>
+        /// Whether to use light or dark theme.
+        /// </summary>
+        public ThemeMode? ThemeMode { get; set; }
+        
+        /// <summary>
+        /// The color theme to use.
+        /// </summary>
+        public ColorTheme? ColorTheme { get; set; }
     }
 }

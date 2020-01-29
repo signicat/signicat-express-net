@@ -16,14 +16,14 @@ namespace Idfy.IdentificationV2
         public string Url { get; set; }
 
         /// <summary>
-        /// The UI reference for the identification process. Only applicable to the `headless` flow.
+        /// The security reference for the identification process. Only applicable to the `headless` flow.
         /// </summary>
-        public string UiRef { get; set; }
+        public string SecurityReference { get; set; }
 
         /// <summary>
         /// The status of the identification session.
         /// </summary>
-        public IdSessionStatus Status { get; set; }
+        public IdSessionStatus? Status { get; set; }
 
         /// <summary>
         /// Time at which the session was created.
@@ -38,7 +38,7 @@ namespace Idfy.IdentificationV2
         /// <summary>
         /// The eID provider used for identification.
         /// </summary>
-        public IdSessionProvider? Provider { get; set; }
+        public IdProviderType? Provider { get; set; }
 
         /// <summary>
         /// Details about the identified user. Only available if session has status `success`.
@@ -53,7 +53,7 @@ namespace Idfy.IdentificationV2
         /// <summary>
         /// A list of eID providers that can be used for identification. If not specified, the user will be able to chose from all eID's associated with your Idfy account.
         /// </summary>
-        public List<IdProviderType> AllowedProviders { get; set; }
+        public IList<IdProviderType> AllowedProviders { get; set; }
 
         /// <summary>
         /// The language to use for the identification process. Defaults to `en` (english).
@@ -68,7 +68,7 @@ namespace Idfy.IdentificationV2
         /// <summary>
         /// Request additional information about the user.
         /// </summary>
-        public IEnumerable<Include> Include { get; set; }
+        public IList<Include> Include { get; set; }
 
         /// <summary>
         /// Redirect settings when using the `redirect` flow.
@@ -94,6 +94,11 @@ namespace Idfy.IdentificationV2
         /// Prefilled input values.
         /// </summary>
         public PrefilledInput PrefilledInput { get; set; }
+        
+        /// <summary>
+        /// Resources created for the session.
+        /// </summary>
+        public IList<ExtraInfoResource> Resources { get; set; }
 
         /// <summary>
         /// Audit trail.

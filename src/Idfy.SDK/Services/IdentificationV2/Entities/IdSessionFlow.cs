@@ -4,12 +4,12 @@ namespace Idfy.IdentificationV2
 {
     public enum IdSessionFlow {
         [EnumMember(Value = "redirect")]
-        Redirect,
+        Redirect = 0,
             
         [EnumMember(Value = "iframe")]
-        Iframe,
+        Iframe = 1,
             
         [EnumMember(Value = "headless")]
-        Headless,
+        Headless = 2,
     }
 }

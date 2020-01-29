@@ -13,7 +13,13 @@ namespace Idfy.IdentificationV2
         [EnumMember(Value = "date_of_birth")]
         DateOfBirth = 2,
         
-        [EnumMember(Value = "ssn")]
-        Ssn = 3,
+        [EnumMember(Value = "nin")]
+        Nin = 3,
+        
+        [EnumMember(Value = "email")]
+        Email = 4,
+        
+        [EnumMember(Value = "resource.vipps_aml_person")]
+        VippsAmlPerson = 5,
     }
 }

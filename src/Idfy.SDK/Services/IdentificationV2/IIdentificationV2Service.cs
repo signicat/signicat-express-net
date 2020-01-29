@@ -40,14 +40,14 @@ namespace Idfy.IdentificationV2
         /// </summary>
         /// <param name="idSessionCreateOptions"></param>
         /// <returns></returns>
-        IdSession CreateSession(IdSessionCreate idSessionCreateOptions);
+        IdSession CreateSession(IdSessionCreateOptions idSessionCreateOptions);
 
         /// <summary>
         /// Creates a new identification session.
         /// </summary>
         /// <param name="idSessionCreateOptions"></param>
         /// <returns></returns>
-        Task<IdSession> CreateSessionAsync(IdSessionCreate idSessionCreateOptions);
+        Task<IdSession> CreateSessionAsync(IdSessionCreateOptions idSessionCreateOptions);
 
         /// <summary>
         /// Invalidates the specified identification session.

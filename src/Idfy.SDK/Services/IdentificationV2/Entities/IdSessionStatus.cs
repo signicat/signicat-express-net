@@ -5,24 +5,24 @@ namespace Idfy.IdentificationV2
     public enum IdSessionStatus 
     {
         [EnumMember(Value = "created")]
-        Created,
+        Created = 0,
             
         [EnumMember(Value = "user_initiated")]
-        UserInitiated,
+        UserInitiated = 1,
             
         [EnumMember(Value = "user_aborted")]
-        UserAborted,
+        UserAborted = 2,
             
         [EnumMember(Value = "timed_out")]
-        TimedOut,
+        TimedOut = 3,
             
         [EnumMember(Value = "invalidated")]
-        Invalidated,
+        Invalidated = 4,
             
         [EnumMember(Value = "failed")]
-        Failed,
+        Failed = 5,
             
         [EnumMember(Value = "success")]
-        Success,
+        Success = 6,
     }
 }

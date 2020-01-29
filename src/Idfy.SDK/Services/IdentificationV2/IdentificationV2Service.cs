@@ -74,7 +74,7 @@ namespace Idfy.IdentificationV2
         /// </summary>
         /// <param name="idSessionCreateOptions"></param>
         /// <returns></returns>
-        public IdSession CreateSession(IdSessionCreate idSessionCreateOptions)
+        public IdSession CreateSession(IdSessionCreateOptions idSessionCreateOptions)
         {
             return Post<IdSession>($"{Urls.IdentificationV2}/sessions", idSessionCreateOptions);
         }
@@ -84,7 +84,7 @@ namespace Idfy.IdentificationV2
         /// </summary>
         /// <param name="idSessionCreateOptions"></param>
         /// <returns></returns>
-        public Task<IdSession> CreateSessionAsync(IdSessionCreate idSessionCreateOptions)
+        public Task<IdSession> CreateSessionAsync(IdSessionCreateOptions idSessionCreateOptions)
         {
             return PostAsync<IdSession>($"{Urls.IdentificationV2}/sessions", idSessionCreateOptions);
         }

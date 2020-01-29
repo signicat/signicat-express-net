@@ -8,9 +8,9 @@ namespace Idfy.IdentificationV2
     public class PrefilledInput
     {
         /// <summary>
-        /// Prefill the user's social security number.
+        /// Prefill the user's national identification number.
         /// </summary>
-        public string Ssn { get; set; }
+        public string Nin { get; set; }
 
         /// <summary>
         /// Prefill the user's phone number. Must be prefixed with country code.

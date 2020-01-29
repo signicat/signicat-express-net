@@ -17,6 +17,6 @@ namespace Idfy.IdentificationV2
         /// <summary>
         /// An array containing the actual response elements.
         /// </summary>
-        public List<T> Data { get; set; }
+        public IList<T> Data { get; set; }
     }
 }

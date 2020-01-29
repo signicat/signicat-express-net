@@ -2,12 +2,12 @@ using System.Collections.Generic;
 
 namespace Idfy.IdentificationV2
 {
-    public class IdSessionCreate
+    public class IdSessionCreateOptions
     {
         /// <summary>
         /// A list of eID providers that can be used for identification. If not specified, the user will be able to chose from all eID's associated with your Idfy account.
         /// </summary>
-        public List<IdProviderType> AllowedProviders { get; set; }
+        public IList<IdProviderType> AllowedProviders { get; set; }
 
         /// <summary>
         /// The language to use for the identification process. Defaults to `en` (english).
@@ -22,7 +22,7 @@ namespace Idfy.IdentificationV2
         /// <summary>
         /// Request additional information about the user.
         /// </summary>
-        public IEnumerable<Include> Include { get; set; }
+        public IList<Include> Include { get; set; }
 
         /// <summary>
         /// Redirect settings when using the `redirect` flow.
@@ -38,11 +38,6 @@ namespace Idfy.IdentificationV2
         /// Your external reference for the session.
         /// </summary>
         public string ExternalReference { get; set; }
-
-        /// <summary>
-        /// The department ID to mark the invoice with.
-        /// </summary>
-        public string DepartmentId { get; set; }
 
         /// <summary>
         /// UI settings for the identification process.

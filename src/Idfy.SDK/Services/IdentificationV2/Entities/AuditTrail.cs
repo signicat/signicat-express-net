@@ -15,6 +15,6 @@ namespace Idfy.IdentificationV2
         /// <summary>
         /// Events raised for the current session.
         /// </summary>
-        public List<IdSessionEvent> Events { get; set; }
+        public IList<IdSessionEvent> Events { get; set; }
     }
 }

@@ -18,7 +18,7 @@ namespace Idfy.IdentificationV2
         /// <summary>
         /// The event type.
         /// </summary>
-        public IdSessionEventType EventType { get; set; }
+        public IdSessionEventType? EventType { get; set; }
 
         /// <summary>
         /// Time at which the event was raised.
@@ -28,6 +28,6 @@ namespace Idfy.IdentificationV2
         /// <summary>
         /// Event data.
         /// </summary>
-        public Dictionary<string, Object> EventData { get; set; }
+        public Dictionary<string, object> EventData { get; set; }
     }
 }

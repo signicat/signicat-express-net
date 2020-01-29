@@ -4,12 +4,12 @@ namespace Idfy.IdentificationV2
 {
     public enum IdSessionEventType {
         [EnumMember(Value = "success")]
-        Success,
+        Success = 0,
             
         [EnumMember(Value = "failure")]
-        Failure,
+        Failure = 1,
             
         [EnumMember(Value = "information")]
-        Information,
+        Information = 2,
     }
 }

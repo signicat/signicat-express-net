@@ -38,13 +38,18 @@ namespace Idfy.IdentificationV2
         public DateTime? DateOfBirth { get; set; }
 
         /// <summary>
+        /// National identification number.
+        /// </summary>
+        public string Nin { get; set; }
+        
+        /// <summary>
         /// Phone number.
         /// </summary>
         public string PhoneNumber { get; set; }
-
+        
         /// <summary>
-        /// Social security number.
+        /// Email address.
         /// </summary>
-        public string Ssn { get; set; }
+        public string Email { get; set; }
     }
 }
