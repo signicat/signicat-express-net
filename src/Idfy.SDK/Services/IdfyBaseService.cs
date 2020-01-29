@@ -28,7 +28,7 @@ namespace Idfy
         {
             _clientId = clientId ?? throw new ArgumentNullException(nameof(clientId));
             _clientSecret = clientSecret ?? throw new ArgumentNullException(nameof(clientSecret));
-            _scopes = scopes.Select(s => s.ToEnumMemberString()) ?? throw new ArgumentNullException(nameof(scopes));
+            _scopes = scopes?.Select(s => s.ToEnumMemberString()) ?? throw new ArgumentNullException(nameof(scopes));
         }
 
         protected T Get<T>(string url)

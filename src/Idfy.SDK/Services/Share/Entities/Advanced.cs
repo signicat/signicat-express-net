@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Idfy.Share.Entities
+namespace Idfy.Share
 {
     public class Advanced
     {

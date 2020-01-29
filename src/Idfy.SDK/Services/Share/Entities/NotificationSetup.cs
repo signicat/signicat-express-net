@@ -1,4 +1,4 @@
-﻿namespace Idfy.Share.Entities
+﻿namespace Idfy.Share
 {
     /// <summary>
     /// Setup of notifications

@@ -15,13 +15,13 @@ namespace Idfy.Admin
         {
         }
 
-        public AdminService(string clientId, string clientSecret, IEnumerable<string> scopes) :
-            base(clientId, clientSecret, scopes)
+        public AdminService(string clientId, string clientSecret, IEnumerable<string> scopes)
+            : base(clientId, clientSecret, scopes)
         {
         }
         
-        public AdminService(string clientId, string clientSecret, IEnumerable<OAuthScope> scopes) :
-            base(clientId, clientSecret, scopes)
+        public AdminService(string clientId, string clientSecret, IEnumerable<OAuthScope> scopes)
+            : base(clientId, clientSecret, scopes)
         {
         }
 

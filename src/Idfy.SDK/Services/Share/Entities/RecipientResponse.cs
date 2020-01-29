@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Idfy.Share.Entities
+namespace Idfy.Share
 {
     /// <summary>
     /// Recipient of the secure share
