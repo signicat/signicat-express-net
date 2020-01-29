@@ -23,7 +23,7 @@ namespace Idfy.SDK.Tests
             var session = _identificationService.GetSession("1");
 
             Assert.IsNotNull(session);
-            AssertRequest(HttpMethod.Get, $"/identification/session?requestId=1");
+            AssertRequest(HttpMethod.Get, "/identification/session?requestId=1");
         }
 
         [Test]
@@ -32,7 +32,7 @@ namespace Idfy.SDK.Tests
             var session = await _identificationService.GetSessionAsync("1");
 
             Assert.IsNotNull(session);
-            AssertRequest(HttpMethod.Get, $"/identification/session?requestId=1");
+            AssertRequest(HttpMethod.Get, "/identification/session?requestId=1");
         }
         
         [Test]
@@ -42,7 +42,7 @@ namespace Idfy.SDK.Tests
             var session = _identificationService.CreateSession(request);
 
             Assert.IsNotNull(session);
-            AssertRequest(HttpMethod.Post, $"/identification/session");
+            AssertRequest(HttpMethod.Post, "/identification/session");
         }
 
         [Test]
@@ -52,7 +52,7 @@ namespace Idfy.SDK.Tests
             var session = await _identificationService.CreateSessionAsync(request);
 
             Assert.IsNotNull(session);
-            AssertRequest(HttpMethod.Post, $"/identification/session");
+            AssertRequest(HttpMethod.Post, "/identification/session");
         }
         
         [Test]
@@ -61,7 +61,7 @@ namespace Idfy.SDK.Tests
             var status = _identificationService.GetSessionStatus("1");
 
             Assert.IsNotNull(status);
-            AssertRequest(HttpMethod.Get, $"/identification/session/status?requestId=1");
+            AssertRequest(HttpMethod.Get, "/identification/session/status?requestId=1");
         }
 
         [Test]
@@ -70,7 +70,7 @@ namespace Idfy.SDK.Tests
             var status = await _identificationService.GetSessionStatusAsync("1");
 
             Assert.IsNotNull(status);
-            AssertRequest(HttpMethod.Get, $"/identification/session/status?requestId=1");
+            AssertRequest(HttpMethod.Get, "/identification/session/status?requestId=1");
         }
         
         [Test]
@@ -78,7 +78,7 @@ namespace Idfy.SDK.Tests
         {
             _identificationService.InvalidateSession("1");
 
-            AssertRequest(HttpMethod.Put, $"/identification/session/invalidate?requestId=1");
+            AssertRequest(HttpMethod.Put, "/identification/session/invalidate?requestId=1");
         }
 
         [Test]
@@ -86,7 +86,7 @@ namespace Idfy.SDK.Tests
         {
             await _identificationService.InvalidateSessionAsync("1");
 
-            AssertRequest(HttpMethod.Put, $"/identification/session/invalidate?requestId=1");
+            AssertRequest(HttpMethod.Put, "/identification/session/invalidate?requestId=1");
         }
         
         [Test]
@@ -95,7 +95,7 @@ namespace Idfy.SDK.Tests
             var log = _identificationService.GetLogEntry("1");
 
             Assert.IsNotNull(log);
-            AssertRequest(HttpMethod.Get, $"/identification/log/requestId/1");
+            AssertRequest(HttpMethod.Get, "/identification/log/requestId/1");
         }
 
         [Test]
@@ -104,7 +104,7 @@ namespace Idfy.SDK.Tests
             var log = await _identificationService.GetLogEntryAsync("1");
 
             Assert.IsNotNull(log);
-            AssertRequest(HttpMethod.Get, $"/identification/log/requestId/1");
+            AssertRequest(HttpMethod.Get, "/identification/log/requestId/1");
         }
         
         [Test]
@@ -113,7 +113,7 @@ namespace Idfy.SDK.Tests
             var logs = _identificationService.ListLogEntries(2000, 1);
 
             Assert.IsNotNull(logs);
-            AssertRequest(HttpMethod.Get, $"/identification/log/filter/2000?month=1");
+            AssertRequest(HttpMethod.Get, "/identification/log/filter/2000?month=1");
         }
 
         [Test]
@@ -122,7 +122,7 @@ namespace Idfy.SDK.Tests
             var logs = await _identificationService.ListLogEntriesAsync(2000, 1);
 
             Assert.IsNotNull(logs);
-            AssertRequest(HttpMethod.Get, $"/identification/log/filter/2000?month=1");
+            AssertRequest(HttpMethod.Get, "/identification/log/filter/2000?month=1");
         }
 
         [Test]
@@ -132,7 +132,7 @@ namespace Idfy.SDK.Tests
             var session = _identificationService.CreateBankIdMobileSession(request);
             
             Assert.IsNotNull(session);
-            AssertRequest(HttpMethod.Post, $"/identification/no/bankid/mobile");
+            AssertRequest(HttpMethod.Post, "/identification/no/bankid/mobile");
         }
         
         [Test]
@@ -142,7 +142,7 @@ namespace Idfy.SDK.Tests
             var session = await _identificationService.CreateBankIdMobileSessionAsync(request);
             
             Assert.IsNotNull(session);
-            AssertRequest(HttpMethod.Post, $"/identification/no/bankid/mobile");
+            AssertRequest(HttpMethod.Post, "/identification/no/bankid/mobile");
         }
     }
 }
