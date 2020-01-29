@@ -19,6 +19,17 @@ namespace Idfy.Validation
         /// <param name="clientId"></param>
         /// <param name="clientSecret"></param>
         /// <param name="scopes"></param>
+        public ValidationService(string clientId, string clientSecret, IEnumerable<string> scopes) :
+            base(clientId, clientSecret, scopes)
+        {
+        }
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="clientId"></param>
+        /// <param name="clientSecret"></param>
+        /// <param name="scopes"></param>
         public ValidationService(string clientId, string clientSecret, IEnumerable<OAuthScope> scopes) :
             base(clientId, clientSecret, scopes)
         {

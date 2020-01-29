@@ -14,6 +14,6 @@ namespace Idfy.Signature
         Handwritten = 2,  
         
         [EnumMember(Value = "handwritten_with_identification")]
-        HandwrittenWithIdentification = 2,  
+        HandwrittenWithIdentification = 3,  
     }
 }

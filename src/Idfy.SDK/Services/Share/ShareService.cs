@@ -13,6 +13,11 @@ namespace Idfy.Share
         {
         }
 
+        public ShareService(string clientId, string clientSecret, IEnumerable<string> scopes) :
+            base(clientId, clientSecret, scopes)
+        {
+        }
+        
         public ShareService(string clientId, string clientSecret, IEnumerable<OAuthScope> scopes) :
             base(clientId, clientSecret, scopes)
         {

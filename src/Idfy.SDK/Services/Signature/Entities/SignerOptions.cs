@@ -34,6 +34,11 @@ namespace Idfy.Signature
         /// Settings for extra information to collect about the signer.
         /// </summary>
         public ExtraInfoSignerRequest ExtraInfo { get; set; }
+
+        /// <summary>
+        /// Setup additional functionality to be executed automatically
+        /// </summary>
+        public AddonsSignerRequest Addons { get; set; }
     
         /// <summary>
         /// UI settings for the signature process.
