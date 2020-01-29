@@ -14,13 +14,13 @@ namespace Idfy.Notification
         {
         }
 
-        public NotificationService(string clientId, string clientSecret, IEnumerable<string> scopes) :
-            base(clientId, clientSecret, scopes)
+        public NotificationService(string clientId, string clientSecret, IEnumerable<string> scopes)
+            : base(clientId, clientSecret, scopes)
         {
         }
         
-        public NotificationService(string clientId, string clientSecret, IEnumerable<OAuthScope> scopes) :
-            base(clientId, clientSecret, scopes)
+        public NotificationService(string clientId, string clientSecret, IEnumerable<OAuthScope> scopes)
+            : base(clientId, clientSecret, scopes)
         {
         }
 

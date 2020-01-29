@@ -15,13 +15,13 @@ namespace Idfy.MerchantSign
         {
         }
 
-        public MerchantSignService(string clientId, string clientSecret, IEnumerable<string> scopes) :
-            base(clientId, clientSecret, scopes)
+        public MerchantSignService(string clientId, string clientSecret, IEnumerable<string> scopes)
+            : base(clientId, clientSecret, scopes)
         {
         }
         
-        public MerchantSignService(string clientId, string clientSecret, IEnumerable<OAuthScope> scopes) :
-            base(clientId, clientSecret, scopes)
+        public MerchantSignService(string clientId, string clientSecret, IEnumerable<OAuthScope> scopes)
+            : base(clientId, clientSecret, scopes)
         {
         }
 
