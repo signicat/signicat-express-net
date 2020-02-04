@@ -2,6 +2,17 @@
 {
     public class DataToSign 
     {
+
+        /// <summary>
+        /// Document title
+        /// </summary>
+        public string Title { get; set; }
+
+        /// <summary>
+        /// Document description
+        /// </summary>
+        public string Description { get; set; }
+
         /// <summary>
         /// Base64-encoded string of the document, UTF-8-encoded.
         /// </summary>
