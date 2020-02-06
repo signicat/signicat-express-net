@@ -36,7 +36,7 @@ namespace Idfy.SDK.Tests
                 CallBase =  true
             };
 
-            IdfyConfiguration.HttpMessageHandler = _mockHttpClientHandler.Object;
+            IdfyConfiguration.HttpClient = new HttpClient(_mockHttpClientHandler.Object);
             IdfyConfiguration.BaseUrl = url;
             IdfyConfiguration.OAuthBaseUrl = url;
             IdfyConfiguration.SetClientCredentials("idfy-sdk-test", "secret", new List<OAuthScope>());
