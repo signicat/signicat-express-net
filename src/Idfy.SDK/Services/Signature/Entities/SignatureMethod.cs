@@ -4,6 +4,9 @@ namespace Idfy.Signature
 {
     public enum SignatureMethod
     {
+        [EnumMember(Value = "no_bankid")]
+        NoBankId = 0,
+    
         [EnumMember(Value = "no_bankid_mobile")]
         NoBankIdMobile = 1,
     
@@ -12,7 +15,7 @@ namespace Idfy.Signature
     
         [EnumMember(Value = "no_buypass")]
         NoBuypass = 3,
-
+        
         [EnumMember(Value = "se_bankid")]
         SeBankid = 5,
     
