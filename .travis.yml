@@ -31,7 +31,7 @@ deploy:
       tags: true
   # Push NuGet package to nuget.org on new version
   - provider: script  
-    skip_cleanup: true
+    cleanup: false
     script: dotnet nuget push src/Idfy.SDK/bin/Release/Idfy.SDK.* --api-key $NUGET_APIKEY --source https://www.nuget.org/api/v2/package
     on:
       tags: true
