@@ -4,24 +4,6 @@ namespace Idfy.Signature
 {
     public enum ExtraInfoSignerType
     {
-        [EnumMember(Value = "personalInfo")]
-        PersonalInfo = 0,
-    
-        [EnumMember(Value = "companyInfo")]
-        CompanyInfo = 1,
-    
-        [EnumMember(Value = "companyInfoAutoComplete")]
-        CompanyInfoAutoComplete = 2,
-    
-        [EnumMember(Value = "personalCreditCheck")]
-        PersonalCreditCheck = 3,
-    
-        [EnumMember(Value = "businessCreditCheck")]
-        BusinessCreditCheck = 4,
-    
-        [EnumMember(Value = "officialPersonalInfo")]
-        OfficialPersonalInfo = 5,
-    
         [EnumMember(Value = "bankIDApisAmlPersonSanctionPep")]
         BankIDApisAmlPersonSanctionPep = 6,
     
@@ -29,6 +11,9 @@ namespace Idfy.Signature
         BankIDApisAmlCurrentAddress = 7,
         
         [EnumMember(Value = "bankIDApisAmlPersonSanctionPepReport")]
-        BankIDApisAmlPersonSanctionPepReport = 8,
+        BankIDApisAmlPersonSanctionPepReport = 8, 
+        
+        [EnumMember(Value = "vippsAmlPerson")]
+        VippsAmlPerson = 8,
     }
 }
