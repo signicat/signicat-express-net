@@ -4,11 +4,11 @@
     {
         internal static string DefaultBaseUrl => "https://api.idfy.io";
         
-        internal static string DefaultOAuthBaseUrl => DefaultBaseUrl;
+        internal static string DefaultOAuthBaseUrl => $"{DefaultBaseUrl}/oauth";
 
         internal static string BaseUrl => IdfyConfiguration.BaseUrl;
 
-        internal static string OAuthToken => $"{IdfyConfiguration.OAuthBaseUrl}/oauth/connect/token";
+        internal static string OAuthToken => $"{IdfyConfiguration.OAuthBaseUrl}/connect/token";
 
         internal static string Signature => $"{BaseUrl}/signature";
 
