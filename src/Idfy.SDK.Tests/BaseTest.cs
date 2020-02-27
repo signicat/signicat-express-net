@@ -29,7 +29,7 @@ namespace Idfy.SDK.Tests
         private static object Initialize()
         {
             var port = Environment.GetEnvironmentVariable("IDFY_MOCK_SERVER_PORT") ?? "5000";
-            var url = $"http://localhost:{port}/oauth";
+            var url = $"http://localhost:{port}";
 
             _mockHttpClientHandler = new Mock<HttpClientHandler>()
             {
@@ -38,7 +38,7 @@ namespace Idfy.SDK.Tests
 
             IdfyConfiguration.HttpClient = new HttpClient(_mockHttpClientHandler.Object);
             IdfyConfiguration.BaseUrl = url;
-            IdfyConfiguration.OAuthBaseUrl = url;
+            IdfyConfiguration.OAuthBaseUrl = url + "/oauth";
             IdfyConfiguration.SetClientCredentials("idfy-sdk-test", "secret", new List<OAuthScope>());
             
             // Make sure that the Idfy Mock Server is running
