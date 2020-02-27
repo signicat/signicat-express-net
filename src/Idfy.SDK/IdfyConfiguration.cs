@@ -12,6 +12,12 @@ namespace Idfy
         private static string _baseUrl;
         private static string _oauthBaseUrl;
 
+        /// <summary>
+        /// Sets the OAuth client credentials and scopes.
+        /// </summary>
+        /// <param name="clientId">Client ID.</param>
+        /// <param name="clientSecret">Client secret.</param>
+        /// <param name="scopes">Scopes.</param>
         public static void SetClientCredentials(string clientId, string clientSecret, IEnumerable<OAuthScope> scopes)
         {
             ClientId = clientId;
@@ -19,6 +25,12 @@ namespace Idfy
             Scopes = scopes.Select(s => s.ToEnumMemberString());
         }
         
+        /// <summary>
+        /// Sets the OAuth client credentials and scopes.
+        /// </summary>
+        /// <param name="clientId">Client ID.</param>
+        /// <param name="clientSecret">Client secret.</param>
+        /// <param name="scopes">Scopes.</param>
         public static void SetClientCredentials(string clientId, string clientSecret, IEnumerable<string> scopes)
         {
             ClientId = clientId;
@@ -27,24 +39,31 @@ namespace Idfy
         }
         
         /// <summary>
-        /// Lets you provide your own HttpMessageHandler.
+        /// Lets you provide your own <see cref="HttpClient"/>.
         /// </summary>
-        public static HttpMessageHandler HttpMessageHandler { get; set; }
+        public static HttpClient HttpClient { get; set; }
         
-        public static TimeSpan? HttpTimeout { get; set; }
-        
+        /// <summary>
+        /// Gets or sets the Idfy API base URL.
+        /// </summary>
         public static string BaseUrl
         {
             get => string.IsNullOrWhiteSpace(_baseUrl) ? Urls.DefaultBaseUrl : _baseUrl;
             set => _baseUrl = value;
         }
 
+        /// <summary>
+        /// Gets or sets the Idfy OAuth base URL.
+        /// </summary>
         public static string OAuthBaseUrl
         {
             get => string.IsNullOrWhiteSpace(_oauthBaseUrl) ? Urls.DefaultOAuthBaseUrl : _oauthBaseUrl;
             set => _oauthBaseUrl = value;
         }
 
+        /// <summary>
+        /// Gets the version of the Idfy .NET SDK.
+        /// </summary>
         public static string SdkVersion
         {
             get
