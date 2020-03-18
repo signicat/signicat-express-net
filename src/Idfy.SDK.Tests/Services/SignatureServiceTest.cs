@@ -476,7 +476,7 @@ namespace Idfy.SDK.Tests
                 FileType.Pdf, Language.EN, false);
             
             Assert.IsNotNull(methods);
-            AssertRequest(HttpMethod.Get, "/signature/signature-methods");
+            AssertRequest(HttpMethod.Get, "/signature/signature-methods?mechanism=pkisignature&fileType=pdf&language=EN&signableAttachments=False");
         }
         
         [Test]
@@ -486,7 +486,7 @@ namespace Idfy.SDK.Tests
                 FileType.Pdf, Language.EN, false);
             
             Assert.IsNotNull(methods);
-            AssertRequest(HttpMethod.Get, "/signature/signature-methods");
+            AssertRequest(HttpMethod.Get, "/signature/signature-methods?mechanism=pkisignature&fileType=pdf&language=EN&signableAttachments=False");
         }
         
         [Test]
@@ -496,7 +496,7 @@ namespace Idfy.SDK.Tests
                 FileType.Pdf, Language.EN, false);
             
             Assert.IsNotNull(methods);
-            AssertRequest(HttpMethod.Get, "/signature/signature-methods/account");
+            AssertRequest(HttpMethod.Get, "/signature/signature-methods/account?mechanism=pkisignature&fileType=pdf&language=EN&signableAttachments=False");
         }
         
         [Test]
@@ -506,7 +506,7 @@ namespace Idfy.SDK.Tests
                 FileType.Pdf, Language.EN, false);
             
             Assert.IsNotNull(methods);
-            AssertRequest(HttpMethod.Get, "/signature/signature-methods/account");
+            AssertRequest(HttpMethod.Get, "/signature/signature-methods/account?mechanism=pkisignature&fileType=pdf&language=EN&signableAttachments=False");
         }
     }
 }
