@@ -468,5 +468,45 @@ namespace Idfy.SDK.Tests
             Assert.IsNotNull(spinners);
             AssertRequest(HttpMethod.Get, $"/signature/themes/list/spinners");
         }
+        
+        [Test]
+        public void ListSignatureMethods()
+        {
+            var methods = _signatureService.ListSignatureMethods(SignatureMechanism.PkiSignature, 
+                FileType.Pdf, Language.EN, false);
+            
+            Assert.IsNotNull(methods);
+            AssertRequest(HttpMethod.Get, "/signature/signature-methods?mechanism=pkisignature&fileType=pdf&language=EN&signableAttachments=False");
+        }
+        
+        [Test]
+        public async Task ListSignatureMethodsAsync()
+        {
+            var methods = await _signatureService.ListSignatureMethodsAsync(SignatureMechanism.PkiSignature,
+                FileType.Pdf, Language.EN, false);
+            
+            Assert.IsNotNull(methods);
+            AssertRequest(HttpMethod.Get, "/signature/signature-methods?mechanism=pkisignature&fileType=pdf&language=EN&signableAttachments=False");
+        }
+        
+        [Test]
+        public void ListSignatureMethodsForAccount()
+        {
+            var methods = _signatureService.ListSignatureMethodsForAccount(SignatureMechanism.PkiSignature, 
+                FileType.Pdf, Language.EN, false);
+            
+            Assert.IsNotNull(methods);
+            AssertRequest(HttpMethod.Get, "/signature/signature-methods/account?mechanism=pkisignature&fileType=pdf&language=EN&signableAttachments=False");
+        }
+        
+        [Test]
+        public async Task ListSignatureMethodsForAccountAsync()
+        {
+            var methods = await _signatureService.ListSignatureMethodsForAccountAsync(SignatureMechanism.PkiSignature,
+                FileType.Pdf, Language.EN, false);
+            
+            Assert.IsNotNull(methods);
+            AssertRequest(HttpMethod.Get, "/signature/signature-methods/account?mechanism=pkisignature&fileType=pdf&language=EN&signableAttachments=False");
+        }
     }
 }

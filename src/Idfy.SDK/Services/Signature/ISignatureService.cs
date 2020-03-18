@@ -438,5 +438,45 @@ namespace Idfy.Signature
         /// </summary>
         /// <returns></returns>
         Task<List<Spinner>> ListSpinnersAsync();
+
+        /// <summary>
+        /// Returns a list of all the supported signature-methods.
+        /// </summary>
+        /// <param name="mechanism">The available signature methods may differ between signature-mechanisms</param>
+        /// <param name="fileType">The available signature methods may differ between file-types</param>
+        /// <param name="language">Language for the title/description returned</param>
+        /// <param name="signableAttachments">When using signable attachments some signature-methods may not be available</param>
+        /// <returns></returns>
+        List<AppSignatureMethod> ListSignatureMethods(SignatureMechanism mechanism, FileType fileType, Language language, bool signableAttachments);
+
+        /// <summary>
+        /// Returns a list of all the supported signature-methods.
+        /// </summary>
+        /// <param name="mechanism">The available signature methods may differ between signature-mechanisms</param>
+        /// <param name="fileType">The available signature methods may differ between file-types</param>
+        /// <param name="language">Language for the title/description returned</param>
+        /// <param name="signableAttachments">When using signable attachments some signature-methods may not be available</param>
+        /// <returns></returns>
+        Task<List<AppSignatureMethod>> ListSignatureMethodsAsync(SignatureMechanism mechanism, FileType fileType, Language language, bool signableAttachments);
+        
+        /// <summary>
+        /// Returns a list of all the supported signature-methods.
+        /// </summary>
+        /// <param name="mechanism">The available signature methods may differ between signature-mechanisms</param>
+        /// <param name="fileType">The available signature methods may differ between file-types</param>
+        /// <param name="language">Language for the title/description returned</param>
+        /// <param name="signableAttachments">When using signable attachments some signature-methods may not be available</param>
+        /// <returns></returns>
+        List<AppSignatureMethod> ListSignatureMethodsForAccount(SignatureMechanism mechanism, FileType fileType, Language language, bool signableAttachments);
+
+        /// <summary>
+        /// Returns a list of all the supported signature-methods.
+        /// </summary>
+        /// <param name="mechanism">The available signature methods may differ between signature-mechanisms</param>
+        /// <param name="fileType">The available signature methods may differ between file-types</param>
+        /// <param name="language">Language for the title/description returned</param>
+        /// <param name="signableAttachments">When using signable attachments some signature-methods may not be available</param>
+        /// <returns></returns>
+        Task<List<AppSignatureMethod>> ListSignatureMethodsForAccountAsync(SignatureMechanism mechanism, FileType fileType, Language language, bool signableAttachments);
     }
 }

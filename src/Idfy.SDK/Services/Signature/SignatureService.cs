@@ -709,5 +709,50 @@ namespace Idfy.Signature
         {
             return await GetAsync<List<Spinner>>($"{Urls.Signature}/themes/list/spinners");
         }
+
+        public List<AppSignatureMethod> ListSignatureMethods(SignatureMechanism mechanism, FileType fileType, Language language, bool signableAttachments)
+        {
+            var url = ListSignMethodsUrlWithParams($"{Urls.Signature}/signature-methods", mechanism, fileType, language, signableAttachments);
+            return Get<List<AppSignatureMethod>>(url);
+        }
+
+       
+
+        public Task<List<AppSignatureMethod>> ListSignatureMethodsAsync(SignatureMechanism mechanism, FileType fileType, Language language,
+            bool signableAttachments)
+        {
+            var url = ListSignMethodsUrlWithParams($"{Urls.Signature}/signature-methods", mechanism, fileType, language, signableAttachments);
+            return GetAsync<List<AppSignatureMethod>>(url);
+        }
+
+        public List<AppSignatureMethod> ListSignatureMethodsForAccount(SignatureMechanism mechanism, FileType fileType, Language language,
+            bool signableAttachments)
+        {
+            var url = ListSignMethodsUrlWithParams($"{Urls.Signature}/signature-methods/account", mechanism, fileType, language, signableAttachments);
+            return Get<List<AppSignatureMethod>>(url);
+        }
+
+        public Task<List<AppSignatureMethod>> ListSignatureMethodsForAccountAsync(SignatureMechanism mechanism, FileType fileType, Language language,
+            bool signableAttachments)
+        {
+            var url = ListSignMethodsUrlWithParams($"{Urls.Signature}/signature-methods/account", mechanism, fileType, language, signableAttachments);
+            return GetAsync<List<AppSignatureMethod>>(url);
+        }
+        
+        private static string ListSignMethodsUrlWithParams(string url, SignatureMechanism mechanism, FileType fileType, Language language,
+            bool signableAttachments)
+        {
+            url = APIHelper.AppendQueryParams(url,
+                new Dictionary<string, object>()
+                {
+                    {"mechanism", mechanism},
+                    {"fileType", fileType},
+                    {"language", language},
+                    {"signableAttachments", signableAttachments}
+                });
+            return url;
+        }
+        
+        
     }
 }
