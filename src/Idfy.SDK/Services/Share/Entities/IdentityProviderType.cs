@@ -8,6 +8,7 @@
         SweBankIdMobile,
         NoBuypass, 
         DaNemId, 
-        FiTupas
+        FiTupas,
+        SmsOtp
     }
 }
