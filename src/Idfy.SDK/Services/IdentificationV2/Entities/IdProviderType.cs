@@ -33,5 +33,8 @@ namespace Idfy.IdentificationV2
         
         [EnumMember(Value = "google")]
         Google = 9,
+        
+        [EnumMember(Value = "linkedin")]
+        LinkedIn = 10,
     }
 }
