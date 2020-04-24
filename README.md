@@ -18,7 +18,7 @@ Package Manager:
 
 ## Documentation
 - [Idfy REST API Reference](https://developer.idfy.io/api)
-- [Idfy Developer Documentation](https://docs.idfy.io)
+- [Idfy Developer Documentation](https://developer.idfy.io/docs)
 
 
 ## Sample Usage
