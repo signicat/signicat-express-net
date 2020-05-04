@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 using Idfy.Infrastructure;
 
@@ -55,7 +57,12 @@ namespace Idfy.Share
         {
             using (var content = new MultipartFormDataContent())
             {
-                content.Add(new StreamContent(new MemoryStream(file)), "file", filename);
+                // A kind of hacky way to enforce utf8 encoding (problems with æøå)
+                var streamContent = new StreamContent(new MemoryStream(file));
+                streamContent.Headers.Add("Content-Disposition",
+                    new string(Encoding.UTF8.GetBytes($"form-data; name=\"file\"; filename=\"{filename}\"").
+                        Select(b => (char)b).ToArray()));
+                content.Add(streamContent);
                 PostFormContentData($"{Urls.Share}/buckets/{id}/upload/{fileId}", content);
             }
         }
@@ -72,7 +79,12 @@ namespace Idfy.Share
         {
             using (var content = new MultipartFormDataContent())
             {
-                content.Add(new StreamContent(new MemoryStream(file)), "file", filename);
+                // A kind of hacky way to enforce utf8 encoding (problems with æøå)
+                var streamContent = new StreamContent(new MemoryStream(file));
+                streamContent.Headers.Add("Content-Disposition",
+                    new string(Encoding.UTF8.GetBytes($"form-data; name=\"file\"; filename=\"{filename}\"").
+                        Select(b => (char)b).ToArray()));
+                content.Add(streamContent);
                 await PostFormContentDataAsync($"{Urls.Share}/buckets/{id}/upload/{fileId}", content);
             }
         }
