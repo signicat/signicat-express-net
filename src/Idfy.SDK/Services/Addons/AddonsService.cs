@@ -43,8 +43,7 @@ namespace Idfy.Addons
                     {"matchMode", personQuery.MatchMode},
                     {"addPdfAppendix", personQuery.AddPdfAppendix},
                 });
-            var tes = await GetAsync<PersonResponse>(url);
-            return tes;
+            return await GetAsync<PersonResponse>(url);
         }
 
         /// <summary>
