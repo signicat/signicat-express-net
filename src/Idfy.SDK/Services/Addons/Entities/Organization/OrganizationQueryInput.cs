@@ -1,11 +1,8 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
-using Signicat.Aml.Vipps.Client.Models.API;
-using Constants = IdentiSign.AddonServices.Constants.Constants;
 
-namespace Idfy.Addons
+namespace Idfy.Addons.Entities.Organization
 {
     /// <summary>
     /// Input for Organization queries
@@ -36,7 +33,6 @@ namespace Idfy.Addons
         /// <summary>
         /// Language of the report, currently supports NO/EN (two letters ISO 639-1)
         /// </summary>
-        [RegularExpression(Constants.LanguageRegex)]
         public string Language { get; set; }
 
         public string RequestUri { get; set; }
@@ -103,5 +99,11 @@ namespace Idfy.Addons
 
         [EnumMember(Value = "links.reports.credit")]
         links_reports_credit,
+    }
+
+    public enum MatchMode
+    {
+        [EnumMember(Value = "exact")] EXACT,
+        [EnumMember(Value = "fuzzy")] FUZZY,
     }
 }

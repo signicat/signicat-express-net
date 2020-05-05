@@ -1,5 +1,6 @@
 using System.Collections.Generic;
-using System.Threading.Tasks;
+using Idfy.Addons.Entities;
+using Idfy.Addons.Entities.Organization;
 using Idfy.Infrastructure;
 
 namespace Idfy.Addons
@@ -9,7 +10,7 @@ namespace Idfy.Addons
         public Addons()
         {
         }
-        
+
         public Addons(string clientId, string clientSecret, IEnumerable<string> scopes)
             : base(clientId, clientSecret, scopes)
         {
@@ -19,27 +20,24 @@ namespace Idfy.Addons
             : base(clientId, clientSecret, scopes)
         {
         }
-        
+
         /// <summary>
         /// Retrieve person information 
         /// </summary>
-        /// <param name="organizationNumber"></param>
-        /// <param name="nationality"></param>
-        /// <param name="dunsNumber"></param>
-        /// <param name="expands"></param>
-        /// <param name="language"></param>
         /// <returns></returns>
-        public AmlPersonResponse AmlPerson(string id)
+        public PersonAmlModel AmlPerson(PersonQueryModel personQuery)
         {
-            return Get<AmlPersonResponse>($"{Urls.Addons}/api/aml/person");
+            return Get<PersonAmlModel>($"{Urls.Addons}/api/aml/person");
         }
+
         /// <summary>
         /// Retrieve organization information 
         /// </summary>
-        /// <param name="id"></param>
         /// <returns></returns>
-        public IdSession GetSession(string id)
+        public OrganizationResponseModel AmlOrganization(OrganizationQueryInput organizationQuery)
         {
-            return Get<IdSession>($"{Urls.IdentificationV2}/sessions/{id}");
+            return Get<OrganizationResponseModel>($"{Urls.Addons}/api/aml/organization");
         }
+    }
+}
 }
