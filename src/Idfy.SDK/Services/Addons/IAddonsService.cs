@@ -1,15 +1,18 @@
-using System.Collections.Generic;
 using System.Threading.Tasks;
-using Idfy.Addons.Entities;
 using Idfy.Addons.Entities.Organization;
-using Idfy.IdentificationV2;
+using Idfy.Addons.Entities.Person;
+using OrganizationResponse = Idfy.Addons.Entities.Organization.OrganizationResponse;
 
 namespace Idfy.Addons
 {
     public interface IAddonsService
     {
-        PersonAmlModel AmlPerson(PersonQueryModel personQuery);
+        Task<PersonResponse> GetAmlPersonAsync(PersonQueryModel personQuery);
 
-        OrganizationResponseModel AmlOrganization(OrganizationQueryInput personQuery);
+        Task<OrganizationResponse> GetAmlOrganizationAsync(OrganizationQueryInput personQuery);
+        
+        PersonResponse GetAmlPerson(PersonQueryModel personQuery);
+
+        OrganizationResponse GetAmlOrganization(OrganizationQueryInput personQuery);
     }
 }

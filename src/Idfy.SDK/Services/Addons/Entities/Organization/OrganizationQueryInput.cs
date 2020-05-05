@@ -1,37 +1,37 @@
-﻿﻿using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
 namespace Idfy.Addons.Entities.Organization
 {
     /// <summary>
-    /// Input for Organization queries
+    ///     Input for Organization queries
     /// </summary>
     public class OrganizationQueryInput
     {
         /// <summary>
-        /// Organization number
+        ///     Organization number
         /// </summary>
         public string OrganizationNumber { get; set; }
 
         /// <summary>
-        /// Nationality of the organization (two letters ISO 3166 )
+        ///     Nationality of the organization (two letters ISO 3166 )
         /// </summary>
         public string Nationality { get; set; }
 
         /// <summary>
-        /// DUNS number
+        ///     DUNS number
         /// </summary>
         public string DunsNumber { get; set; }
 
 
         /// <summary>
-        /// List of expands for the information requested
+        ///     List of expands for the information requested
         /// </summary>
         public List<OrganizationExpands> Expands { get; set; }
 
         /// <summary>
-        /// Language of the report, currently supports NO/EN (two letters ISO 639-1)
+        ///     Language of the report, currently supports NO/EN (two letters ISO 639-1)
         /// </summary>
         public string Language { get; set; }
 
@@ -40,12 +40,12 @@ namespace Idfy.Addons.Entities.Organization
         public Guid TransactionId { get; set; }
 
         /// <summary>
-        /// Name of organization
+        ///     Name of organization
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// Match mode
+        ///     Match mode
         /// </summary>
         public MatchMode MatchMode { get; set; }
     }
@@ -98,12 +98,6 @@ namespace Idfy.Addons.Entities.Organization
         links_reports_certificate_of_incorporation,
 
         [EnumMember(Value = "links.reports.credit")]
-        links_reports_credit,
-    }
-
-    public enum MatchMode
-    {
-        [EnumMember(Value = "exact")] EXACT,
-        [EnumMember(Value = "fuzzy")] FUZZY,
+        links_reports_credit
     }
 }

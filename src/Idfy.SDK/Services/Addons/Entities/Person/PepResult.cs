@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using Idfy.Addons.Entities.Organization;
-using Idfy.Addons.Entities.Person;
 
-namespace Idfy.Addons.Entities
+namespace Idfy.Addons.Entities.Person
 {
     /// <summary>
-    /// List of all Sanction items with match for the input request.
+    /// List of all PEP items with match for the input request.
     /// </summary>
-    public class SanctionResult
+    public class PepResult
     { 
         /// <summary>
         /// Quality indicator of match. Higher number means better match.

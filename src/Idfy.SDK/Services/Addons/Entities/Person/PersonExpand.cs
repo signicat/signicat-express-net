@@ -1,6 +1,6 @@
 ﻿﻿﻿﻿using System.Runtime.Serialization;
 
-  namespace Idfy.Addons.Entities.Person
+   namespace Idfy.Addons.Entities.Person
 {
     /// <summary>
     /// Use comma separated list to pick what information you want to receive 

@@ -1,22 +1,25 @@
 using System.Collections.Generic;
-using Idfy.Addons.Entities;
+using System.Linq;
+using System.Threading.Tasks;
 using Idfy.Addons.Entities.Organization;
+using Idfy.Addons.Entities.Person;
 using Idfy.Infrastructure;
+using OrganizationResponse = Idfy.Addons.Entities.Organization.OrganizationResponse;
 
 namespace Idfy.Addons
 {
-    public class Addons : IdfyBaseService, IAddonsService
+    public class AddonsService : IdfyBaseService, IAddonsService
     {
-        public Addons()
+        public AddonsService()
         {
         }
 
-        public Addons(string clientId, string clientSecret, IEnumerable<string> scopes)
+        public AddonsService(string clientId, string clientSecret, IEnumerable<string> scopes)
             : base(clientId, clientSecret, scopes)
         {
         }
 
-        public Addons(string clientId, string clientSecret, IEnumerable<OAuthScope> scopes)
+        public AddonsService(string clientId, string clientSecret, IEnumerable<OAuthScope> scopes)
             : base(clientId, clientSecret, scopes)
         {
         }
@@ -25,19 +28,79 @@ namespace Idfy.Addons
         /// Retrieve person information 
         /// </summary>
         /// <returns></returns>
-        public PersonAmlModel AmlPerson(PersonQueryModel personQuery)
+        public async Task<PersonResponse> GetAmlPersonAsync(PersonQueryModel personQuery)
         {
-            return Get<PersonAmlModel>($"{Urls.Addons}/api/aml/person");
+            var url = APIHelper.AppendQueryParams($"{Urls.Addons}/api/aml/person/",
+                new Dictionary<string, object>()
+                {
+                    {"dateOfBirth", personQuery.DateOfBirth},
+                    {"firstName", personQuery.FirstName},
+                    {"lastName", personQuery.LastName},
+                    {"ssn", personQuery.Ssn},
+                    {"countryOfSSn", personQuery.CountryOfSsn},
+                    {"language", personQuery.Language},
+                    {"Expands", string.Join(",", personQuery.Expands)},
+                    {"matchMode", personQuery.MatchMode},
+                    {"addPdfAppendix", personQuery.AddPdfAppendix},
+                });
+            var tes = await GetAsync<PersonResponse>(url);
+            return tes;
         }
 
         /// <summary>
         /// Retrieve organization information 
         /// </summary>
         /// <returns></returns>
-        public OrganizationResponseModel AmlOrganization(OrganizationQueryInput organizationQuery)
+        public async Task<OrganizationResponse> GetAmlOrganizationAsync(OrganizationQueryInput organizationQuery)
         {
-            return Get<OrganizationResponseModel>($"{Urls.Addons}/api/aml/organization");
+            var url = APIHelper.AppendQueryParams($"{Urls.Addons}/api/aml/organization/",
+                new Dictionary<string, object>()
+                {
+                    {"OrganizationNumber", organizationQuery.OrganizationNumber},
+                    {"Nationality", organizationQuery.Nationality},
+                    {"DunsNumber", organizationQuery.DunsNumber},
+                    {"Expands", string.Join(",", organizationQuery.Expands)},
+                    {"RequestUri", organizationQuery.RequestUri},
+                    {"Language", organizationQuery.Language},
+                });
+            return await GetAsync<OrganizationResponse>(url);
+        }
+
+        public PersonResponse GetAmlPerson(PersonQueryModel personQuery)
+        {
+            var url = APIHelper.AppendQueryParams($"{Urls.Addons}/api/aml/person/",
+                new Dictionary<string, object>()
+                {
+                    {"dateOfBirth", personQuery.DateOfBirth},
+                    {"firstName", personQuery.FirstName},
+                    {"lastName", personQuery.LastName},
+                    {"ssn", personQuery.Ssn},
+                    {"countryOfSSn", personQuery.CountryOfSsn},
+                    {"language", personQuery.Language},
+                    {"Expands", string.Join(",", personQuery.Expands)},
+                    {"matchMode", personQuery.MatchMode},
+                    {"addPdfAppendix", personQuery.AddPdfAppendix},
+                });
+            return Get<PersonResponse>(url);
+        }
+
+        /// <summary>
+        /// Retrieve organization information 
+        /// </summary>
+        /// <returns></returns>
+        public OrganizationResponse GetAmlOrganization(OrganizationQueryInput organizationQuery)
+        {
+            var url = APIHelper.AppendQueryParams($"{Urls.Addons}/api/aml/organization/",
+                new Dictionary<string, object>()
+                {
+                    {"OrganizationNumber", organizationQuery.OrganizationNumber},
+                    {"Nationality", organizationQuery.Nationality},
+                    {"DunsNumber", organizationQuery.DunsNumber},
+                    {"Expands", string.Join(",", organizationQuery.Expands)},
+                    {"RequestUri", organizationQuery.RequestUri},
+                    {"Language", organizationQuery.Language},
+                });
+            return Get<OrganizationResponse>(url);
         }
     }
-}
 }
