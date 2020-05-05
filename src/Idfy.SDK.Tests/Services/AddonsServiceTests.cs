@@ -24,6 +24,7 @@ namespace Idfy.SDK.Tests
         }
 
         [Test]
+        [Ignore("Requires clientid + secret")]
         public async Task GetAmlOrganization()
         {
             var opts = new OrganizationQueryInput()
@@ -40,7 +41,9 @@ namespace Idfy.SDK.Tests
             var response = await _addonsService.GetAmlOrganizationAsync(opts);
             Assert.IsNotNull(response);
         }
+        
         [Test]
+        [Ignore("Requires clientid + secret")]
         public async Task GetAmlPerson()
         {
             var opts = new PersonQueryModel()
