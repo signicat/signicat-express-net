@@ -7,7 +7,7 @@ namespace Idfy.Addons.Entities.Organization
     /// <summary>
     ///     Input for Organization queries
     /// </summary>
-    public class OrganizationQueryInput
+    public class OrganizationQueryModel
     {
         /// <summary>
         ///     Organization number
