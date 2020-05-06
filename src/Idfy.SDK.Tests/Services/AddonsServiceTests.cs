@@ -1,67 +1,115 @@
 ﻿using System.Collections.Generic;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Idfy.Addons;
 using Idfy.Addons.Entities;
 using Idfy.Addons.Entities.Organization;
 using Idfy.Addons.Entities.Person;
+using Idfy.Infrastructure;
 using NUnit.Framework;
+using AutoFixture;
 
 namespace Idfy.SDK.Tests
 {
-    public class AddonsServicetest : BaseTest
+    [TestFixture]
+    public class AddonsServiceTest : BaseTest
     {
         private IAddonsService _addonsService;
 
         [SetUp]
         public void Setup()
         {
-            // To test against test env: 
-            // Change oauth token url in BaseTest -> Initialize to https://api.idfy.io
-            // Add a client here with test access to addons and overridden BankIdAML settings
-            // Set Urls -> Addons to https://addonstest.signere.com
-            _addonsService = new AddonsService("<REMOVED>",
-                "<REMOVED>", new List<string> {"addons"});
+            _addonsService = new AddonsService();
         }
 
         [Test]
-        [Ignore("Requires clientid + secret")]
-        public async Task GetAmlOrganization()
+        [Ignore("Awaiting update to docs")]
+        public async Task GetAmlOrganizationAsync()
         {
-            var opts = new OrganizationQueryInput()
-            {
-                Expands = new List<OrganizationExpands>
+            var opts = Fixture.Create<OrganizationQueryModel>();
+            var url = APIHelper.AppendQueryParams($"{Urls.Addons}/api/aml/organization/",
+                new Dictionary<string, object>()
                 {
-                    OrganizationExpands.keyInformation_lei,
-                    OrganizationExpands.address,
-                    OrganizationExpands.links_reports_aml
-                },
-                OrganizationNumber = "123456789",
-                Nationality = "NO"
-            };
+                    {"OrganizationNumber", opts.OrganizationNumber},
+                    {"Nationality", opts.Nationality},
+                    {"DunsNumber", opts.DunsNumber},
+                    {"Expands", string.Join(",", opts.Expands)},
+                    {"RequestUri", opts.RequestUri},
+                    {"Language", opts.Language},
+                });
+            
             var response = await _addonsService.GetAmlOrganizationAsync(opts);
             Assert.IsNotNull(response);
+            AssertRequest(HttpMethod.Get, url);
         }
-        
+
         [Test]
-        [Ignore("Requires clientid + secret")]
-        public async Task GetAmlPerson()
+        [Ignore("Awaiting update to docs")]
+        public async Task GetAmlPersonAsync()
         {
-            var opts = new PersonQueryModel()
-            {
-                Expands = new List<PersonExpand>()
+            var opts = Fixture.Create<PersonQueryModel>();
+            var url = APIHelper.AppendQueryParams($"{Urls.Addons}/api/aml/person/",
+                new Dictionary<string, object>()
                 {
-                    PersonExpand.aml,
-                    PersonExpand.address_postal,
-                    PersonExpand.links_reports_aml
-                },
-                FirstName = "Tomas",
-                LastName = "Topstad",
-                Ssn = "01010750160",
-                MatchMode = MatchMode.EXACT,
-                CountryOfSsn = "NO"
-            };
+                    {"dateOfBirth", opts.DateOfBirth},
+                    {"firstName", opts.FirstName},
+                    {"lastName", opts.LastName},
+                    {"ssn", opts.Ssn},
+                    {"countryOfSSn", opts.CountryOfSsn},
+                    {"language", opts.Language},
+                    {"Expands", string.Join(",", opts.Expands)},
+                    {"matchMode", opts.MatchMode},
+                    {"addPdfAppendix", opts.AddPdfAppendix},
+                });
+
             var response = await _addonsService.GetAmlPersonAsync(opts);
             Assert.IsNotNull(response);
+            AssertRequest(HttpMethod.Get, url);
+        }
+
+        [Test]
+        [Ignore("Awaiting update to docs")]
+        public void GetAmlPerson()
+        {
+            var opts = Fixture.Create<PersonQueryModel>();
+            var url = APIHelper.AppendQueryParams($"{Urls.Addons}/api/aml/person/",
+                new Dictionary<string, object>()
+                {
+                    {"dateOfBirth", opts.DateOfBirth},
+                    {"firstName", opts.FirstName},
+                    {"lastName", opts.LastName},
+                    {"ssn", opts.Ssn},
+                    {"countryOfSSn", opts.CountryOfSsn},
+                    {"language", opts.Language},
+                    {"Expands", string.Join(",", opts.Expands)},
+                    {"matchMode", opts.MatchMode},
+                    {"addPdfAppendix", opts.AddPdfAppendix},
+                });
+
+            var response = _addonsService.GetAmlPerson(opts);
+            Assert.IsNotNull(response);
+            AssertRequest(HttpMethod.Get, url);
+        }
+
+        [Test]
+        [Ignore("Awaiting update to docs")]
+        public void GetAmlOrganization()
+        {
+            var opts = Fixture.Create<OrganizationQueryModel>();
+            var url = APIHelper.AppendQueryParams($"{Urls.Addons}/api/aml/organization/",
+                new Dictionary<string, object>()
+                {
+                    {"OrganizationNumber", opts.OrganizationNumber},
+                    {"Nationality", opts.Nationality},
+                    {"DunsNumber", opts.DunsNumber},
+                    {"Expands", string.Join(",", opts.Expands)},
+                    {"RequestUri", opts.RequestUri},
+                    {"Language", opts.Language},
+                });
+
+            var response = _addonsService.GetAmlOrganization(opts);
+            Assert.IsNotNull(response);
+            AssertRequest(HttpMethod.Get, url);
         }
     }
 }

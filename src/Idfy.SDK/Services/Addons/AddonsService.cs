@@ -50,7 +50,7 @@ namespace Idfy.Addons
         /// Retrieve organization information 
         /// </summary>
         /// <returns></returns>
-        public async Task<OrganizationResponse> GetAmlOrganizationAsync(OrganizationQueryInput organizationQuery)
+        public async Task<OrganizationResponse> GetAmlOrganizationAsync(OrganizationQueryModel organizationQuery)
         {
             var url = APIHelper.AppendQueryParams($"{Urls.Addons}/api/aml/organization/",
                 new Dictionary<string, object>()
@@ -87,7 +87,7 @@ namespace Idfy.Addons
         /// Retrieve organization information 
         /// </summary>
         /// <returns></returns>
-        public OrganizationResponse GetAmlOrganization(OrganizationQueryInput organizationQuery)
+        public OrganizationResponse GetAmlOrganization(OrganizationQueryModel organizationQuery)
         {
             var url = APIHelper.AppendQueryParams($"{Urls.Addons}/api/aml/organization/",
                 new Dictionary<string, object>()

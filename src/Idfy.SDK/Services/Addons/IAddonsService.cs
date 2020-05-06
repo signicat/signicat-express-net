@@ -17,7 +17,7 @@ namespace Idfy.Addons
         /// Retrieve organization information 
         /// </summary>
         /// <returns></returns>
-        Task<OrganizationResponse> GetAmlOrganizationAsync(OrganizationQueryInput personQuery);
+        Task<OrganizationResponse> GetAmlOrganizationAsync(OrganizationQueryModel personQuery);
         
         /// <summary>
         /// Retrieve person information 
@@ -29,6 +29,6 @@ namespace Idfy.Addons
         /// Retrieve organization information 
         /// </summary>
         /// <returns></returns>
-        OrganizationResponse GetAmlOrganization(OrganizationQueryInput personQuery);
+        OrganizationResponse GetAmlOrganization(OrganizationQueryModel personQuery);
     }
 }
