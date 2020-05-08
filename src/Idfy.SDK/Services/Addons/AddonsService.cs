@@ -30,7 +30,7 @@ namespace Idfy.Addons
         /// <returns></returns>
         public async Task<PersonResponse> GetAmlPersonAsync(PersonQueryModel personQuery)
         {
-            var url = APIHelper.AppendQueryParams($"{Urls.Addons}/api/aml/person/",
+            var url = APIHelper.AppendQueryParams($"{Urls.Addons}/aml/person/",
                 new Dictionary<string, object>()
                 {
                     {"dateOfBirth", personQuery.DateOfBirth},
@@ -52,7 +52,7 @@ namespace Idfy.Addons
         /// <returns></returns>
         public async Task<OrganizationResponse> GetAmlOrganizationAsync(OrganizationQueryModel organizationQuery)
         {
-            var url = APIHelper.AppendQueryParams($"{Urls.Addons}/api/aml/organization/",
+            var url = APIHelper.AppendQueryParams($"{Urls.Addons}/aml/organization/",
                 new Dictionary<string, object>()
                 {
                     {"OrganizationNumber", organizationQuery.OrganizationNumber},
@@ -67,7 +67,7 @@ namespace Idfy.Addons
 
         public PersonResponse GetAmlPerson(PersonQueryModel personQuery)
         {
-            var url = APIHelper.AppendQueryParams($"{Urls.Addons}/api/aml/person/",
+            var url = APIHelper.AppendQueryParams($"{Urls.Addons}/aml/person/",
                 new Dictionary<string, object>()
                 {
                     {"dateOfBirth", personQuery.DateOfBirth},
@@ -89,7 +89,7 @@ namespace Idfy.Addons
         /// <returns></returns>
         public OrganizationResponse GetAmlOrganization(OrganizationQueryModel organizationQuery)
         {
-            var url = APIHelper.AppendQueryParams($"{Urls.Addons}/api/aml/organization/",
+            var url = APIHelper.AppendQueryParams($"{Urls.Addons}/aml/organization/",
                 new Dictionary<string, object>()
                 {
                     {"OrganizationNumber", organizationQuery.OrganizationNumber},
