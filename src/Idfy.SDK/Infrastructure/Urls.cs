@@ -29,6 +29,6 @@
         internal static string Share => $"{BaseUrl}/share";
 
         internal static string IdentificationV2 => $"{BaseUrl}/identification/v2";
-        internal static string Addons => "https://signereaddons.azurewebsites.net";
+        internal static string Addons => $"{BaseUrl}/information";
     }
 }

@@ -27,7 +27,7 @@ namespace Idfy.SDK.Tests
         public async Task GetAmlOrganizationAsync()
         {
             var opts = Fixture.Create<OrganizationQueryModel>();
-            var url = APIHelper.AppendQueryParams($"{Urls.Addons}/api/aml/organization/",
+            var url = APIHelper.AppendQueryParams($"{Urls.Addons}/aml/organization/",
                 new Dictionary<string, object>()
                 {
                     {"OrganizationNumber", opts.OrganizationNumber},
@@ -48,7 +48,7 @@ namespace Idfy.SDK.Tests
         public async Task GetAmlPersonAsync()
         {
             var opts = Fixture.Create<PersonQueryModel>();
-            var url = APIHelper.AppendQueryParams($"{Urls.Addons}/api/aml/person/",
+            var url = APIHelper.AppendQueryParams($"{Urls.Addons}/aml/person/",
                 new Dictionary<string, object>()
                 {
                     {"dateOfBirth", opts.DateOfBirth},
@@ -72,7 +72,7 @@ namespace Idfy.SDK.Tests
         public void GetAmlPerson()
         {
             var opts = Fixture.Create<PersonQueryModel>();
-            var url = APIHelper.AppendQueryParams($"{Urls.Addons}/api/aml/person/",
+            var url = APIHelper.AppendQueryParams($"{Urls.Addons}/aml/person/",
                 new Dictionary<string, object>()
                 {
                     {"dateOfBirth", opts.DateOfBirth},
@@ -96,7 +96,7 @@ namespace Idfy.SDK.Tests
         public void GetAmlOrganization()
         {
             var opts = Fixture.Create<OrganizationQueryModel>();
-            var url = APIHelper.AppendQueryParams($"{Urls.Addons}/api/aml/organization/",
+            var url = APIHelper.AppendQueryParams($"{Urls.Addons}/aml/organization/",
                 new Dictionary<string, object>()
                 {
                     {"OrganizationNumber", opts.OrganizationNumber},
