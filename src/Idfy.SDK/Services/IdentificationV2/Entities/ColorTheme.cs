@@ -7,7 +7,7 @@ namespace Idfy.IdentificationV2
         [EnumMember(Value = "default")]
         Default = 0,
         
-        [EnumMember(Value = "pink")]
-        Pink = 1,
+        [EnumMember(Value = "light_blue")]
+        LightBlue = 1,
     }
 }
