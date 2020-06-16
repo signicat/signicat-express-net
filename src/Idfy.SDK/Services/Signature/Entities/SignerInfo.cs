@@ -31,5 +31,10 @@
         /// The signer's organization info.
         /// </summary>
         public OrganizationInfo OrganizationInfo { get; set; }
+
+        /// <summary>
+        /// Give the signer a title (i.e CTO, Buyer, Customer, Lord..), this title may be merged into the PAdES-frontpage (in PAdES setting set)
+        /// </summary>
+        public string Title { get; set; }
     }
 }
