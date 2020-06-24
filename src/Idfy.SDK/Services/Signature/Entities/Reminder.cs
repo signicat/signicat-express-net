@@ -1,14 +1,20 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Idfy.Signature
 {
     public class Reminder 
     {
         /// <summary>
-        /// Defines a chron expression that control the interval of the reminders (Use UTC time). We use Quartz cron expressions, read more about it here: http://www.quartz-scheduler.org/documentation/quartz-2.x/tutorials/crontrigger.html.
+        /// Defines a cron expression that control the interval of the reminders (Use UTC time). We use Quartz cron expressions, read more about it here: http://www.quartz-scheduler.org/documentation/quartz-2.x/tutorials/crontrigger.html.
         /// </summary>
         public string ChronSchedule { get; set; }
     
+        /// <summary>
+        /// No reminders will be sent before this date (optional)
+        /// </summary>
+        public DateTimeOffset? FirstReminderAfter { get; set; } 
+        
         /// <summary>
         /// The maximum number of reminders to be sent for each signer.
         /// </summary>
