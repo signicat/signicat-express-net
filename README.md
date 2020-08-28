@@ -17,8 +17,8 @@ Package Manager:
 	dotnet add package Idfy.SDK
 
 ## Documentation
-- [Idfy REST API Reference](https://developer.idfy.io/api)
-- [Idfy Developer Documentation](https://developer.idfy.io/docs)
+- [Idfy REST API Reference](https://developer.signicat.io/apis/overview.html)
+- [Idfy Developer Documentation](https://developer.signicat.io/docs)
 
 
 ## Sample Usage
