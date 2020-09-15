@@ -18,5 +18,10 @@ namespace Idfy.Signature
         /// A list of custom SMS texts to use for the notification. Default texts will be used if not specified.
         /// </summary>
         public List<SMS> Sms { get; set; }
+
+        /// <summary>
+        /// The receipt may be sent to persons that are not a signer on this document, by adding a recipient to this list 
+        /// </summary>
+        public List<AdditionalRecipient> AdditionalRecipients { get; set; }
     }
 }
