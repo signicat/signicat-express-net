@@ -24,5 +24,11 @@ namespace Idfy.IdentificationV2
         
         [EnumMember(Value = "insufficient_access")]
         InsufficientAccess = 6,
+        
+        [EnumMember(Value = "invalid_credentials")]
+        InvalidCredentials = 7,
+        
+        [EnumMember(Value = "service_unavailable")]
+        ServiceUnavailable = 8,
     }
 }
