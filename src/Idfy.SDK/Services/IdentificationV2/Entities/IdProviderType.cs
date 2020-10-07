@@ -36,5 +36,8 @@ namespace Idfy.IdentificationV2
         
         [EnumMember(Value = "linkedin")]
         LinkedIn = 10,
+        
+        [EnumMember(Value = "email_otp")]
+        EmailOtp = 11,
     }
 }
