@@ -39,5 +39,20 @@ namespace Idfy.IdentificationV2
         
         [EnumMember(Value = "email_otp")]
         EmailOtp = 11,
+
+        [EnumMember(Value = "microsoft")]
+        Microsoft = 12,
+        
+        [EnumMember(Value = "itsme")]
+        Itsme = 13,
+        
+        [EnumMember(Value = "idin")]
+        Idin = 14,
+        
+        [EnumMember(Value = "digid")]
+        DigiD = 15,
+        
+        [EnumMember(Value = "eherkenning")]
+        EHerkenning = 16,
     }
 }
