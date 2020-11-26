@@ -18,5 +18,8 @@ namespace Idfy.Signature
     
         [EnumMember(Value = "FI")]
         FI = 4,
+        
+        [EnumMember(Value = "NL")]
+        NL = 5,
     }
 }
