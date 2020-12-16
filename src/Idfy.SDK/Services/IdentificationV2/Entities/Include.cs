@@ -21,5 +21,8 @@ namespace Idfy.IdentificationV2
         
         [EnumMember(Value = "resource.vipps_aml_person")]
         VippsAmlPerson = 5,
+        
+        [EnumMember(Value = "organization")]
+        Organization = 6,
     }
 }

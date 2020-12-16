@@ -51,5 +51,10 @@ namespace Idfy.IdentificationV2
         /// Email address.
         /// </summary>
         public string Email { get; set; }
+
+        /// <summary>
+        /// Information about the organization the user represents.
+        /// </summary>
+        public Organization Organization { get; set; }
     }
 }
