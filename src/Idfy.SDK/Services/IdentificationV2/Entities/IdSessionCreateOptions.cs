@@ -38,6 +38,11 @@ namespace Idfy.IdentificationV2
         /// Your external reference for the session.
         /// </summary>
         public string ExternalReference { get; set; }
+        
+        /// <summary>
+        /// The department ID to mark the invoice with.
+        /// </summary>
+        public string DepartmentId { get; set; }
 
         /// <summary>
         /// UI settings for the identification process.
