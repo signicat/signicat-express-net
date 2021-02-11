@@ -15,5 +15,11 @@ namespace Idfy.IdentificationV2
         
         [EnumMember(Value = "da")]
         Da = 3,
+        
+        [EnumMember(Value = "fi")]
+        Fi,
+        
+        [EnumMember(Value = "de")]
+        De,
     }
 }
