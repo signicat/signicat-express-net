@@ -2,7 +2,7 @@
 {
     internal static class Urls
     {
-        internal static string DefaultBaseUrl => "https://api.signicat.io";
+        internal static string DefaultBaseUrl => "https://api.idfy.io";
         
         internal static string DefaultOAuthBaseUrl => $"{DefaultBaseUrl}/oauth";
 
