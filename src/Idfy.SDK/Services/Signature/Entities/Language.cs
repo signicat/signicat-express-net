@@ -23,6 +23,6 @@ namespace Idfy.Signature
         NL = 5,
         
         [EnumMember(Value = "DE")]
-        DE = 5,
+        DE = 6,
     }
 }
