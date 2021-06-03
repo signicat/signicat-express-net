@@ -54,5 +54,8 @@ namespace Idfy.IdentificationV2
         
         [EnumMember(Value = "eherkenning")]
         EHerkenning = 16,
+        
+        [EnumMember(Value = "mitid")]
+        Mitid = 17,
     }
 }

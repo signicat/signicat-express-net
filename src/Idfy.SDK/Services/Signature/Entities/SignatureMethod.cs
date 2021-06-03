@@ -42,5 +42,8 @@ namespace Idfy.Signature
 
         [EnumMember(Value = "eherkenning")]
         EHerkenning = 21,
+        
+        [EnumMember(Value = "mitid")]
+        Mitid = 22,
     }
 }
