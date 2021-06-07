@@ -1,4 +1,6 @@
-﻿namespace Idfy.Signature
+﻿using System.Collections.Generic;
+
+namespace Idfy.Signature
 {
     public class DialogBefore
     {
@@ -16,5 +18,10 @@
         /// The message body of the dialog.
         /// </summary>
         public string Message { get; set; }
+        
+        /// <summary>
+        /// List of input fields presented to signer.
+        /// </summary>
+        public List<FormField> FormFields { get; set; }
     }
 }
