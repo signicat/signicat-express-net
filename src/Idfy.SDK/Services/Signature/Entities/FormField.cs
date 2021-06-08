@@ -18,7 +18,7 @@ namespace Idfy.Signature
         /// <summary>
         /// The type of input in this form field. Can be either text or a checkbox.
         /// </summary>
-        public FormType Type { get; set; } 
+        public FormType? Type { get; set; } 
         
         /// <summary>
         /// Regex for validating input in form field. Should begin with /^ and end with $/
