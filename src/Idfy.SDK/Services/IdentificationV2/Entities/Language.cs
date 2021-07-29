@@ -21,5 +21,8 @@ namespace Idfy.IdentificationV2
         
         [EnumMember(Value = "de")]
         De,
+        
+        [EnumMember(Value = "nl")]
+        Nl,
     }
 }
