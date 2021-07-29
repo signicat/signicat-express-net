@@ -1,5 +1,5 @@
 # Idfy .NET SDK
-[![Build Status](https://travis-ci.org/idfy-io/idfy-sdk-net.svg?branch=master)](https://travis-ci.org/idfy-io/idfy-sdk-net) [![NuGet](https://img.shields.io/nuget/v/Idfy.SDK.svg)](https://www.nuget.org/packages/Idfy.SDK)
+[![Build Status](https://travis-ci.com/idfy-io/idfy-sdk-net.svg?branch=master)](https://travis-ci.com/idfy-io/idfy-sdk-net) [![NuGet](https://img.shields.io/nuget/v/Idfy.SDK.svg)](https://www.nuget.org/packages/Idfy.SDK)
 
 A .NET SDK for simple integration with the Idfy REST API.
 
