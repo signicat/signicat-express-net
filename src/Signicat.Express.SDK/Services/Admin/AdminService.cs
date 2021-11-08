@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
-using Idfy.Infrastructure;
+using Signicat.Express.Infrastructure;
 
-namespace Idfy.Admin
+namespace Signicat.Express.Admin
 {
     /// <summary>
     /// Manage your Idfy account.

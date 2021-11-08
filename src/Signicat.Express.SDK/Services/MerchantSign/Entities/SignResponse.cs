@@ -1,7 +1,7 @@
 using System;
 using Newtonsoft.Json;
 
-namespace Idfy.MerchantSign
+namespace Signicat.Express.MerchantSign
 {
     public class SignResponse
     {

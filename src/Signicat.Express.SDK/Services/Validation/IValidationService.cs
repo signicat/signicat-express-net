@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 
-namespace Idfy.Validation
+namespace Signicat.Express.Validation
 {
     public interface IValidationService
     {

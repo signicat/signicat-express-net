@@ -1,7 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace Idfy.Validation
+namespace Signicat.Express.Validation
 {
     public class Certificate 
     {

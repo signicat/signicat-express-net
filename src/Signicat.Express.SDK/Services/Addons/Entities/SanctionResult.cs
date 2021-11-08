@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using Idfy.Addons.Entities.Organization;
-using Idfy.Addons.Entities.Person;
+using Signicat.Express.Addons.Organization;
+using Signicat.Express.Addons.Person;
 
-namespace Idfy.Addons.Entities
+namespace Signicat.Express.Addons
 {
     /// <summary>
     /// List of all Sanction items with match for the input request.

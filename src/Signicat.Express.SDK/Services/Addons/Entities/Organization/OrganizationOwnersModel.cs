@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Idfy.Addons.Entities.Person;
+using Signicat.Express.Addons.Person;
 
-namespace Idfy.Addons.Entities.Organization
+namespace Signicat.Express.Addons.Organization
 {
     public class OrganizationOwnersModel
     {

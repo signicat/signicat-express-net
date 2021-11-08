@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace Idfy.Validation
+namespace Signicat.Express.Validation
 {
     public enum IdentificatorType
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Idfy
+namespace Signicat.Express
 {
     public class IdfyResponse
     {

@@ -1,4 +1,4 @@
-﻿namespace Idfy.Addons.Entities.Organization
+﻿namespace Signicat.Express.Addons.Organization
 {
     /// <summary>
     ///     Remarks to the signing result

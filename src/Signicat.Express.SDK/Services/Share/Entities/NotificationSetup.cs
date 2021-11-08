@@ -1,4 +1,4 @@
-﻿namespace Idfy.Share
+﻿namespace Signicat.Express.Share
 {
     /// <summary>
     /// Setup of notifications

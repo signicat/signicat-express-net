@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Idfy.Admin
+namespace Signicat.Express.Admin
 {
     public interface IAdminService
     {

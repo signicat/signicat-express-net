@@ -1,6 +1,6 @@
 using System.Runtime.Serialization;
 
-namespace Idfy.MerchantSign
+namespace Signicat.Express.MerchantSign
 {
     public enum SigningFormat
     {

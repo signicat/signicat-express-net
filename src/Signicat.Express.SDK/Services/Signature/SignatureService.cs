@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
-using Idfy.Infrastructure;
+using Signicat.Express.Infrastructure;
 
-namespace Idfy.Signature
+namespace Signicat.Express.Signature
 {
     /// <summary>
     /// Sign contracts, declarations, forms and other documents using digital signatures.

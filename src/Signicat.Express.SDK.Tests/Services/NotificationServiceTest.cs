@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using AutoFixture;
-using Idfy.Notification;
 using NUnit.Framework;
+using Signicat.Express.Notification;
 
-namespace Idfy.SDK.Tests
+namespace Signicat.Express.SDK.Tests
 {
     [TestFixture]
     public class NotificationServiceTest : BaseTest

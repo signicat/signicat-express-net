@@ -1,7 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace Idfy
+namespace Signicat.Express
 {
     public class OAuthToken
     {

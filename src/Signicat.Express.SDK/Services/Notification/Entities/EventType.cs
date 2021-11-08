@@ -1,6 +1,6 @@
 using System.Runtime.Serialization;
 
-namespace Idfy.Notification
+namespace Signicat.Express.Notification
 {
     public enum EventType
     {

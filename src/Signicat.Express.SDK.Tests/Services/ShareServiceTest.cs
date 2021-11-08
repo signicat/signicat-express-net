@@ -2,10 +2,10 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using AutoFixture;
-using Idfy.Share;
 using NUnit.Framework;
+using Signicat.Express.Share;
 
-namespace Idfy.SDK.Tests
+namespace Signicat.Express.SDK.Tests
 {
     public class ShareServiceTest : BaseTest
     {

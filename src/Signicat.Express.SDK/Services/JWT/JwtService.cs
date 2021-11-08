@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Idfy.Infrastructure;
+using Signicat.Express.Infrastructure;
 
-namespace Idfy.JWT
+namespace Signicat.Express.JWT
 {
     /// <summary>
     /// Validate JSON Web Tokens from Idfy.

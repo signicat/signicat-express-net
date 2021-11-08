@@ -1,4 +1,4 @@
-﻿namespace Idfy
+﻿namespace Signicat.Express
 {
     public class Link 
     {

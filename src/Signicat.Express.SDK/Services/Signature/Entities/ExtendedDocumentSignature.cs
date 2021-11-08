@@ -1,7 +1,6 @@
 ﻿using System;
-using Idfy.Signature;
 
-namespace Idfy.Signature
+namespace Signicat.Express.Signature
 {
     public class ExtendedDocumentSignature 
     {

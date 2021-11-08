@@ -1,6 +1,6 @@
 using System.Runtime.Serialization;
 
-namespace Idfy.Signature
+namespace Signicat.Express.Signature
 {
     public enum ThemeMode
     {

@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace Idfy.IdentificationV2
+namespace Signicat.Express.IdentificationV2
 {
     public enum ColorTheme
     {

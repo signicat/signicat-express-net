@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Idfy.JWT
+namespace Signicat.Express.JWT
 {
     public class JwtValidationResult
     {

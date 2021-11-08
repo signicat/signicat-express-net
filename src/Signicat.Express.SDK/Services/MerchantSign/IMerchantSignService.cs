@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace Idfy.MerchantSign
+namespace Signicat.Express.MerchantSign
 {
     public interface IMerchantSignService
     {

@@ -1,6 +1,6 @@
 using System.Runtime.Serialization;
 
-namespace Idfy.Admin
+namespace Signicat.Express.Admin
 {
     public enum CoverPageSetting
     {

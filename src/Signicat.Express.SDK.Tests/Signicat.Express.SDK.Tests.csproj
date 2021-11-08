@@ -3,7 +3,7 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <VersionPrefix>3.5.0</VersionPrefix>
     <VersionSuffix>beta1</VersionSuffix>
-    <RootNamespace>Idfy.SDK.Tests</RootNamespace>
+    <RootNamespace>Signicat.Express.SDK.Tests</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="AutoFixture" Version="4.5.1" />

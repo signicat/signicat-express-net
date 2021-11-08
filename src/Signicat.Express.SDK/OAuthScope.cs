@@ -1,7 +1,6 @@
-﻿using System;
-using System.Runtime.Serialization;
+﻿using System.Runtime.Serialization;
 
-namespace Idfy
+namespace Signicat.Express
 {
     public enum OAuthScope
     {

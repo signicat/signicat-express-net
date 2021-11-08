@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 
-namespace Idfy.Identification
+namespace Signicat.Express.Identification
 {
     public interface IIdentificationService
     {

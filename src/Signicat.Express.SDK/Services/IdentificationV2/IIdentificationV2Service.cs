@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Idfy.IdentificationV2
+namespace Signicat.Express.IdentificationV2
 {
     public interface IIdentificationV2Service
     {

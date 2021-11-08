@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Idfy.Infrastructure;
+using Signicat.Express.Infrastructure;
 
-namespace Idfy.Identification
+namespace Signicat.Express.Identification
 {
     /// <summary>
     /// Identify users through eID providers such as Norwegian BankID, Swedish BankID and NemID.

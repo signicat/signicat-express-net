@@ -1,4 +1,4 @@
-namespace Idfy.Signature
+namespace Signicat.Express.Signature
 {
     /// <summary>
     /// A list of questions presented to signer before signing the document.

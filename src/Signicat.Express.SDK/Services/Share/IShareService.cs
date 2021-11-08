@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Idfy.Signature;
 
-namespace Idfy.Share
+namespace Signicat.Express.Share
 {
     public interface IShareService
     {

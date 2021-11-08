@@ -5,7 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Runtime.Serialization;
 
-namespace Idfy.Infrastructure
+namespace Signicat.Express.Infrastructure
 {
     internal static class APIHelper
     {

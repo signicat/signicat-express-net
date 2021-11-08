@@ -1,5 +1,5 @@
 ﻿
- namespace Idfy.Addons.Entities.Person
+ namespace Signicat.Express.Addons.Person
 {
     public class PersonQueryModel : BasePersonQueryModel
     {

@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Idfy.Infrastructure;
+using Signicat.Express.Infrastructure;
 
-namespace Idfy.IdentificationV2
+namespace Signicat.Express.IdentificationV2
 {
     public class IdentificationV2Service : IdfyBaseService, IIdentificationV2Service
     {

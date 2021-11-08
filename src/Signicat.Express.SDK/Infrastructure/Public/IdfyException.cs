@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Net;
+using Signicat.Express;
 
-namespace Idfy
+namespace Signicat.Express
 {
     public class IdfyException : Exception
     {

@@ -1,6 +1,6 @@
 using System.Runtime.Serialization;
 
-namespace Idfy.Identification
+namespace Signicat.Express.Identification
 {
     public enum Language
     {

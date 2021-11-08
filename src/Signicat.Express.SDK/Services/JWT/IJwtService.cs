@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 
-namespace Idfy.JWT
+namespace Signicat.Express.JWT
 {
     public interface IJwtService
     {

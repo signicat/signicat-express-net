@@ -1,10 +1,10 @@
 ﻿using System.Net.Http;
 using System.Threading.Tasks;
 using AutoFixture;
-using Idfy.IdentificationV2;
 using NUnit.Framework;
+using Signicat.Express.IdentificationV2;
 
-namespace Idfy.SDK.Tests
+namespace Signicat.Express.SDK.Tests
 {
     public class IdentificationV2ServiceTest : BaseTest
     {

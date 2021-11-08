@@ -1,6 +1,6 @@
 using System;
 
-namespace Idfy.IdentificationV2
+namespace Signicat.Express.IdentificationV2
 {
     /// <summary>
     /// Details about the identified user. Only available if session has status `success`.

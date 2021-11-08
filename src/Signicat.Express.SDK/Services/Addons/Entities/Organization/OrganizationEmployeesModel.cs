@@ -1,4 +1,4 @@
-﻿namespace Idfy.Addons.Entities.Organization
+﻿namespace Signicat.Express.Addons.Organization
 {
     /// <summary>
     ///     Information about how many employees the organization have.

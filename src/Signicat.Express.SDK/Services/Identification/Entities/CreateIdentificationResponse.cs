@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace Idfy.Identification
+namespace Signicat.Express.Identification
 {
     /// <summary>
     /// The response of the Create Identitiy request
