@@ -6,7 +6,7 @@ namespace Signicat.Express.Signature
     {
         /// <summary>
         /// A list of signature methods that the signer is allowed to use when signing the document.
-        /// If not specified, all available signature methods for your Idfy account will be displayed to the signer.
+        /// If not specified, all available signature methods for your Signicat account will be displayed to the signer.
         /// </summary>
         public List<SignatureMethod> SignatureMethods { get; set; }
         

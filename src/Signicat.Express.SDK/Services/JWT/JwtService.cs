@@ -5,9 +5,9 @@ using Signicat.Express.Infrastructure;
 namespace Signicat.Express.JWT
 {
     /// <summary>
-    /// Validate JSON Web Tokens from Idfy.
+    /// Validate JSON Web Tokens from Signicat.
     /// </summary>
-    public class JwtService : IdfyBaseService, IJwtService
+    public class JwtService : SignicatBaseService, IJwtService
     {
         public JwtService()
         {

@@ -7,7 +7,7 @@ namespace Signicat.Express.Identification
     /// <summary>
     /// Identify users through eID providers such as Norwegian BankID, Swedish BankID and NemID.
     /// </summary>
-    public class IdentificationService : IdfyBaseService, IIdentificationService
+    public class IdentificationService : SignicatBaseService, IIdentificationService
     {
         public IdentificationService()
         {

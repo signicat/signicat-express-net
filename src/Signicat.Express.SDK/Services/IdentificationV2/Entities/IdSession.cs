@@ -51,7 +51,7 @@ namespace Signicat.Express.IdentificationV2
         public Environment Environment { get; set; }
 
         /// <summary>
-        /// A list of eID providers that can be used for identification. If not specified, the user will be able to chose from all eID's associated with your Idfy account.
+        /// A list of eID providers that can be used for identification. If not specified, the user will be able to chose from all eID's associated with your Signicat account.
         /// </summary>
         public IList<IdProviderType> AllowedProviders { get; set; }
 

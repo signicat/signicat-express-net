@@ -23,8 +23,8 @@ namespace Signicat.Express.SDK.Tests
 
             Assert.AreEqual($"Bearer {token}", request.Headers.GetValues("Authorization").FirstOrDefault());
 
-            Assert.AreEqual($".NET {IdfyConfiguration.SdkVersion}",
-                request.Headers.GetValues("X-Idfy-SDK").FirstOrDefault());
+            Assert.AreEqual($".NET {SignicatConfiguration.SdkVersion}",
+                request.Headers.GetValues("X-Signicat-Express-SDK").FirstOrDefault());
             
             Assert.AreEqual(HttpMethod.Get, request.Method);
         }

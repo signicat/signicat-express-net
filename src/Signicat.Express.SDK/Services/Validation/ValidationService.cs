@@ -7,7 +7,7 @@ namespace Signicat.Express.Validation
     /// <summary>
     /// Validate signatures from supported eID providers.
     /// </summary>
-    public class ValidationService : IdfyBaseService, IValidationService
+    public class ValidationService : SignicatBaseService, IValidationService
     {
         public ValidationService()
         {

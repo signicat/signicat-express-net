@@ -4,7 +4,7 @@ using Signicat.Express.Infrastructure;
 
 namespace Signicat.Express.IdentificationV2
 {
-    public class IdentificationV2Service : IdfyBaseService, IIdentificationV2Service
+    public class IdentificationV2Service : SignicatBaseService, IIdentificationV2Service
     {
         public IdentificationV2Service()
         {

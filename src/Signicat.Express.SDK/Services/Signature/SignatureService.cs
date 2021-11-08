@@ -9,7 +9,7 @@ namespace Signicat.Express.Signature
     /// <summary>
     /// Sign contracts, declarations, forms and other documents using digital signatures.
     /// </summary>
-    public class SignatureService : IdfyBaseService, ISignatureService
+    public class SignatureService : SignicatBaseService, ISignatureService
     {
         public SignatureService()
         {

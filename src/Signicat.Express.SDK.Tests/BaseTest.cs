@@ -36,10 +36,10 @@ namespace Signicat.Express.SDK.Tests
                 CallBase =  true
             };
 
-            IdfyConfiguration.HttpClient = new HttpClient(_mockHttpClientHandler.Object);
-            IdfyConfiguration.BaseUrl = url;
-            IdfyConfiguration.OAuthBaseUrl = url + "/oauth";
-            IdfyConfiguration.SetClientCredentials("idfy-sdk-test", "secret", new List<OAuthScope>());
+            SignicatConfiguration.HttpClient = new HttpClient(_mockHttpClientHandler.Object);
+            SignicatConfiguration.BaseUrl = url;
+            SignicatConfiguration.OAuthBaseUrl = url + "/oauth";
+            SignicatConfiguration.SetClientCredentials("signicat-sdk-test", "secret", new List<OAuthScope>());
             
             // Make sure that the Idfy Mock Server is running
             using (var client = new HttpClient())

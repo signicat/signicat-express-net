@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Net;
-using Signicat.Express;
 
 namespace Signicat.Express
 {
-    public class IdfyException : Exception
+    public class SignicatException : Exception
     {
-        public IdfyException(HttpStatusCode statusCode, IdfyError error, IdfyResponse response, string message) :
+        public SignicatException(HttpStatusCode statusCode, SignicatError error, SignicatResponse response, string message) :
             base(message ?? $"The server returned status code {(int) statusCode}")
         {
             HttpStatusCode = statusCode;
@@ -16,8 +15,8 @@ namespace Signicat.Express
         
         public HttpStatusCode HttpStatusCode { get; }
         
-        public IdfyResponse Response { get; }
+        public SignicatResponse Response { get; }
         
-        public IdfyError Error { get; }
+        public SignicatError Error { get; }
     }
 }

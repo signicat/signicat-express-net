@@ -8,7 +8,7 @@ using Signicat.Express.Infrastructure;
 
 namespace Signicat.Express.Share
 {
-    public class ShareService : IdfyBaseService, IShareService
+    public class ShareService : SignicatBaseService, IShareService
     {
         public ShareService()
         {
