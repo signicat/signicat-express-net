@@ -19,8 +19,8 @@ install:
 
 script:
   - dotnet build -c Release src/
-  - dotnet test src/Idfy.SDK.Tests/Idfy.SDK.Tests.csproj
-  - dotnet pack src/Idfy.SDK/ -c Release
+  - dotnet test src/Signicat.Express.SDK.Tests/Signicat.Express.SDK.Tests.csproj
+  - dotnet pack src/Signicat.Express.SDK/ -c Release
 
 deploy:
   # Create GitHub release on new version
@@ -32,7 +32,7 @@ deploy:
   # Push NuGet package to nuget.org on new version
   - provider: script  
     skip_cleanup: true
-    script: dotnet nuget push src/Idfy.SDK/bin/Release/Idfy.SDK.* --api-key $NUGET_APIKEY --source https://www.nuget.org/api/v2/package
+    script: dotnet nuget push src/Signicat.Express.SDK/bin/Release/Signicat.Express.SDK.* --api-key $NUGET_APIKEY --source https://www.nuget.org/api/v2/package
     on:
       tags: true
 
