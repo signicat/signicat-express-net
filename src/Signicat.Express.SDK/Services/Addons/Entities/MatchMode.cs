@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace Idfy.Addons.Entities
+namespace Signicat.Express.Addons
 {
     public enum MatchMode
     {

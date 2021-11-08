@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using Idfy.Addons.Entities.Person;
 
-namespace Idfy.Addons.Entities.Organization
+namespace Signicat.Express.Addons.Organization
 {
     public class OrganizationSignatureModel
     { 

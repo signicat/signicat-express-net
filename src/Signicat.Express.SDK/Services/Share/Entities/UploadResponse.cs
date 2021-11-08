@@ -1,6 +1,6 @@
 using System;
 
-namespace Idfy.Share
+namespace Signicat.Express.Share
 {
     /// <summary>
     /// Upload information

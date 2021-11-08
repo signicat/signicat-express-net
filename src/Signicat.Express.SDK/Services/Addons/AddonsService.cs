@@ -1,12 +1,11 @@
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using Idfy.Addons.Entities.Organization;
-using Idfy.Addons.Entities.Person;
-using Idfy.Infrastructure;
-using OrganizationResponse = Idfy.Addons.Entities.Organization.OrganizationResponse;
+using Signicat.Express.Addons.Organization;
+using Signicat.Express.Addons.Person;
+using Signicat.Express.Infrastructure;
+using OrganizationResponse = Signicat.Express.Addons.Organization.OrganizationResponse;
 
-namespace Idfy.Addons
+namespace Signicat.Express.Addons
 {
     public class AddonsService : IdfyBaseService, IAddonsService
     {

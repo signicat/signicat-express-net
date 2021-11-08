@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace Idfy.Signature
+namespace Signicat.Express.Signature
 {
     public interface ISignatureService
     {

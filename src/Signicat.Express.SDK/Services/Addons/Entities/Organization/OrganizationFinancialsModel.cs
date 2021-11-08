@@ -1,4 +1,4 @@
-﻿namespace Idfy.Addons.Entities.Organization
+﻿namespace Signicat.Express.Addons.Organization
 {
     public class OrganizationFinancialsModel
     {

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace Idfy.Notification
+namespace Signicat.Express.Notification
 {
     public class Webhook
     {

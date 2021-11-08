@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
-using Idfy.Infrastructure;
+using Signicat.Express.Infrastructure;
 
-namespace Idfy.MerchantSign
+namespace Signicat.Express.MerchantSign
 {
     /// <summary>
     /// Sign documents with a merchant signature.

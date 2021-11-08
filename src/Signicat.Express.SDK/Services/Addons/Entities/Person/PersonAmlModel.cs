@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Idfy.Addons.Entities.Person
+namespace Signicat.Express.Addons.Person
 {
     /// <summary>
     /// AML information about screened person

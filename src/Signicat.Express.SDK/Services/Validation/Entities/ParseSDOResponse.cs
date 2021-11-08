@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace Idfy.Validation
+namespace Signicat.Express.Validation
 {
     public class ParseSDOResponse 
     {

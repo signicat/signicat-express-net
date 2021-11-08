@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace Idfy.Addons.Entities.Organization
+namespace Signicat.Express.Addons.Organization
 {
     public enum OrganizationSanctionsResultsStatus
     {

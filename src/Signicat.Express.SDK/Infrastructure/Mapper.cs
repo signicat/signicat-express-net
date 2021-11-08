@@ -2,7 +2,7 @@
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 
-namespace Idfy.Infrastructure
+namespace Signicat.Express.Infrastructure
 {
     internal static class Mapper
     {

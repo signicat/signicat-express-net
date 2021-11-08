@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace Idfy.Identification
+namespace Signicat.Express.Identification
 {
     public class CreateBankIDMobileRequest
     {

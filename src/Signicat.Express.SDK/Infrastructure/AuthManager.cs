@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.Linq;
 
-namespace Idfy.Infrastructure
+namespace Signicat.Express.Infrastructure
 {
     internal static class AuthManager {
         public static OAuthToken Authorize()

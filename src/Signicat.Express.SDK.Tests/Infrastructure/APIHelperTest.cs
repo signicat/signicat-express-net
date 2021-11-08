@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using Idfy.Infrastructure;
-using Idfy.Signature;
 using NUnit.Framework;
+using Signicat.Express.Infrastructure;
+using Signicat.Express.Signature;
 
-namespace Idfy.SDK.Tests
+namespace Signicat.Express.SDK.Tests
 {
     [TestFixture]
     public class APIHelperTest : BaseTest

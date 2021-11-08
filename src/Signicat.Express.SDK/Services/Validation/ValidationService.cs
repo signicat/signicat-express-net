@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Idfy.Infrastructure;
+using Signicat.Express.Infrastructure;
 
-namespace Idfy.Validation
+namespace Signicat.Express.Validation
 {
     /// <summary>
     /// Validate signatures from supported eID providers.

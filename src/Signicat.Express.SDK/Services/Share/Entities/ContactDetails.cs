@@ -1,4 +1,4 @@
-﻿namespace Idfy.Share
+﻿namespace Signicat.Express.Share
 {
     public class ContactDetails
     {

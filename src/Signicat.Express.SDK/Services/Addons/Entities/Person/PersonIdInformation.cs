@@ -1,4 +1,4 @@
-﻿namespace Idfy.Addons.Entities.Person
+﻿namespace Signicat.Express.Addons.Person
 {
     /// <summary>
     /// Information coming from persons ID method

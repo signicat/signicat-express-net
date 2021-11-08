@@ -2,10 +2,10 @@ using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 using AutoFixture;
-using Idfy.Signature;
 using NUnit.Framework;
+using Signicat.Express.Signature;
 
-namespace Idfy.SDK.Tests
+namespace Signicat.Express.SDK.Tests
 {
 
     [TestFixture]

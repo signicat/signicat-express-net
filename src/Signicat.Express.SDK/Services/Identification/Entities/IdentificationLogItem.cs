@@ -1,7 +1,7 @@
 using System;
 using Newtonsoft.Json;
 
-namespace Idfy.Identification
+namespace Signicat.Express.Identification
 {
     public class IdentificationLogItem
     {

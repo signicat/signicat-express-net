@@ -1,15 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Idfy.Addons;
-using Idfy.Addons.Entities;
-using Idfy.Addons.Entities.Organization;
-using Idfy.Addons.Entities.Person;
-using Idfy.Infrastructure;
-using NUnit.Framework;
 using AutoFixture;
+using NUnit.Framework;
+using Signicat.Express.Addons;
+using Signicat.Express.Addons.Organization;
+using Signicat.Express.Addons.Person;
+using Signicat.Express.Infrastructure;
 
-namespace Idfy.SDK.Tests
+namespace Signicat.Express.SDK.Tests
 {
     [TestFixture]
     public class AddonsServiceTest : BaseTest

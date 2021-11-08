@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Idfy.Infrastructure;
+using Signicat.Express.Infrastructure;
 
-namespace Idfy.Notification
+namespace Signicat.Express.Notification
 {
     /// <summary>
     /// Manage events that are raised when something happens in your account.

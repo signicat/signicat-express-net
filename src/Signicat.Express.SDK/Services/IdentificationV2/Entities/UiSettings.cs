@@ -1,4 +1,4 @@
-namespace Idfy.IdentificationV2
+namespace Signicat.Express.IdentificationV2
 {
     /// <summary>
     /// UI settings for the identification process.

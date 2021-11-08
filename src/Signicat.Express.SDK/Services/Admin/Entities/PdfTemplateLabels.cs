@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace Idfy.Admin
+namespace Signicat.Express.Admin
 {
     public class PdfTemplateLabels
     {

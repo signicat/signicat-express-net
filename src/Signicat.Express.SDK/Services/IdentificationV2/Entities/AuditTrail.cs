@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Idfy.IdentificationV2
+namespace Signicat.Express.IdentificationV2
 {
     /// <summary>
     /// Audit trail.

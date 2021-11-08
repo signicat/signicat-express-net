@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Idfy.Addons.Entities.Organization
+namespace Signicat.Express.Addons.Organization
 {
     public class OrganizationSanctionsResults
     {

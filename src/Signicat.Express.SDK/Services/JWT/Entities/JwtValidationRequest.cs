@@ -1,4 +1,4 @@
-﻿namespace Idfy.JWT
+﻿namespace Signicat.Express.JWT
 {
     public class JwtValidationRequest
     {

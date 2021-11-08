@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Idfy.IdentificationV2
+namespace Signicat.Express.IdentificationV2
 {
     /// <summary>
     /// Iframe settings when using the `iframe` flow.

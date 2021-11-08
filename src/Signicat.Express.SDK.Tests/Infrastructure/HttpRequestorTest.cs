@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
 using System.Net.Http;
-using Idfy.Infrastructure;
 using NUnit.Framework;
+using Signicat.Express.Infrastructure;
 
-namespace Idfy.SDK.Tests
+namespace Signicat.Express.SDK.Tests
 {
     [TestFixture]
     public class HttpRequestorTest : BaseTest

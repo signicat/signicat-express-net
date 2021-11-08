@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Idfy.Addons.Entities.Organization;
+using Signicat.Express.Addons.Organization;
 
-namespace Idfy.Addons.Entities.Person
+namespace Signicat.Express.Addons.Person
 {
     /// <summary>
     /// List of all PEP items with match for the input request.

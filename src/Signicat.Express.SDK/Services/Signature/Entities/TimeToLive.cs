@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Idfy.Signature
+namespace Signicat.Express.Signature
 {
     public class TimeToLive
     {

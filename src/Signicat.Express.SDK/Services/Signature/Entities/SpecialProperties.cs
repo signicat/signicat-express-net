@@ -1,4 +1,4 @@
-﻿namespace Idfy.Signature
+﻿namespace Signicat.Express.Signature
 {
     public class SpecialProperties
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Idfy.Addons.Entities.Person
+namespace Signicat.Express.Addons.Person
 {
     /// <summary>
     /// Basic information about a person

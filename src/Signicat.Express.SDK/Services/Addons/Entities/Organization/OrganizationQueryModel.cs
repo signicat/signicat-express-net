@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-namespace Idfy.Addons.Entities.Organization
+namespace Signicat.Express.Addons.Organization
 {
     /// <summary>
     ///     Input for Organization queries

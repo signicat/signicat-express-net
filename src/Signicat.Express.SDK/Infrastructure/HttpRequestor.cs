@@ -8,7 +8,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Idfy.Infrastructure
+namespace Signicat.Express.Infrastructure
 {
     internal static class HttpRequestor
     {

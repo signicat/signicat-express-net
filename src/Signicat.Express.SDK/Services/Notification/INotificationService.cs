@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Idfy.Notification
+namespace Signicat.Express.Notification
 {
     public interface INotificationService
     {

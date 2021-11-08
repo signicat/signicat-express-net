@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Idfy
+namespace Signicat.Express
 {
     public class CollectionWithPaging<T>
     {

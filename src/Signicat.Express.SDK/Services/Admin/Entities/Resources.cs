@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace Idfy.Admin
+namespace Signicat.Express.Admin
 {
     public class Resources
     {

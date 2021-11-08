@@ -1,9 +1,9 @@
 using System.Threading.Tasks;
-using Idfy.Addons.Entities.Organization;
-using Idfy.Addons.Entities.Person;
-using OrganizationResponse = Idfy.Addons.Entities.Organization.OrganizationResponse;
+using Signicat.Express.Addons.Organization;
+using Signicat.Express.Addons.Person;
+using OrganizationResponse = Signicat.Express.Addons.Organization.OrganizationResponse;
 
-namespace Idfy.Addons
+namespace Signicat.Express.Addons
 {
     public interface IAddonsService
     {

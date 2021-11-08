@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace Idfy.Addons.Entities.Person
+namespace Signicat.Express.Addons.Person
 {
     public enum NationalAddressItemAddressStatus
     {

@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace Idfy
+namespace Signicat.Express.Signature
 {
     public enum AttachmentType
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Idfy.Signature
+namespace Signicat.Express.Signature
 {
     public class Reminder 
     {

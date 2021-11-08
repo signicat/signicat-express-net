@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Idfy.Share
+namespace Signicat.Express.Share
 {
     /// <summary>
     /// Options for notification

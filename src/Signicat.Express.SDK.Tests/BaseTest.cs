@@ -6,7 +6,7 @@ using AutoFixture;
 using Moq;
 using Moq.Protected;
 
-namespace Idfy.SDK.Tests
+namespace Signicat.Express.SDK.Tests
 {
     public class BaseTest
     {

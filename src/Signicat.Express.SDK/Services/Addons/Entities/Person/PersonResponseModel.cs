@@ -1,6 +1,6 @@
-﻿using Idfy.Addons.Entities.Organization;
+﻿using Signicat.Express.Addons.Organization;
 
-namespace Idfy.Addons.Entities.Person
+namespace Signicat.Express.Addons.Person
 {
     /// <summary>
     /// Response object for screened person

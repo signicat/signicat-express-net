@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Reflection;
-using Idfy.Infrastructure;
+using Signicat.Express.Infrastructure;
 
-namespace Idfy
+namespace Signicat.Express
 {
     public static class IdfyConfiguration
     {

@@ -1,4 +1,4 @@
-﻿namespace Idfy.Infrastructure
+﻿namespace Signicat.Express.Infrastructure
 {
     internal static class Urls
     {
