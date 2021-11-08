@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Idfy.SDK", "Idfy.SDK\Idfy.SDK.csproj", "{792AB709-9AA4-4859-9AF1-DFAA48E43F00}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Signicat.Express.SDK", "Signicat.Express.SDK\Signicat.Express.SDK.csproj", "{792AB709-9AA4-4859-9AF1-DFAA48E43F00}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Idfy.SDK.Tests", "Idfy.SDK.Tests\Idfy.SDK.Tests.csproj", "{3FAC4D53-944F-4ACD-A2AC-F57012813DDC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Signicat.Express.SDK.Tests", "Signicat.Express.SDK.Tests\Signicat.Express.SDK.Tests.csproj", "{3FAC4D53-944F-4ACD-A2AC-F57012813DDC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

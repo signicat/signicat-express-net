@@ -5,13 +5,12 @@
     <VersionSuffix>$(VersionSuffix)</VersionSuffix>
     <Description>.NET SDK for Idfy REST API</Description>
     <Authors>Idfy Norge AS</Authors>
-    <PackageId>Idfy.SDK</PackageId>
+    <PackageId>Signicat.Express.SDK</PackageId>
     <PackageTags>idfy;rest;signature;identification;api</PackageTags>
     <PackageIconUrl>https://idfy-img.azureedge.net/nuget-icon-128x128.png</PackageIconUrl>
     <PackageProjectUrl>https://github.com/idfy-io/idfy-sdk-net</PackageProjectUrl>
     <PackageLicenseUrl>https://raw.githubusercontent.com/idfy-io/idfy-sdk-net/master/LICENSE</PackageLicenseUrl>
     <RootNamespace>Idfy</RootNamespace>
-    <AssemblyName>Idfy.SDK</AssemblyName>
     <AssemblyTitle>Idfy.SDK</AssemblyTitle>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>$(NoWarn);CS1591</NoWarn>
