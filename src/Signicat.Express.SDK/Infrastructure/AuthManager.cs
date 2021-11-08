@@ -7,8 +7,8 @@ namespace Signicat.Express.Infrastructure
     internal static class AuthManager {
         public static OAuthToken Authorize()
         {
-            IdfyConfiguration.OAuthToken = Authorize(IdfyConfiguration.ClientId, IdfyConfiguration.ClientSecret, IdfyConfiguration.Scopes);
-            return IdfyConfiguration.OAuthToken;
+            SignicatConfiguration.OAuthToken = Authorize(SignicatConfiguration.ClientId, SignicatConfiguration.ClientSecret, SignicatConfiguration.Scopes);
+            return SignicatConfiguration.OAuthToken;
         }
         
         public static OAuthToken Authorize(string clientId, string clientSecret, IEnumerable<string> scopes)

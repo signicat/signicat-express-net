@@ -9,7 +9,7 @@ namespace Signicat.Express.MerchantSign
     /// <summary>
     /// Sign documents with a merchant signature.
     /// </summary>
-    public class MerchantSignService : IdfyBaseService, IMerchantSignService
+    public class MerchantSignService : SignicatBaseService, IMerchantSignService
     {
         public MerchantSignService()
         {

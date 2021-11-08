@@ -6,7 +6,7 @@ using Signicat.Express.Infrastructure;
 
 namespace Signicat.Express
 {
-    public static class IdfyConfiguration
+    public static class SignicatConfiguration
     {
         private static string _baseUrl;
         private static string _oauthBaseUrl;
@@ -43,7 +43,7 @@ namespace Signicat.Express
         public static HttpClient HttpClient { get; set; }
         
         /// <summary>
-        /// Gets or sets the Idfy API base URL.
+        /// Gets or sets the Signicat Express API base URL.
         /// </summary>
         public static string BaseUrl
         {
@@ -52,7 +52,7 @@ namespace Signicat.Express
         }
 
         /// <summary>
-        /// Gets or sets the Idfy OAuth base URL.
+        /// Gets or sets the Signicat Express OAuth base URL.
         /// </summary>
         public static string OAuthBaseUrl
         {
@@ -61,7 +61,7 @@ namespace Signicat.Express
         }
 
         /// <summary>
-        /// Gets the version of the Idfy .NET SDK.
+        /// Gets the version of the Signicat Express .NET SDK.
         /// </summary>
         public static string SdkVersion
         {

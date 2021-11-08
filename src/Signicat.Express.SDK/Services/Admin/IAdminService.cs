@@ -7,52 +7,52 @@ namespace Signicat.Express.Admin
     public interface IAdminService
     {
         /// <summary>
-        /// Retrieves the details of your Idfy account.
+        /// Retrieves the details of your Signicat account.
         /// </summary>
         /// <returns></returns>
         Account GetAccount();
 
         /// <summary>
-        /// Retrieves the details of your Idfy account.
+        /// Retrieves the details of your Signicat account.
         /// </summary>
         /// <returns></returns>
         Task<Account> GetAccountAsync();
 
         /// <summary>
-        /// Updates your Idfy account.
+        /// Updates your Signicat account.
         /// </summary>
         /// <param name="accountUpdateOptions"></param>
         /// <returns></returns>
         Account UpdateAccount(AccountUpdateOptions accountUpdateOptions);
 
         /// <summary>
-        /// Updates your Idfy account.
+        /// Updates your Signicat account.
         /// </summary>
         /// <param name="accountUpdateOptions"></param>
         /// <returns></returns>
         Task<Account> UpdateAccountAsync(AccountUpdateOptions accountUpdateOptions);
 
         /// <summary>
-        /// Creates a new Idfy account.
+        /// Creates a new Signicat account.
         /// </summary>
         /// <param name="accountCreateOptions"></param>
         /// <returns></returns>
         Account CreateAccount(AccountCreateOptions accountCreateOptions);
 
         /// <summary>
-        /// Creates a new Idfy account.
+        /// Creates a new Signicat account.
         /// </summary>
         /// <param name="accountCreateOptions"></param>
         /// <returns></returns>
         Task<Account> CreateAccountAsync(AccountCreateOptions accountCreateOptions);
 
         /// <summary>
-        /// Sets your Idfy account to inactive/disabled.
+        /// Sets your Signicat account to inactive/disabled.
         /// </summary>
         void DisableAccount();
 
         /// <summary>
-        /// Sets your Idfy account to inactive/disabled.
+        /// Sets your Signicat account to inactive/disabled.
         /// </summary>
         /// <returns></returns>
         Task DisableAccountAsync();
@@ -166,13 +166,13 @@ namespace Signicat.Express.Admin
             bool? getAsCsv = null);
 
         /// <summary>
-        /// Returns a list of PDF templates for your Idfy account.
+        /// Returns a list of PDF templates for your Signicat account.
         /// </summary>
         /// <returns></returns>
         IList<PdfTemplateListItem> ListTemplates();
 
         /// <summary>
-        /// Returns a list of PDF templates for your Idfy account.
+        /// Returns a list of PDF templates for your Signicat account.
         /// </summary>
         /// <returns></returns>
         Task<IList<PdfTemplateListItem>> ListTemplatesAsync();

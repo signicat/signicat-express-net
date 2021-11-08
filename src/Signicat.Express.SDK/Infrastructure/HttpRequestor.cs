@@ -16,78 +16,78 @@ namespace Signicat.Express.Infrastructure
 
         static HttpRequestor()
         {
-            HttpClient = IdfyConfiguration.HttpClient ?? new HttpClient();
+            HttpClient = SignicatConfiguration.HttpClient ?? new HttpClient();
         }
 
-        public static IdfyResponse Get(string url, string token = null)
+        public static SignicatResponse Get(string url, string token = null)
         {
             return Send(url, HttpMethod.Get, token);
         }
 
-        public static Task<IdfyResponse> GetAsync(string url, string token = null)
+        public static Task<SignicatResponse> GetAsync(string url, string token = null)
         {
             return SendAsync(url, HttpMethod.Get, token);
         }
 
-        public static IdfyResponse Post(string url, string jsonBody = null, string token = null)
+        public static SignicatResponse Post(string url, string jsonBody = null, string token = null)
         {
             return Send(url, HttpMethod.Post, token, jsonBody);
         }
 
-        public static Task<IdfyResponse> PostAsync(string url, string jsonBody = null, string token = null)
+        public static Task<SignicatResponse> PostAsync(string url, string jsonBody = null, string token = null)
         {
             return SendAsync(url, HttpMethod.Post, token, jsonBody);
         }
 
-        public static IdfyResponse PostFormData(string url, NameValueCollection formData, string token = null)
+        public static SignicatResponse PostFormData(string url, NameValueCollection formData, string token = null)
         {
             return Send(url, HttpMethod.Post, token, formData: formData);
         }
 
-        public static Task<IdfyResponse> PostFormDataAsync(string url, NameValueCollection formData,
+        public static Task<SignicatResponse> PostFormDataAsync(string url, NameValueCollection formData,
             string token = null)
         {
             return SendAsync(url, HttpMethod.Post, token, formData: formData);
         }
 
-        public static IdfyResponse PostContentFormData(string url, MultipartFormDataContent content,
+        public static SignicatResponse PostContentFormData(string url, MultipartFormDataContent content,
             string token = null)
         {
             return Send(url, HttpMethod.Post, token, formDataContent: content);
         }
 
-        public static Task<IdfyResponse> PostContentFormDataAsync(string url, MultipartFormDataContent content,
+        public static Task<SignicatResponse> PostContentFormDataAsync(string url, MultipartFormDataContent content,
             string token = null)
         {
             return SendAsync(url, HttpMethod.Post, token, formDataContent: content);
         }
 
-        public static IdfyResponse Patch(string url, string jsonBody = null, string token = null)
+        public static SignicatResponse Patch(string url, string jsonBody = null, string token = null)
         {
             return Send(url, new HttpMethod("PATCH"), token, jsonBody);
         }
 
-        public static Task<IdfyResponse> PatchAsync(string url, string jsonBody = null, string token = null)
+        public static Task<SignicatResponse> PatchAsync(string url, string jsonBody = null, string token = null)
         {
             return SendAsync(url, new HttpMethod("PATCH"), token, jsonBody);
         }
 
-        public static IdfyResponse Put(string url, string jsonBody = null, string token = null)
+        public static SignicatResponse Put(string url, string jsonBody = null, string token = null)
         {
             return Send(url, HttpMethod.Put, token, jsonBody);
         }
 
-        public static Task<IdfyResponse> PutAsync(string url, string jsonBody = null, string token = null)
+        public static Task<SignicatResponse> PutAsync(string url, string jsonBody = null, string token = null)
         {
             return SendAsync(url, HttpMethod.Put, token, jsonBody);
         }
 
-        public static IdfyResponse Delete(string url, string token = null)
+        public static SignicatResponse Delete(string url, string token = null)
         {
             return Send(url, HttpMethod.Delete, token);
         }
 
-        public static Task<IdfyResponse> DeleteAsync(string url, string token = null)
+        public static Task<SignicatResponse> DeleteAsync(string url, string token = null)
         {
             return SendAsync(url, HttpMethod.Delete, token);
         }
@@ -112,7 +112,7 @@ namespace Signicat.Express.Infrastructure
         {
             var request = BuildRequest(url, method, jsonBody, formData, formDataContent);
 
-            request.Headers.Add("X-Idfy-SDK", $".NET {IdfyConfiguration.SdkVersion}");
+            request.Headers.Add("X-Signicat-Express-SDK", $".NET {SignicatConfiguration.SdkVersion}");
 
             if (!string.IsNullOrWhiteSpace(token))
             {
@@ -122,7 +122,7 @@ namespace Signicat.Express.Infrastructure
             return request;
         }
 
-        private static IdfyResponse Send(string url, HttpMethod method, string token = null, string jsonBody = null,
+        private static SignicatResponse Send(string url, HttpMethod method, string token = null, string jsonBody = null,
             NameValueCollection formData = null, MultipartFormDataContent formDataContent = null)
         {
             var request = GetRequestMessage(url, method, token, jsonBody, formData, formDataContent);
@@ -130,7 +130,7 @@ namespace Signicat.Express.Infrastructure
             return ExecuteRequest(request);
         }
 
-        private static Task<IdfyResponse> SendAsync(string url, HttpMethod method, string token = null,
+        private static Task<SignicatResponse> SendAsync(string url, HttpMethod method, string token = null,
             string jsonBody = null, NameValueCollection formData = null,
             MultipartFormDataContent formDataContent = null)
         {
@@ -167,12 +167,12 @@ namespace Signicat.Express.Infrastructure
             return request;
         }
 
-        private static IdfyResponse ExecuteRequest(HttpRequestMessage requestMessage)
+        private static SignicatResponse ExecuteRequest(HttpRequestMessage requestMessage)
         {
             return AsyncHelper.RunSync(() => ExecuteRequestAsync(requestMessage));
         }
 
-        private static async Task<IdfyResponse> ExecuteRequestAsync(HttpRequestMessage requestMessage)
+        private static async Task<SignicatResponse> ExecuteRequestAsync(HttpRequestMessage requestMessage)
         {
             var response = await HttpClient.SendAsync(requestMessage);
             var content = await response.Content.ReadAsStringAsync();
@@ -202,9 +202,9 @@ namespace Signicat.Express.Infrastructure
             throw BuildException(result, response.StatusCode);
         }
 
-        private static IdfyResponse BuildResponseData(HttpResponseMessage response, string responseJson)
+        private static SignicatResponse BuildResponseData(HttpResponseMessage response, string responseJson)
         {
-            return new IdfyResponse()
+            return new SignicatResponse()
             {
                 RequestId = response.Headers.Contains("Request-Id")
                     ? response.Headers.GetValues("Request-Id").First()
@@ -215,11 +215,11 @@ namespace Signicat.Express.Infrastructure
             };
         }
 
-        private static IdfyException BuildException(IdfyResponse response, HttpStatusCode statusCode)
+        private static SignicatException BuildException(SignicatResponse response, HttpStatusCode statusCode)
         {
-            var idfyError = Mapper.MapFromJson<IdfyError>(response.ResponseJson);
+            var signicatError = Mapper.MapFromJson<SignicatError>(response.ResponseJson);
 
-            return new IdfyException(statusCode, idfyError, response, idfyError?.Message ?? idfyError?.Error);
+            return new SignicatException(statusCode, signicatError, response, signicatError?.Message ?? signicatError?.Error);
         }
     }
 }

@@ -20,7 +20,7 @@ namespace Signicat.Express.Signature
         public int? RequiredSignatures { get; set; }
     
         /// <summary>
-        /// The name of the application that created the document. Used for Idfy statistics.
+        /// The name of the application that created the document. Used for Signicat statistics.
         /// </summary>    
         public string CreatedByApplication { get; set; }
     

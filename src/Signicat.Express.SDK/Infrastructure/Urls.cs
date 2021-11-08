@@ -2,13 +2,13 @@
 {
     internal static class Urls
     {
-        internal static string DefaultBaseUrl => "https://api.idfy.io";
+        internal static string DefaultBaseUrl => "https://api.signicat.io";
         
         internal static string DefaultOAuthBaseUrl => $"{DefaultBaseUrl}/oauth";
 
-        internal static string BaseUrl => IdfyConfiguration.BaseUrl;
+        internal static string BaseUrl => SignicatConfiguration.BaseUrl;
 
-        internal static string OAuthToken => $"{IdfyConfiguration.OAuthBaseUrl}/connect/token";
+        internal static string OAuthToken => $"{SignicatConfiguration.OAuthBaseUrl}/connect/token";
 
         internal static string Signature => $"{BaseUrl}/signature";
 

@@ -7,7 +7,7 @@ using OrganizationResponse = Signicat.Express.Addons.Organization.OrganizationRe
 
 namespace Signicat.Express.Addons
 {
-    public class AddonsService : IdfyBaseService, IAddonsService
+    public class AddonsService : SignicatBaseService, IAddonsService
     {
         public AddonsService()
         {

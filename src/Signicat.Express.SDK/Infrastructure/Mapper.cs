@@ -26,7 +26,7 @@ namespace Signicat.Express.Infrastructure
                 : default(T);
         }
         
-        public static T MapFromJson<T>(IdfyResponse response)
+        public static T MapFromJson<T>(SignicatResponse response)
         {
             return MapFromJson<T>(response.ResponseJson);
         }

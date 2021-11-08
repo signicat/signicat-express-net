@@ -6,9 +6,9 @@ using Signicat.Express.Infrastructure;
 namespace Signicat.Express.Admin
 {
     /// <summary>
-    /// Manage your Idfy account.
+    /// Manage your Signicat account.
     /// </summary>
-    public class AdminService : IdfyBaseService, IAdminService
+    public class AdminService : SignicatBaseService, IAdminService
     {
         public AdminService()
         {
@@ -25,7 +25,7 @@ namespace Signicat.Express.Admin
         }
 
         /// <summary>
-        /// Retrieves the details of your Idfy account.
+        /// Retrieves the details of your Signicat account.
         /// </summary>
         /// <returns></returns>
         public Account GetAccount()
@@ -34,7 +34,7 @@ namespace Signicat.Express.Admin
         }
 
         /// <summary>
-        /// Retrieves the details of your Idfy account.
+        /// Retrieves the details of your Signicat account.
         /// </summary>
         /// <returns></returns>
         public async Task<Account> GetAccountAsync()
@@ -43,7 +43,7 @@ namespace Signicat.Express.Admin
         }
 
         /// <summary>
-        /// Updates your Idfy account.
+        /// Updates your Signicat account.
         /// </summary>
         /// <param name="accountUpdateOptions"></param>
         /// <returns></returns>
@@ -53,7 +53,7 @@ namespace Signicat.Express.Admin
         }
 
         /// <summary>
-        /// Updates your Idfy account.
+        /// Updates your Signicat account.
         /// </summary>
         /// <param name="accountUpdateOptions"></param>
         /// <returns></returns>
@@ -63,7 +63,7 @@ namespace Signicat.Express.Admin
         }
 
         /// <summary>
-        /// Creates a new Idfy account.
+        /// Creates a new Signicat account.
         /// </summary>
         /// <param name="accountCreateOptions"></param>
         /// <returns></returns>
@@ -73,7 +73,7 @@ namespace Signicat.Express.Admin
         }
 
         /// <summary>
-        /// Creates a new Idfy account.
+        /// Creates a new Signicat account.
         /// </summary>
         /// <param name="accountCreateOptions"></param>
         /// <returns></returns>
@@ -83,7 +83,7 @@ namespace Signicat.Express.Admin
         }
 
         /// <summary>
-        /// Sets your Idfy account to inactive/disabled.
+        /// Sets your Signicat account to inactive/disabled.
         /// </summary>
         public void DisableAccount()
         {
@@ -91,7 +91,7 @@ namespace Signicat.Express.Admin
         }
 
         /// <summary>
-        /// Sets your Idfy account to inactive/disabled.
+        /// Sets your Signicat account to inactive/disabled.
         /// </summary>
         /// <returns></returns>
         public async Task DisableAccountAsync()
@@ -288,7 +288,7 @@ namespace Signicat.Express.Admin
         }
 
         /// <summary>
-        /// Returns a list of PDF templates for your Idfy account.
+        /// Returns a list of PDF templates for your Signicat account.
         /// </summary>
         /// <returns></returns>
         public IList<PdfTemplateListItem> ListTemplates()
@@ -297,7 +297,7 @@ namespace Signicat.Express.Admin
         }
         
         /// <summary>
-        /// Returns a list of PDF templates for your Idfy account.
+        /// Returns a list of PDF templates for your Signicat account.
         /// </summary>
         /// <returns></returns>
         public async Task<IList<PdfTemplateListItem>> ListTemplatesAsync()

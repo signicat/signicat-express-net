@@ -8,23 +8,23 @@ using Signicat.Express.Infrastructure;
 
 namespace Signicat.Express
 {
-    public abstract class IdfyBaseService
+    public abstract class SignicatBaseService
     {
         private readonly string _clientId;
         private readonly string _clientSecret;
         private readonly IEnumerable<string> _scopes;
         private OAuthToken _oAuthToken;
 
-        protected IdfyBaseService() { }
+        protected SignicatBaseService() { }
 
-        protected IdfyBaseService(string clientId, string clientSecret, IEnumerable<string> scopes)
+        protected SignicatBaseService(string clientId, string clientSecret, IEnumerable<string> scopes)
         {
             _clientId = clientId ?? throw new ArgumentNullException(nameof(clientId));
             _clientSecret = clientSecret ?? throw new ArgumentNullException(nameof(clientSecret));
             _scopes = scopes ?? throw new ArgumentNullException(nameof(scopes));
         }
         
-        protected IdfyBaseService(string clientId, string clientSecret, IEnumerable<OAuthScope> scopes)
+        protected SignicatBaseService(string clientId, string clientSecret, IEnumerable<OAuthScope> scopes)
         {
             _clientId = clientId ?? throw new ArgumentNullException(nameof(clientId));
             _clientSecret = clientSecret ?? throw new ArgumentNullException(nameof(clientSecret));

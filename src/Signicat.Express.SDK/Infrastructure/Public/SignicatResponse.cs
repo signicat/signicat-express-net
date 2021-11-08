@@ -2,15 +2,15 @@
 
 namespace Signicat.Express
 {
-    public class IdfyResponse
+    public class SignicatResponse
     {
         /// <summary>
-        /// The raw JSON returned by Idfy.
+        /// The raw JSON returned by Signicat.
         /// </summary>
         public string ResponseJson { get; set; }
         
         /// <summary>
-        /// A unique identifier associated with the request. You will be able to use this to search the logs in the Idfy dashboard.
+        /// A unique identifier associated with the request. You will be able to use this to search the logs in the Signicat dashboard.
         /// If you need to contact us about a specific request, providing the request identifier will ensure the fastest possible resolution.
         /// </summary>
         public string RequestId { get; set; }

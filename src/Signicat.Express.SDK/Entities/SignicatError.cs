@@ -2,7 +2,7 @@
 
 namespace Signicat.Express
 {
-    public class IdfyError
+    public class SignicatError
     {
         [JsonProperty("message")]
         public string Message { get; set; }
