@@ -1,5 +1,5 @@
 # Get current version
-$csprojPath = "$pwd/src/Idfy.SDK/Idfy.SDK.csproj"
+$csprojPath = "$pwd/src/Signicat.Express.SDK/Signicat.Express.SDK.csproj"
 $xml = New-Object XML
 $xml.PreserveWhitespace = $true
 $xml.Load($csprojPath)
