@@ -1,4 +1,4 @@
-**Note: For support questions, please contact us at support@idfy.io.**
+**Note: For support questions, please visit [Signicat Community](https://community.signicat.com).**
 
 * **I'm submitting a ...**
   - [ ] bug report
@@ -24,7 +24,7 @@
 
 * **Please tell us about your environment:**
   
-  - Idfy SDK version: 
+  - Signicat Express SDK version: 
   - .NET version: 
   - OS version: 
 
