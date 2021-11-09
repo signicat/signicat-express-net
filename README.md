@@ -1,5 +1,6 @@
 # Signicat Express .NET SDK
-[![Build Status](https://travis-ci.com/idfy-io/idfy-sdk-net.svg?branch=master)](https://travis-ci.com/idfy-io/idfy-sdk-net) [![NuGet](https://img.shields.io/nuget/v/Signicat.Express.SDK.svg)](https://www.nuget.org/packages/Signicat.Express.SDK)
+[![Tests](https://github.com/signicat/signicat-express-net/actions/workflows/test.yml/badge.svg)](https://github.com/signicat/signicat-express-net/actions/workflows/test.yml)
+ [![NuGet](https://img.shields.io/nuget/v/Signicat.Express.SDK.svg)](https://www.nuget.org/packages/Signicat.Express.SDK)
 
 A .NET SDK for simple integration with the Signicat Express REST API.
 
