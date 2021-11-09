@@ -19,8 +19,8 @@ namespace Signicat.Express.IdentificationV2
         [EnumMember(Value = "dk_nemid")]
         DkNemid = 4,
             
-        [EnumMember(Value = "fi_eid")]
-        FiEid = 5,
+        [EnumMember(Value = "ftn")]
+        Ftn = 5,
             
         [EnumMember(Value = "sms_otp")]
         SmsOtp = 6,
