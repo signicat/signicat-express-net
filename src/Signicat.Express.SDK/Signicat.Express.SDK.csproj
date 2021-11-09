@@ -6,16 +6,16 @@
     <Description>.NET SDK for Signicat Express REST API</Description>
     <Authors>Signicat AS</Authors>
     <PackageId>Signicat.Express.SDK</PackageId>
-    <PackageTags>signicat;idfy;rest;signature;identification;api</PackageTags>
+    <PackageTags>signicat;rest;signature;identification;api</PackageTags>
     <PackageIconUrl>https://idfy-img.azureedge.net/nuget-icon-128x128.png</PackageIconUrl>
-    <PackageProjectUrl>https://github.com/idfy-io/idfy-sdk-net</PackageProjectUrl>
-    <PackageLicenseUrl>https://raw.githubusercontent.com/idfy-io/idfy-sdk-net/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/signicat/signicat-express-net</PackageProjectUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/signicat/signicat-express-net/master/LICENSE</PackageLicenseUrl>
     <RootNamespace>Signicat.Express</RootNamespace>
     <AssemblyTitle>Signicat.Express.SDK</AssemblyTitle>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>$(NoWarn);CS1591</NoWarn>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/idfy-io/idfy-sdk-net</RepositoryUrl>
+    <RepositoryUrl>https://github.com/signicat/signicat-express-net</RepositoryUrl>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
