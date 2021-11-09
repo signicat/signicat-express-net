@@ -17,7 +17,7 @@ Package Manager:
 	dotnet add package Signicat.Express.SDK
 
 ## Documentation
-- [Signicat Express REST API Reference](https://developer.signicat.io/apis/overview.html)
+- [Signicat Express REST API Reference](https://developer.signicat.com/express/apis/overview.html)
 - [Signicat Express Developer Documentation](https://developer.signicat.com/express/docs)
 
 
