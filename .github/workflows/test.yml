@@ -22,7 +22,8 @@ jobs:
           unzip "idfy-mock-server/idfy-mock-server_$IDFY_MOCK_SERVER_VERSION.zip" -d "idfy-mock-server/idfy-mock-server_$IDFY_MOCK_SERVER_VERSION/"
           dotnet "idfy-mock-server/idfy-mock-server_$IDFY_MOCK_SERVER_VERSION/Idfy.MockServer.dll" &
 
-      - name: Build and test
-        run: |
-          dotnet build src -c Release
-          dotnet test src --no-build
+      - name: Build
+        run: dotnet build src -c Release
+
+      - name: Test
+        run: dotnet test src -c Release --no-build
