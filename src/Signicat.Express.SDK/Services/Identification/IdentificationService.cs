@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Signicat.Express.Infrastructure;
 
@@ -7,6 +8,7 @@ namespace Signicat.Express.Identification
     /// <summary>
     /// Identify users through eID providers such as Norwegian BankID, Swedish BankID and NemID.
     /// </summary>
+    [Obsolete("Deprecated. Use IdentificationV2Service.")]
     public class IdentificationService : SignicatBaseService, IIdentificationService
     {
         public IdentificationService()
