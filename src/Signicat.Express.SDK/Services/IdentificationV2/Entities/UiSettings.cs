@@ -24,5 +24,10 @@ namespace Signicat.Express.IdentificationV2
         /// The color theme to use.
         /// </summary>
         public ColorTheme? ColorTheme { get; set; }
+
+        /// <summary>
+        /// Add a top bar to the identification process.
+        /// </summary>
+        public TopBarSettings TopBar { get; set; }
     }
 }
