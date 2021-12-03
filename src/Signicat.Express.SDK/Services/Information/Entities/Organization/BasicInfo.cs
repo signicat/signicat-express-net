@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 
 namespace Signicat.Express.Information.Organization
 {
@@ -71,11 +72,22 @@ namespace Signicat.Express.Information.Organization
     }
     
     public enum LegalStatus {
+        [EnumMember(Value = "unknown")]
         Unknown = 0,
+        
+        [EnumMember(Value = "active")]
         Active = 1,
+        
+        [EnumMember(Value = "inactive")]
         Inactive = 2,
+        
+        [EnumMember(Value = "insolvent")]
         Insolvent = 3,
+        
+        [EnumMember(Value = "terminating")]
         Terminating = 4,
+        
+        [EnumMember(Value = "terminated")]
         Terminated = 5,
     }
 
@@ -154,16 +166,19 @@ namespace Signicat.Express.Information.Organization
         /// <summary>
         /// The type of name is not known
         /// </summary>
+        [EnumMember(Value = "unknown")]
         Unknown = 0,
         
         /// <summary>
         /// Trade name
         /// </summary>
+        [EnumMember(Value = "tradeName")]
         TradeName = 1,
         
         /// <summary>
         /// Registered name
         /// </summary>
+        [EnumMember(Value = "registered")]
         Registered = 2
     }
 }

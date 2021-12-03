@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.Serialization;
 
 namespace Signicat.Express.Information
 {
@@ -51,44 +52,25 @@ namespace Signicat.Express.Information
         /// <summary>
         /// Unknown address
         /// </summary>
+        [EnumMember(Value = "unknown")]
         Unknown = 0,
         
         /// <summary>
         /// Address in official records
         /// </summary>
+        [EnumMember(Value = "registered")]
         Registered = 1,
         
         /// <summary>
         /// Principle place of business dealings and operations
         /// </summary>
+        [EnumMember(Value = "business")]
         Business = 2,
         
         /// <summary>
         /// Postal address
         /// </summary>
-        Postal = 3
-    }
-    
-    public enum DatedAddressType
-    {
-        /// <summary>
-        /// Unknown address
-        /// </summary>
-        Unknown = 0,
-        
-        /// <summary>
-        /// Address in official records
-        /// </summary>
-        Registered = 1,
-        
-        /// <summary>
-        /// Principle place of business dealings and operations
-        /// </summary>
-        Business = 2,
-        
-        /// <summary>
-        /// Postal address
-        /// </summary>
+        [EnumMember(Value = "postal")]
         Postal = 3
     }
 }

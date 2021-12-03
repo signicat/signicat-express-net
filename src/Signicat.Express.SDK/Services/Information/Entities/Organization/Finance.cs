@@ -86,7 +86,7 @@ namespace Signicat.Express.Information.Organization
         public long? NetWorth { get; set; }
     }
 
-    public abstract class FiscalYear
+    public class FiscalYear
     {
         /// <summary>
         /// Fiscal year

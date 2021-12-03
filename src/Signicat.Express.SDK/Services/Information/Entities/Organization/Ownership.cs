@@ -58,7 +58,7 @@ namespace Signicat.Express.Information.Organization
         public string Id { get; set; }
     }
 
-    public abstract class Shareholder
+    public class Shareholder
     {
         /// <summary>
         /// Shareholding percentage in the organization

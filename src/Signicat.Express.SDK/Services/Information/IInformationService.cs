@@ -2,13 +2,12 @@
 using System.Threading.Tasks;
 
 namespace Signicat.Express.Information
-{   
+{
     public interface IInformationService
     {
         /**
          * ORGANIZATION
          */
-        
         /// <summary>
         /// Retrieve basic info about an organization.
         /// </summary>
@@ -24,7 +23,7 @@ namespace Signicat.Express.Information
             string idType = null,
             string source = null,
             bool? rawJson = null);
-        
+
         /// <summary>
         /// Retrieve basic info about an organization.
         /// </summary>
@@ -72,7 +71,7 @@ namespace Signicat.Express.Information
             string idType = null,
             string source = null,
             bool? rawJson = null);
-        
+
         /// <summary>
         /// Retrieve ownership info for an organization.
         /// </summary>
@@ -88,7 +87,7 @@ namespace Signicat.Express.Information
             string idType = null,
             string source = null,
             bool? rawJson = null);
-        
+
         /// <summary>
         /// Retrieve ownership info for an organization.
         /// </summary>
@@ -110,7 +109,6 @@ namespace Signicat.Express.Information
         /// </summary>
         /// <param name="country"></param>
         /// <param name="id"></param>
-        /// <param name="expand"></param>
         /// <param name="idType"></param>
         /// <param name="source"></param>
         /// <param name="rawJson"></param>
@@ -118,17 +116,15 @@ namespace Signicat.Express.Information
         Organization.Roles GetOrganizationRoles(
             string country,
             string id,
-            List<string> expand = null,
             string idType = null,
             string source = null,
             bool? rawJson = null);
-        
+
         /// <summary>
         /// Retrieve information about roles in an organization.
         /// </summary>
         /// <param name="country"></param>
         /// <param name="id"></param>
-        /// <param name="expand"></param>
         /// <param name="idType"></param>
         /// <param name="source"></param>
         /// <param name="rawJson"></param>
@@ -136,11 +132,10 @@ namespace Signicat.Express.Information
         Task<Organization.Roles> GetOrganizationRolesAsync(
             string country,
             string id,
-            List<string> expand = null,
             string idType = null,
             string source = null,
             bool? rawJson = null);
-        
+
         /// <summary>
         /// Retrieve information about ultimate beneficial owners for an organization.
         /// </summary>
@@ -156,7 +151,7 @@ namespace Signicat.Express.Information
             string idType = null,
             string source = null,
             bool? rawJson = null);
-        
+
         /// <summary>
         /// Retrieve information about ultimate beneficial owners for an organization.
         /// </summary>
@@ -172,7 +167,7 @@ namespace Signicat.Express.Information
             string idType = null,
             string source = null,
             bool? rawJson = null);
-        
+
         /// <summary>
         /// Retrieve financial info for an organization.
         /// </summary>
@@ -188,7 +183,7 @@ namespace Signicat.Express.Information
             string idType = null,
             string source = null,
             bool? rawJson = null);
-        
+
         /// <summary>
         /// Retrieve financial info for an organization.
         /// </summary>
@@ -228,7 +223,7 @@ namespace Signicat.Express.Information
             string listType = null,
             int? offset = null,
             int? limit = null);
-        
+
         /// <summary>
         /// AML/CFT screening against lists with politically exposed persons (PEP), sanctions and adverse media.
         /// </summary>
@@ -276,7 +271,7 @@ namespace Signicat.Express.Information
             string cursor = null,
             int? offset = null,
             int? limit = null);
-        
+
         /// <summary>
         /// Search for an organization.
         /// </summary>
@@ -300,7 +295,7 @@ namespace Signicat.Express.Information
             string cursor = null,
             int? offset = null,
             int? limit = null);
-        
+
         /*
          * PERSON
          */
@@ -334,7 +329,7 @@ namespace Signicat.Express.Information
             string city = null,
             string source = null,
             bool? rawJson = null);
-        
+
         /// <summary>
         /// Retrieve basic info about a person.
         /// </summary>
@@ -394,7 +389,7 @@ namespace Signicat.Express.Information
             string city = null,
             string source = null,
             bool? rawJson = null);
-        
+
         /// <summary>
         /// Retrieve address info for a person.
         /// </summary>
@@ -424,7 +419,7 @@ namespace Signicat.Express.Information
             string city = null,
             string source = null,
             bool? rawJson = null);
-        
+
         /// <summary>
         /// Retrieve finance info for a person.
         /// </summary>
@@ -454,7 +449,7 @@ namespace Signicat.Express.Information
             string city = null,
             string source = null,
             bool? rawJson = null);
-        
+
         /// <summary>
         /// Retrieve finance info for a person.
         /// </summary>
@@ -484,7 +479,7 @@ namespace Signicat.Express.Information
             string city = null,
             string source = null,
             bool? rawJson = null);
-        
+
         /// <summary>
         /// Verification of a persons address.
         /// </summary>
@@ -514,7 +509,7 @@ namespace Signicat.Express.Information
             string city = null,
             string source = null,
             bool? rawJson = null);
-        
+
         /// <summary>
         /// Verification of a persons address.
         /// </summary>
@@ -570,7 +565,7 @@ namespace Signicat.Express.Information
             string listType = null,
             int? offset = null,
             int? limit = null);
-        
+
         /// <summary>
         /// AML/CFT screening against lists with politically exposed persons (PEP), sanctions and adverse media.
         /// </summary>
@@ -596,7 +591,7 @@ namespace Signicat.Express.Information
             string listType = null,
             int? offset = null,
             int? limit = null);
-        
+
         /// <summary>
         /// Search for a person. Functionality is subject to change without prior notice.
         /// </summary>
@@ -644,7 +639,7 @@ namespace Signicat.Express.Information
             bool? rawJson = null,
             int? offset = null,
             int? limit = null);
-        
+
         /*
          * BUSINESSREGISTRY
          */
@@ -654,7 +649,7 @@ namespace Signicat.Express.Information
         /// </summary>
         /// <returns></returns>
         IEnumerable<BusinessRegistry.RegistrationAuthorityItem> ListRegistrationAuthorities();
-        
+
         /// <summary>
         /// Retrieves a list of business registration authorities globally.
         /// </summary>

@@ -1,3 +1,5 @@
+using System.Runtime.Serialization;
+
 namespace Signicat.Express.Information
 {
     /// <summary>
@@ -5,9 +7,16 @@ namespace Signicat.Express.Information
     /// </summary>
     public enum Gender
     {
+        [EnumMember(Value = "unknown")]
         Unknown = 0,
+        
+        [EnumMember(Value = "female")]
         Female = 1,
+        
+        [EnumMember(Value = "male")]
         Male = 2,
+        
+        [EnumMember(Value = "other")]
         Other = 3
     }
 }

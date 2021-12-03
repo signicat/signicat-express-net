@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 
 namespace Signicat.Express.Information.Organization
 {
@@ -24,7 +25,7 @@ namespace Signicat.Express.Information.Organization
 
         public Gender Gender { get; set; }
         
-        public IdNumberDto IdentityNumber { get; set; }
+        public IdentityNumber IdentityNumber { get; set; }
         
         public Iso3166 Nationality { get; set; }
         
@@ -78,16 +79,22 @@ namespace Signicat.Express.Information.Organization
     /// </summary>
     public class VotingPowerRange : Range
     {
-        
     }
     
     /// <summary>
     /// Role of the person
     /// </summary>
     public enum UboRole {
+        [EnumMember(Value = "unknown")]
         Unknown = 0,
+        
+        [EnumMember(Value = "boardMember")]
         BoardMember = 1,
+        
+        [EnumMember(Value = "shareHolder")]
         Shareholder = 2,
+        
+        [EnumMember(Value = "other")]
         Other = 3
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.Serialization;
 
 namespace Signicat.Express.Information
 {
@@ -40,20 +41,13 @@ namespace Signicat.Express.Information
         /// <summary>
         /// Only a full name was found
         /// </summary>
+        [EnumMember(Value = "partial")]
         Partial,
 
         /// <summary>
         /// All name attributes are set
         /// </summary>
+        [EnumMember(Value = "all")]
         All
-    } 
-    
-    public class DatedNameHit : Name
-    {
-        public HitRating HitRating { get; set; }
-        
-        public DateTime? StartDate { get; set; }
-        
-        public DateTime? EndDate { get; set; }
     }
 }

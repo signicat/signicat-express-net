@@ -3,7 +3,6 @@ namespace Signicat.Express.Information.Organization
 {
     public class SearchResult : PagedCollection<SearchItem, Metadata>
     {
-
     }
     
     public class SearchItem

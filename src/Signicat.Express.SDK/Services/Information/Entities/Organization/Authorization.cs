@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 
 namespace Signicat.Express.Information.Organization
 {
@@ -136,10 +137,19 @@ namespace Signicat.Express.Information.Organization
     /// </summary> 
     public enum AuthorizationStatus
     {
+        [EnumMember(Value = "unknown")]
         Unknown = 0,
+        
+        [EnumMember(Value = "error")]
         Error = 1,
+        
+        [EnumMember(Value = "none")]
         None = 2,
+        
+        [EnumMember(Value = "incomplete")]
         Incomplete = 3,
+        
+        [EnumMember(Value = "complete")]
         Complete = 4
     }
     

@@ -1,10 +1,12 @@
 
+using System.Runtime.Serialization;
+
 namespace Signicat.Express.Information
 {
     /// <summary>
     /// Identity number
     /// </summary>
-    public class IdNumberDto
+    public class IdentityNumber
     {
         /// <summary>
         /// The identity number
@@ -21,10 +23,19 @@ namespace Signicat.Express.Information
     /// </summary>
     public enum IdNumberType
     {
+        [EnumMember(Value = "unknown")]
         Unknown = 0,
+        
+        [EnumMember(Value = "nationalIdentityNumber")]
         NationalIdentityNumber = 1,
+        
+        [EnumMember(Value = "socialSecurityNumber")]
         SocialSecurityNumber = 2,
+        
+        [EnumMember(Value = "taxIdentificationNumber")]
         TaxIdentificationNumber = 3,
+        
+        [EnumMember(Value = "identificationDocumentNumber")]
         IdentificationDocumentNumber = 4,
     }
 }
