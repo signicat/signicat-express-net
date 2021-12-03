@@ -219,7 +219,11 @@ namespace Signicat.Express.Infrastructure
         {
             var signicatError = Mapper.MapFromJson<SignicatError>(response.ResponseJson);
 
-            return new SignicatException(statusCode, signicatError, response, signicatError?.Message ?? signicatError?.Error);
+            return new SignicatException(
+                statusCode,
+                signicatError,
+                response,
+                signicatError?.Message ?? signicatError?.OAuthError);
         }
     }
 }
