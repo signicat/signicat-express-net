@@ -546,70 +546,6 @@ namespace Signicat.Express.Information
             bool? rawJson = null);
 
         /// <summary>
-        /// Retrieve account details if bank account (an IBAN) is found and if is match the name.
-        /// </summary>
-        /// <param name="country"></param>
-        /// <param name="iban"></param>
-        /// <param name="identityNumber"></param>
-        /// <param name="givenName"></param>
-        /// <param name="surname"></param>
-        /// <param name="dateOfBirth"></param>
-        /// <param name="caseRef"></param>
-        /// <param name="street"></param>
-        /// <param name="streetNumber"></param>
-        /// <param name="postalCode"></param>
-        /// <param name="city"></param>
-        /// <param name="source"></param>
-        /// <param name="rawJson"></param>
-        /// <returns></returns>
-        Person.IbanVerificationResult PersonVerifyIban(
-            string country,
-            string iban,
-            string identityNumber = null,
-            string givenName = null,
-            string surname = null,
-            string dateOfBirth = null,
-            string caseRef = null,
-            string street = null,
-            string streetNumber = null,
-            string postalCode = null,
-            string city = null,
-            string source = null,
-            bool? rawJson = null);
-        
-        /// <summary>
-        /// Retrieve account details if bank account (an IBAN) is found and if is match the name.
-        /// </summary>
-        /// <param name="country"></param>
-        /// <param name="iban"></param>
-        /// <param name="identityNumber"></param>
-        /// <param name="givenName"></param>
-        /// <param name="surname"></param>
-        /// <param name="dateOfBirth"></param>
-        /// <param name="caseRef"></param>
-        /// <param name="street"></param>
-        /// <param name="streetNumber"></param>
-        /// <param name="postalCode"></param>
-        /// <param name="city"></param>
-        /// <param name="source"></param>
-        /// <param name="rawJson"></param>
-        /// <returns></returns>
-        Task<Person.IbanVerificationResult> PersonVerifyIbanAsync(
-            string country,
-            string iban,
-            string identityNumber = null,
-            string givenName = null,
-            string surname = null,
-            string dateOfBirth = null,
-            string caseRef = null,
-            string street = null,
-            string streetNumber = null,
-            string postalCode = null,
-            string city = null,
-            string source = null,
-            bool? rawJson = null);
-
-        /// <summary>
         /// AML/CFT screening against lists with politically exposed persons (PEP), sanctions and adverse media.
         /// </summary>
         /// <param name="dateOfBirth"></param>
@@ -708,34 +644,6 @@ namespace Signicat.Express.Information
             bool? rawJson = null,
             int? offset = null,
             int? limit = null);
-        
-        /*
-         * SOURCES
-         */
-
-        /// <summary>
-        /// Returns the sources available for organizational lookups.
-        /// </summary>
-        /// <returns></returns>
-        OrgLookupProviders GetOrganizationSources();
-
-        /// <summary>
-        /// Returns the sources available for organizational lookups.
-        /// </summary>
-        /// <returns></returns>
-        Task<OrgLookupProviders> GetOrganizationSourcesAsync();
-
-        /// <summary>
-        /// Returns the sources available for natural person lookups.
-        /// </summary>
-        /// <returns></returns>
-        PersonLookupProviders GetPersonLookupSources();
-        
-        /// <summary>
-        /// Returns the sources available for natural person lookups.
-        /// </summary>
-        /// <returns></returns>
-        Task<PersonLookupProviders> GetPersonLookupSourcesAsync();
         
         /*
          * BUSINESSREGISTRY
