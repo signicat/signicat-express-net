@@ -5,9 +5,6 @@ namespace Signicat.Express.Information
 {
     public interface IInformationService
     {
-        /**
-         * ORGANIZATION
-         */
         /// <summary>
         /// Retrieve basic info about an organization.
         /// </summary>
@@ -295,10 +292,6 @@ namespace Signicat.Express.Information
             string cursor = null,
             int? offset = null,
             int? limit = null);
-
-        /*
-         * PERSON
-         */
 
         /// <summary>
         /// Retrieve basic info about a person.
@@ -640,10 +633,6 @@ namespace Signicat.Express.Information
             int? offset = null,
             int? limit = null);
 
-        /*
-         * BUSINESSREGISTRY
-         */
-
         /// <summary>
         /// Retrieves a list of business registration authorities globally.
         /// </summary>
@@ -669,10 +658,6 @@ namespace Signicat.Express.Information
         /// <param name="authorityCode"></param>
         /// <returns></returns>
         Task<BusinessRegistry.RegistrationAuthority> GetRegistrationAuthorityAsync(string authorityCode);
-
-        /*
-         * GEODATA
-         */
 
         /// <summary>
         /// Lists all countries in the world with English name and ISO 3166-1 country code.

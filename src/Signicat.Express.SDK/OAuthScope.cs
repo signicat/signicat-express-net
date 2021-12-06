@@ -53,6 +53,12 @@ namespace Signicat.Express
         DepositWrite,
         
         [EnumMember(Value = "deposit_read")]
-        DepositRead
+        DepositRead,
+        
+        [EnumMember(Value = "info_legal_person_read")]
+        InfoOrganizationRead,
+
+        [EnumMember(Value = "info_natural_person_read")]
+        InfoPersonRead
     }
 }

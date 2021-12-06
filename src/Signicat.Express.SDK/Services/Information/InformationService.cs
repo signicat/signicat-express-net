@@ -6,6 +6,20 @@ namespace Signicat.Express.Information
 {
     public class InformationService : SignicatBaseService, IInformationService
     {
+        public InformationService()
+        {
+        }
+
+        public InformationService(string clientId, string clientSecret, IEnumerable<string> scopes)
+            : base(clientId, clientSecret, scopes)
+        {
+        }
+
+        public InformationService(string clientId, string clientSecret, IEnumerable<OAuthScope> scopes)
+            : base(clientId, clientSecret, scopes)
+        {
+        }
+        
         /// <inheritdoc />
         public Organization.BasicInfo GetBasicOrganizationInfo(
             string country,
