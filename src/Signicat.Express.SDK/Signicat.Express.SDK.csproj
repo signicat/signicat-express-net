@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <VersionPrefix>3.0.1</VersionPrefix>
+    <VersionPrefix>4.0.0</VersionPrefix>
     <VersionSuffix>$(VersionSuffix)</VersionSuffix>
     <Description>.NET SDK for Signicat Express REST API</Description>
     <Authors>Signicat AS</Authors>
