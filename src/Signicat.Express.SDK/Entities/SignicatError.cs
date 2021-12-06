@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace Signicat.Express
 {
@@ -10,11 +11,13 @@ namespace Signicat.Express
         [JsonProperty("code")]
         public string Code { get; set; }
         
-        // OAuth 2 errors
+        [JsonProperty("errors")]
+        public IEnumerable<ValidationError> ValidationErrors { get; set; }
+
         [JsonProperty("error")]
-        public string Error { get; set; }
+        public string OAuthError { get; set; }
         
         [JsonProperty("error_description")]
-        public string ErrorDescription { get; set; }
+        public string OAuthErrorDescription { get; set; }
     }
 }
