@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Signicat.Express.IdentificationV2
 {
@@ -56,5 +57,10 @@ namespace Signicat.Express.IdentificationV2
         /// Information about the organization the user represents.
         /// </summary>
         public Organization Organization { get; set; }
+        
+        /// <summary>
+        /// Additional user attributes.
+        /// </summary>
+        public Dictionary<string, string> Attributes { get; set; }
     }
 }
