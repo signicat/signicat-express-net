@@ -1,5 +1,3 @@
-using System;
-
 namespace Signicat.Express.IdentificationV2
 {
     /// <summary>
@@ -18,9 +16,9 @@ namespace Signicat.Express.IdentificationV2
         public string PhoneNumber { get; set; }
 
         /// <summary>
-        /// Prefill the user's date of birth (YYYY-MM-DD).
+        /// Prefill the user's date of birth (YYYY-MM-DD). For Norwegian BankID on Mobile the DDMMYY format is also supported.
         /// </summary>
-        public DateTime? DateOfBirth { get; set; }
+        public string DateOfBirth { get; set; }
 
         /// <summary>
         /// Prefill the user's username.
