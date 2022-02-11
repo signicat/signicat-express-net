@@ -19,7 +19,7 @@ namespace Signicat.Express.MerchantSign
             : base(clientId, clientSecret, scopes)
         {
         }
-        
+
         public MerchantSignService(string clientId, string clientSecret, IEnumerable<OAuthScope> scopes)
             : base(clientId, clientSecret, scopes)
         {
@@ -34,7 +34,7 @@ namespace Signicat.Express.MerchantSign
         {
             return Post<SignResponse>($"{Urls.MerchantSign}/signature", signRequest);
         }
-        
+
         /// <summary>
         /// Creates a new merchant signature.
         /// </summary>
@@ -50,17 +50,39 @@ namespace Signicat.Express.MerchantSign
         /// </summary>
         /// <param name="transactionId"></param>
         /// <returns></returns>
+        [Obsolete("This method is obsolete. Please use GetTransaction instead.")]
         public MerchantSignTransaction GetTransation(Guid transactionId)
         {
-            return Get<MerchantSignTransaction>($"{Urls.MerchantSign}/signature/{transactionId}");
+            return GetTransaction(transactionId);
         }
-        
+
         /// <summary>
         /// Retrieves a single transaction.
         /// </summary>
         /// <param name="transactionId"></param>
         /// <returns></returns>
+        [Obsolete("This method is obsolete. Please use GetTransactionAsync instead.")]
         public async Task<MerchantSignTransaction> GetTransationAsync(Guid transactionId)
+        {
+            return await GetTransactionAsync(transactionId);
+        }
+
+        /// <summary>
+        /// Retrieves a single transaction.
+        /// </summary>
+        /// <param name="transactionId"></param>
+        /// <returns></returns>
+        public MerchantSignTransaction GetTransaction(Guid transactionId)
+        {
+            return Get<MerchantSignTransaction>($"{Urls.MerchantSign}/signature/{transactionId}");
+        }
+
+        /// <summary>
+        /// Retrieves a single transaction.
+        /// </summary>
+        /// <param name="transactionId"></param>
+        /// <returns></returns>
+        public async Task<MerchantSignTransaction> GetTransactionAsync(Guid transactionId)
         {
             return await GetAsync<MerchantSignTransaction>($"{Urls.MerchantSign}/signature/{transactionId}");
         }
@@ -84,10 +106,10 @@ namespace Signicat.Express.MerchantSign
                     {"fromDate", fromDate},
                     {"toDate", toDate}
                 });
-            
+
             return Get<IList<MerchantSignTransaction>>(url);
         }
-        
+
         /// <summary>
         /// Returns a list of transactions.
         /// </summary>
@@ -107,7 +129,7 @@ namespace Signicat.Express.MerchantSign
                     {"fromDate", fromDate},
                     {"toDate", toDate}
                 });
-            
+
             return await GetAsync<IList<MerchantSignTransaction>>(url);
         }
 
@@ -120,7 +142,7 @@ namespace Signicat.Express.MerchantSign
         {
             return GetFile($"{Urls.MerchantSign}/pades/{signedDocumentId}");
         }
-        
+
         /// <summary>
         /// Retrieve PAdES of signed PDF file.
         /// </summary>

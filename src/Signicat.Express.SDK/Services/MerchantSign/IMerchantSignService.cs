@@ -26,6 +26,7 @@ namespace Signicat.Express.MerchantSign
         /// </summary>
         /// <param name="transactionId"></param>
         /// <returns></returns>
+        [Obsolete("This method is obsolete. Please use GetTransaction instead.")]
         MerchantSignTransaction GetTransation(Guid transactionId);
 
         /// <summary>
@@ -33,7 +34,22 @@ namespace Signicat.Express.MerchantSign
         /// </summary>
         /// <param name="transactionId"></param>
         /// <returns></returns>
+        [Obsolete("This method is obsolete. Please use GetTransactionAsync instead.")]
         Task<MerchantSignTransaction> GetTransationAsync(Guid transactionId);
+
+        /// <summary>
+        /// Retrieves a single transaction.
+        /// </summary>
+        /// <param name="transactionId"></param>
+        /// <returns></returns>
+        MerchantSignTransaction GetTransaction(Guid transactionId);
+
+        /// <summary>
+        /// Retrieves a single transaction.
+        /// </summary>
+        /// <param name="transactionId"></param>
+        /// <returns></returns>
+        Task<MerchantSignTransaction> GetTransactionAsync(Guid transactionId);
 
         /// <summary>
         /// Returns a list of transactions.
