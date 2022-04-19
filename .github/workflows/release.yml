@@ -6,7 +6,7 @@ on:
       - "v[0-9]+.[0-9]+.[0-9]+"
 
 env:
-  IDFY_MOCK_SERVER_VERSION: 0.0.8
+  IDFY_MOCK_SERVER_VERSION: 0.0.9
 
 jobs:
   release:
