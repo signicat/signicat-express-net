@@ -57,5 +57,8 @@ namespace Signicat.Express.IdentificationV2
         
         [EnumMember(Value = "mitid")]
         Mitid = 17,
+        
+        [EnumMember(Value = "no_bankid")]
+        NoBankid = 18,
     }
 }
