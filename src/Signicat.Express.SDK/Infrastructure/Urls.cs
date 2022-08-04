@@ -16,8 +16,6 @@
 
         internal static string Notification => $"{BaseUrl}/notification";
 
-        internal static string Identification => $"{BaseUrl}/identification";
-
         internal static string MerchantSign => $"{BaseUrl}/merchant";
         
         internal static string Jwt => $"{BaseUrl}/jwt";
