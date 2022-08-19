@@ -24,5 +24,8 @@ namespace Signicat.Express.IdentificationV2
         
         [EnumMember(Value = "organization")]
         Organization = 6,
+        
+        [EnumMember(Value = "nin_consent")]
+        NinConsent = 7,
     }
 }
