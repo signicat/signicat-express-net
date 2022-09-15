@@ -47,6 +47,6 @@ namespace Signicat.Express.Signature
         Mitid = 22,
         
         [EnumMember(Value = "no_bankid_oidc")]
-        NoBankIdOidc = 22,
+        NoBankIdOidc = 23,
     }
 }
