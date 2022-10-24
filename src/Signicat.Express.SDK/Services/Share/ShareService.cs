@@ -54,14 +54,30 @@ namespace Signicat.Express.Share
         /// <returns></returns>
         public void UploadFile(string id, string fileId, byte[] file, string filename)
         {
+            UploadFile(id, fileId, new MemoryStream(file), filename);
+        }
+        
+        /// <summary>
+        /// Upload file
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="fileId"></param>
+        /// <param name="stream"></param>
+        /// <param name="filename"></param>
+        /// <returns></returns>
+        public void UploadFile(string id, string fileId, Stream stream, string filename)
+        {
             using (var content = new MultipartFormDataContent())
             {
-                // A kind of hacky way to enforce utf8 encoding (problems with æøå)
-                var streamContent = new StreamContent(new MemoryStream(file));
+                var streamContent = new StreamContent(stream);
+
+                // Enforce UTF8-encoded filename
                 streamContent.Headers.Add("Content-Disposition",
-                    new string(Encoding.UTF8.GetBytes($"form-data; name=\"file\"; filename=\"{filename}\"").
-                        Select(b => (char)b).ToArray()));
+                    new string(Encoding.UTF8.GetBytes($"form-data; name=\"file\"; filename=\"{filename}\"")
+                        .Select(b => (char)b).ToArray()));
+
                 content.Add(streamContent);
+                
                 PostFormContentData($"{Urls.Share}/buckets/{id}/upload/{fileId}", content);
             }
         }
@@ -74,16 +90,32 @@ namespace Signicat.Express.Share
         /// <param name="file"></param>
         /// <param name="filename"></param>
         /// <returns></returns>
-        public async Task UploadFileAsync(string id, string fileId, byte[] file, string filename)
+        public Task UploadFileAsync(string id, string fileId, byte[] file, string filename)
+        {
+            return UploadFileAsync(id, fileId, new MemoryStream(file), filename);
+        }
+        
+        /// <summary>
+        /// Upload file
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="fileId"></param>
+        /// <param name="stream"></param>
+        /// <param name="filename"></param>
+        /// <returns></returns>
+        public async Task UploadFileAsync(string id, string fileId, Stream stream, string filename)
         {
             using (var content = new MultipartFormDataContent())
             {
-                // A kind of hacky way to enforce utf8 encoding (problems with æøå)
-                var streamContent = new StreamContent(new MemoryStream(file));
+                var streamContent = new StreamContent(stream);
+                
+                // Enforce UTF8-encoded filename
                 streamContent.Headers.Add("Content-Disposition",
-                    new string(Encoding.UTF8.GetBytes($"form-data; name=\"file\"; filename=\"{filename}\"").
-                        Select(b => (char)b).ToArray()));
+                    new string(Encoding.UTF8.GetBytes($"form-data; name=\"file\"; filename=\"{filename}\"")
+                        .Select(b => (char)b).ToArray()));
+
                 content.Add(streamContent);
+                
                 await PostFormContentDataAsync($"{Urls.Share}/buckets/{id}/upload/{fileId}", content);
             }
         }
