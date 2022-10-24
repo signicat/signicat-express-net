@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace Signicat.Express.Share
@@ -34,10 +35,29 @@ namespace Signicat.Express.Share
         /// </summary>
         /// <param name="id"></param>
         /// <param name="fileId"></param>
+        /// <param name="stream"></param>
+        /// <param name="filename"></param>
+        void UploadFile(string id, string fileId, Stream stream, string filename);
+
+        /// <summary>
+        /// Upload file
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="fileId"></param>
         /// <param name="file"></param>
         /// <param name="filename"></param>
         /// <returns></returns>
         Task UploadFileAsync(string id, string fileId, byte[] file, string filename);
+
+        /// <summary>
+        /// Upload file
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="fileId"></param>
+        /// <param name="stream"></param>
+        /// <param name="filename"></param>
+        /// <returns></returns>
+        Task UploadFileAsync(string id, string fileId, Stream stream, string filename);
 
         /// <summary>
         /// Retrieve bucket

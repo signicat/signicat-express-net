@@ -160,9 +160,10 @@ namespace Signicat.Express.Infrastructure
                 ? new StringContent(postData, Encoding.UTF8, contentType)
                 : null;
 
-
-            if (!string.IsNullOrWhiteSpace(jsonBody) || formData != null || formDataContent == null) return request;
-            request.Content = formDataContent;
+            if (request.Content == null && formDataContent != null)
+            {
+                request.Content = formDataContent;
+            }
 
             return request;
         }
