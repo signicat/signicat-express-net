@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Signicat.Express.Signature
 {
@@ -53,5 +54,21 @@ namespace Signicat.Express.Signature
         /// The IP address of the signer.
         /// </summary>
         public string ClientIp { get; set; }
+        
+        /// <summary>
+        /// The signature mechanism used
+        /// </summary>
+        public SignatureMechanism Mechanism { get; set; }
+        
+        /// <summary>
+        /// The origin of the signer name and/or date of birth
+        /// </summary>
+        public PersonalInfoOrigin PersonalInfoOrigin { get; set; }
+        
+        /// <summary>
+        /// Additional signature attributes
+        /// </summary>
+        public Dictionary<string, string> Attributes { get; set; }
+        
     }
 }
