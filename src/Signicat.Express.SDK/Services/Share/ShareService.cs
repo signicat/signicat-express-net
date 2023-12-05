@@ -310,7 +310,7 @@ namespace Signicat.Express.Share
         }
         
         /// <summary>
-        /// Resend notification(s) for specific recipient
+        /// Resend notification(s) for specific recipient async
         /// </summary>
         /// <param name="id"></param>
         /// <param name="recipientId"></param>
@@ -318,6 +318,17 @@ namespace Signicat.Express.Share
         public async Task ResendNotificationAsync(string id, string recipientId)
         {
             await PostAsync($"{Urls.Share}/buckets/{id}/resendNotificationToRecipient/{recipientId}");  
+        }
+
+        /// <summary>
+        /// Resend notification(s) for specific recipient
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="recipientId"></param>
+        /// <returns></returns>
+        public void ResendNotification(string id, string recipientId)
+        {
+            Post($"{Urls.Share}/buckets/{id}/resendNotificationToRecipient/{recipientId}");  
         }
     }
 }

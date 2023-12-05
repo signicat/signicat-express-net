@@ -198,11 +198,19 @@ namespace Signicat.Express.Share
         Task<IEnumerable<RecipientResponse>> ListRecipientsAsync(string id);
 
         /// <summary>
-        /// Resend notification(s) for specific recipient
+        /// Resend notification(s) for specific recipient async
         /// </summary>
         /// <param name="id"></param>
         /// <param name="recipientId"></param>
         /// <returns></returns>
         Task ResendNotificationAsync(string id, string recipientId);
+
+        /// <summary>
+        /// Resend notification(s) for specific recipient
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="recipientId"></param>
+        /// <returns></returns>
+        void ResendNotification(string id, string recipientId);
     }
 }
