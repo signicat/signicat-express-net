@@ -308,5 +308,16 @@ namespace Signicat.Express.Share
         {
             return await GetAsync<IEnumerable<RecipientResponse>>($"{Urls.Share}/buckets/{id}/recipients");
         }
+        
+        /// <summary>
+        /// Resend notification(s) for specific recipient
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="recipientId"></param>
+        /// <returns></returns>
+        public async Task ResendNotificationAsync(string id, string recipientId)
+        {
+            await PostAsync($"{Urls.Share}/buckets/{id}/resendNotificationToRecipient/{recipientId}");  
+        }
     }
 }
